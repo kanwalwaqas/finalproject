@@ -1,0 +1,157 @@
+﻿@using OLIWS.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <section id="loginForm">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                @*<h4>Use a local account to log in.</h4>
+                                    <hr />
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <div class="checkbox">
+                                                @Html.CheckBoxFor(m => m.RememberMe)
+                                                @Html.LabelFor(m => m.RememberMe)
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="Log in" class="btn btn-default" />
+                                        </div>
+                                    </div>
+                                    <p>
+                                        @Html.ActionLink("Register as a new user", "Register")
+                                    </p>
+                                    @* Enable this once you have account confirmation enabled for password reset functionality
+                                        <p>
+                                            @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                                        </p>
+
+                            </section>
+                        </div>
+                        <div class="col-md-4">
+                            <section id="socialLoginForm">
+                                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                            </section>
+                        </div>
+                    </div>*@
+
+            }
+        </section>
+    </div>
+    </div>
+    <div class="inner-banner has-base-color-overlay text-center" style="background: url(images/background/4.jpg);">
+        <div class="container">
+            <div class="box">
+                <h1>My Account</h1>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="breadcumb-wrapper">
+        <div class="container">
+            @*<div class="pull-left">
+                    <ul class="list-inline link-list">
+                        <li>
+                            <a href="index-2.html">Home</a>
+                        </li>
+
+
+                        <li>
+                            <a href="shop.html">shop</a>
+                        </li>
+
+
+                        <li>My Account</li>
+                    </ul>
+                </div>*@
+
+
+            <div class="pull-right">
+                <a class="get-qoute" href="#"><i class="fa fa-arrow-circle-right"></i>Become a Volunteer</a>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="register-section sec-padd-top">
+        <div class="container">
+            <div class="row">
+                <!--Form Column-->
+
+
+                <div class="form-column column col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="section-title2">
+                        <h3>Login Now</h3>
+                    </div>
+                    <!--Login Form-->
+
+
+                    <div class="styled-form login-form">
+                        <form action="http://steelthemes.com/demo/html/humanity-html/index.html" method="post">
+                            @*<div class="form-group">
+                                    <span class="adon-icon"><span class="fa fa-user"></span></span> <input name="username" placeholder="Your Name *" type="text" value="">
+                                </div>*@
+
+
+                            <div class="form-group">
+                                <span class="adon-icon"><span class="fa fa-envelope-o"></span></span> <input name="useremil" placeholder="Email" type="email" value="">
+                            </div>
+
+
+                            <div class="form-group">
+                                <span class="adon-icon"><span class="fa fa-unlock-alt"></span></span> <input name="userpassword" placeholder="Password" type="password" value="">
+                            </div>
+
+
+                            <div class="clearfix">
+                                <div class="form-group pull-left">
+                                    <button class="thm-btn thm-tran-bg" type="button">login now</button>
+                                </div>
+
+
+                                <div class="form-group social-links-two padd-top-5 pull-right">
+                                    Or login with <a class="img-circle facebook" href="#"><span class="fa fa-facebook-f"></span></a> <a class="img-circle twitter" href="#"><span class="fa fa-twitter"></span></a> <a class="img-circle google-plus" href="#"><span class="fa fa-google-plus"></span></a>
+                                </div>
+                            </div>
+
+
+                            <div class="clearfix">
+                                <div class="pull-left">
+                                    <input id="remember-me" type="checkbox"><label for="remember-me">&nbsp; Remember Me</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        <
+    </section>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

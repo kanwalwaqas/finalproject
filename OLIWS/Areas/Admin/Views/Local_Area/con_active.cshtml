@@ -1,0 +1,57 @@
+﻿@model OLIWS.Models.Country
+@{
+    ViewBag.Title = "con_active";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit_Country</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal" style="margin-top:60px">
+        <h4 style="margin-left:40px">Active/Deactive Country</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.CountryID)
+
+        <div class="form-group"style="display:none">
+            @Html.LabelFor(model => model.country_name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.country_name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.country_name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+      <center>
+        <div class="form-group" style="margin-right:50px">
+            <label style="font-size:20px">Country Status</label>
+            <div class="col-xs-12">
+                <select name="status" class="selectpicker" data-style="btn-white" data-size="15" style="width:500px;height:40px">
+                    <option disabled selected>Select</option>
+                     <option value="True">True</option>
+                    <option value="False">False</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.status, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="submit"style="width:200px;color:slategrey" value="Save" class="btn btn-default"/>
+                @Html.ActionLink("Back to List", "Country")
+            </div>
+        </div>
+          <div>
+             
+          </div>
+          </center>
+
+    </div>
+
+}
+
+
+
+

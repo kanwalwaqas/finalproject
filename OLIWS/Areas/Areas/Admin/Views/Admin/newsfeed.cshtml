@@ -1,0 +1,141 @@
+﻿
+@{
+    ViewBag.Title = "newsfeed";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("newsfeed", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    <link href="~/Areas/Styling/Design/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Areas/Styling/Design/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Areas/Styling/Design/css/animate.min.css" rel="stylesheet" type="text/css" media="all" /><!-- animation -->
+    <link href="~/Areas/Styling/Design/css/menu.css" rel="stylesheet" type="text/css" media="all" /> <!-- menu style -->
+    <!-- //Custom Theme files -->
+    <!-- font-awesome icons -->
+    <link href="~/Areas/Styling/Design/css/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome icons -->
+    <!-- js -->
+    <script src="~/Areas/Styling/Design/js/jquery-2.2.3.min.js"></script>
+    <script src="~/Areas/Styling/Design/js/jquery-scrolltofixed-min.js" type="text/javascript"></script><!-- fixed nav js -->
+   
+    <script>
+    $(document).ready(function() {
+
+        // Dock the header to the top of the window when scrolled past the banner. This is the default behaviour.
+
+        $('.header-two').scrollToFixed();
+        // previous summary up the page.
+
+        var summaries = $('.summary');
+        summaries.each(function(i) {
+            var summary = $(summaries[i]);
+            var next = summaries[i + 1];
+
+            summary.scrollToFixed({
+                marginTop: $('.header-two').outerHeight(true) + 10,
+                zIndex: 999
+            });
+        });
+    });
+    </script>
+    <!-- //js -->
+    <!-- web-fonts -->
+    <link href='~/Areas/Styling/Design/fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='~/Areas/Styling/Design/fonts.googleapis.com/css?family=Lovers+Quarrel' rel='stylesheet' type='text/css'>
+    <link href='~/Areas/Styling/Design/fonts.googleapis.com/css?family=Offside' rel='stylesheet' type='text/css'>
+    <!-- web-fonts -->
+    <!-- start-smooth-scrolling -->
+    <script type="text/javascript" src="~/Areas/Styling/Design/js/move-top.js"></script>
+    <script type="text/javascript" src="~/Areas/Styling/Design/js/easing.js"></script>
+    <script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script type="text/javascript">
+		$(document).ready(function() {
+
+			var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+			};
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+		});
+    </script>
+    <body background="~/Areas/Styling/Design/one.JPG ">
+        <div class="login-page">
+            <div class="container">
+                <h3 class="w3ls-title w3ls-title1">Event And Campain</h3>
+                <div class="login-body">
+                    <form action="#" method="post">
+                        @*<input type="text" name="work_sub_catID" />*@<div class="form-group col-md-6" style="margin-bottom:20px">
+                            <div>
+                                <label>events/campains</label>
+                                <select name="events" class="form-control" style="height:45px;width:430px">
+                                    <option value="events" disabled selected>
+                                        events
+                                    </option>
+                                    <option value="events">
+                                        events
+                                    </option>
+                                    <option value="Campains">
+                                        Campains
+                                    </option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <input type="text" class="user" name="Name" id="vfname" maxlength="15" onkeyup="validate_name('vfname', 'verror', 2, 'N', 'For valid name enter elphabet only')" placeholder="Name" title="Name" required="">
+                        <input type="text" class="user" name="Title" id="vfname" maxlength="15" onkeyup="validate_name('vfname', 'verror', 2, 'N', 'For valid name enter elphabet only')" placeholder="Title" title="Title" required="">
+                        <span id="verror"></span>
+                        <input type="text" class="user" name="Description" placeholder="Description" title="Description" id="vlname" maxlength="15" @*onkeyup="validate_name('vlname', 'vLerror', 2, 'N', 'For valid name enter elphabet only')"*@ required="">
+                        <span id="vLerror"></span>
+
+                        <span id="vEerror"></span>
+                        <input type="text" class="user" name="Date" placeholder="Date" title="Date" id="vpass" @*onkeyup="validate_name('vpass', 'vPerror', 6, 'P', 'please enter atleast 1 capital letter & contain these(#$%^&)')"*@ required="">
+                        <span id="vPerror"></span>
+                        <input type="text" class="user" name="detail" placeholder="detail" title="detail" id="vCpass" @*onkeyup="pass_match('vpass', 'vCpass', 'vCPerror')"*@ required="">
+                        <span id="vCPerror"></span>
+                        <input type="text" class="user" name="Venue" placeholder="Venue" title="Venue" id="cnic" @*onkeyup="validate_name('cnic', 'CNPerror', 14, 'C', 'Type CNIC with dashes')"*@ required="">
+                        <input type="hidden" name="IsActive" value="True" />
+                        @*<input name="work_eventsID" value="@Model.work_eventsID" />*@
+                        <div class="form-group col-md-6 col-lg-push-2" style="margin-top:150px">
+                            <div>
+                                <label>Image</label>
+                                <input type="file" name="file"  />
+                              
+                            </div>
+                        </div>
+
+
+                    </form>
+                    <input type="submit" value="submit " @*onclick="return Check_AllFields()"*@>
+                </div>
+
+            </div>
+        </div>
+    </body>
+    <script src="~/Areas/Styling/Design/js/minicart.js"></script>
+    <script src="~/Areas/Styling/Design/js/jquery.menu-aim.js"> </script>
+    <script src="~/Areas/Styling/Design/js/main.js"></script> <!-- Resource jQuery -->
+    <!-- //menu js aim -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="~/Areas/Styling/Design/js/bootstrap.js"></script>
+
+
+
+}

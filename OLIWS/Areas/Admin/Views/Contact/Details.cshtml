@@ -1,0 +1,37 @@
+﻿@model OLIWS.Models.Contact_us
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<h2>Contact</h2>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card-box m-t-20">
+            <h4 class="m-t-0"><b>Hi Bro, How are you?</b></h4>
+
+            <hr />
+
+            <div class="media m-b-30 ">
+                <a href="#" class="pull-left">
+                    <img alt="" src="" class="media-object thumb-sm img-circle">
+                </a>
+                <div class="media-body">
+                    @*<span class="media-meta pull-right">@Model.CurrentDate.Hour:@Model.CurrentDate.Minute</span>*@
+                    <h4 class="text-primary m-0">@Model.name</h4>
+                    <small class="text-muted">From: @Model.con_Email</small>
+                </div>
+            </div> <!-- media -->
+
+            <p><b>Hi Bro...</b></p>
+
+            <p>@Model.Message</p>
+
+            <hr />
+        </div>
+        <!-- card-box -->
+    </div> <!-- end col -->
+</div> <!-- end row -->
+<!-- container -->
+<div style="margin-right:15px;text-align:right">
+    <a href="~/Admin/Contact/Index"><input type="submit" class="btn btn-primary" value="Back To Inbox" /></a>
+</div> <!-- content -->

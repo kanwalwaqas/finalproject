@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Subcribe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <!-- Section: inner-header -->
+   
+    <section class="register-section sec-padd-top">
+        <div class="container">
+            <div class="row">
+                <form id="mailchimp-subscription-form1" class="newsletter-form mt-40">
+                    <div class="icon-box mb-0 p-0 col-lg-offset-3">
+                        <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                            <i class="pe-7s-users"></i>
+                        </a>
+                        <h1 class="text-gray pt-10 mt-0 mb-30">Newsletter</h1>
+                    </div>
+                    <hr>
+                    <div class="col-md-6 col-md-offset-3">
+                        <h3>Unlimited Support &amp; Easily Customizable</h3>
+                        <h5>Subscribe to Connect with us</h5>
+                        </div>
+                        <!-- Mailchimp Subscription Form-->
+                    <div class="row">
+
+                        <div class="form-group margin-bottom-none col-md-2 col-lg-offset-3" style="margin-right:80px;font-family:Arial">
+                            <input name="Sub_Email"placeholder="Your Email" class="form-control" value="" type="email" style="height:50px;width:400px">
+                        </div>
+                        <div class="form-group margin-bottom-none col-md-2 " style="margin-bottom:100px;font-family:Arial">
+                            <button class="thm-btn thm-tran-bg">Subscribe</button>
+                        </div>
+                    </div>
+                    </form>
+
+                    <!-- Mailchimp Subscription Form Validation-->
+                    <script type="text/javascript">
+              $('#mailchimp-subscription-form1').ajaxChimp({
+                  callback: mailChimpCallBack,
+                  url: '//thememascot.us9.list-manage.com/subscribe/post?u=a01f440178e35febc8cf4e51f&amp;id=49d6d30e1e'
+              });
+
+              function mailChimpCallBack(resp) {
+                  // Hide any previous response text
+                  var $mailchimpform = $('#mailchimp-subscription-form1'),
+                      $response = '';
+                  $mailchimpform.children(".alert").remove();
+                  if (resp.result === 'success') {
+                      $response = '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
+                  } else if (resp.result === 'error') {
+                      $response = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
+                  }
+                  $mailchimpform.prepend($response);
+              }
+                    </script>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+
+
+
+
+                </div>
+            </div>
+      
+    </section>
+ 
+

@@ -1,0 +1,352 @@
+/* Human Welfare - Fundraising and Charity HTML Template */
+
+@media only screen and (max-width: 1340px){
+	
+	
+	.page-wrapper{
+		overflow:hidden;	
+	}
+	
+}
+
+@media only screen and (max-width: 1140px){
+	
+	.main-header{
+		position:relative;
+		margin:0px !important;
+	}
+	
+	.page-title{
+		padding:80px 0px;	
+	}
+	
+	.page-wrapper{
+		overflow:hidden;	
+	}
+	
+	.who-we-are .content-column .inner{
+		padding-left:0px;	
+	}
+	
+	.sidebar-page-container .sidebar{
+		margin-left:0px;	
+	}
+	
+	.sidebar-page-container .content-side{
+		padding-right:15px;	
+	}
+	
+	.volunteer-section .how-to-column .inner-box{
+		padding-left:0px;	
+	}
+	
+}
+
+@media only screen and (min-width: 1025px){
+	.hidden-bar.right-align.visible-sidebar{
+		right:-400px !important;	
+	}
+}
+
+@media only screen and (min-width: 768px){
+	.main-menu .navigation > li > ul,
+	.main-menu .navigation > li > ul > li > ul{
+		display:block !important;
+		visibility:hidden;
+		opacity:0;
+	}
+}
+
+@media only screen and (max-width: 1023px){
+	
+	
+	.main-header .main-box .logo-box {
+		position:relative;
+		left:0px;
+		top:0px;
+		right:0px;
+		bottom:0px;
+		width:200px;
+		margin:0px;
+		text-align:left;
+	}
+	
+	.main-header .main-box .outer-container{
+		padding-left:0px;	
+	}
+	
+	.main-header .nav-outer,
+	.nav-outer .main-menu{
+		display:none;
+	}
+	
+	.main-header .nav-toggler{
+		display:block;
+	}
+	
+	.main-footer .posts-widget .widget-content,
+	.main-footer .posts-widget h2{
+		margin-left:0px;	
+	}
+	
+	.about-us-section .content-box::before{
+		display:none;	
+	}
+	
+	.about-us-section .content-box{
+		padding:0px;	
+	}
+	
+	.about-us-section .content-column .inner-box{
+		padding:0px;
+		margin-bottom:30px;	
+	}
+	
+	.default-team-member .inner-box .image-column,
+	.default-team-member .inner-box .content-column{
+		width:100%;	
+	}
+	
+	.default-team-member .content-column .inner{
+		padding:25px 20px;	
+	}
+	
+	.default-team-member .inner-box .content-column::after{
+		display:none;	
+	}
+	
+	.blog-details .post-bottom .share-it{
+		padding-top:20px;
+		text-align:left;	
+	}
+	
+}
+
+@media only screen and (max-width: 767px){
+	
+	.header-upper .logo-outer {
+		position:relative;
+		left:0px;
+		top:0px;
+		right:0px;
+		bottom:0px;
+		width:100%;
+		margin:0px;
+	}
+	
+	.main-header .header-top .top-right,
+	.main-header .header-top .top-left{
+		width:100%;	
+	}
+	
+	.main-header .header-top .top-right ul li,
+	.main-header .header-top .top-left ul li{
+		margin:0px 10px;	
+	}
+	
+	.main-slider .tp-caption{
+		display:none !important;
+	}
+	
+	.main-header .header-top .top-right ul,
+	.main-header .header-top .top-left ul,
+	.header-top .social-icon,
+	.header-top .top-right ul{
+		text-align:center;
+		width:100%;
+		margin:10px 0px;
+		padding:0px;	
+	}
+	
+	.sec-title h2{
+		font-size:24px;	
+	}
+	
+	.products-section .shop-upper-box .items-label,
+	.products-section .shop-upper-box .sort-by{
+		width:100%;
+		margin:0px;	
+	}
+	
+	.prod-tabs .reviews-container .rev-header h4,
+	.prod-tabs .reviews-container .rev-header .rating{
+		font-size:14px;	
+	}
+	
+	.prod-tabs .add-review .rating li::after{
+		display:none;	
+	}
+	
+	.prod-tabs .add-review .rating li{
+		display:block;
+		margin:0px 10px 0px 0px;	
+	}
+	
+	.cart-section .coupon-outer .pull-left,
+	.cart-section .coupon-outer .pull-right{
+		width:100%;	
+	}
+	
+	.cart-section .coupon-outer .apply-coupon .form-group{
+		margin:0px 0px 15px;
+		width:100%;
+		padding-right:0px;	
+	}
+	
+	.cart-section .coupon-outer .apply-coupon .form-group input[type="text"]{
+		width:100%;
+	}
+	
+	.cart-section .coupon-outer .apply-coupon .form-group button{
+		position:relative;
+		text-align:center;
+		width:100%;
+	}
+	
+	.cart-section .coupon-outer .theme-btn{
+		width:100%;
+		display:block;
+		margin:10px 0px;	
+	}
+	
+	.how-to-contribute .outer-box::after{
+		display:none;	
+	}
+	
+	.how-to-contribute .contribute-block .inner{
+		width:100%;	
+	}
+	
+	.how-to-contribute .contribute-block .inner .inner-box,
+	.how-to-contribute .contribute-block:nth-child(even) .inner .inner-box{
+		max-width:none;
+		text-align:center;
+		padding:0px;	
+	}
+	
+	.how-to-contribute .contribute-block .icon-box,
+	.how-to-contribute .contribute-block:nth-child(even) .icon-box{
+		position:relative;
+		left:0px;
+		top:0px;
+		right:0px;
+		bottom:0px;
+		margin:0px;
+		margin:0 auto 20px;	
+	}
+}
+
+@media only screen and (max-width: 599px){
+	
+	
+	
+	.prod-tabs .reviews-container .review-box{
+		padding-left:0px;	
+	}
+	
+	.prod-tabs .reviews-container .rev-thumb{
+		position:relative;
+		left:0px;
+		top:0px;
+		margin-bottom:20px;
+	}
+	
+	.prod-tabs .tab-btns .tab-btn{
+		display:block;
+		float:none;
+		width:100%;
+		margin:0px 0px 10px;
+		text-align:center;
+	}
+	
+	.blog-details .comments-area .reply-comment{
+		margin-left:0px;	
+	}
+	
+	.upcoming-events .event-box .inner,
+	.news-style-two .inner-box{
+		padding-left:0px;	
+	}
+	
+	.upcoming-events .event-box .image-box,
+	.news-style-two .image-box{
+		position:relative;
+		left:0px;
+		top:0px;
+		width:100%;
+		height:auto;	
+	}
+	
+	.default-cause-box .inner-box .lower-content,
+	.default-event-box .inner-box .lower-content{
+		padding:25px 15px;	
+	}
+	
+	.event-details .default-event-box .lower-content,
+	.cause-details .default-event-box .lower-content{
+		padding:25px 0px;
+	}
+	
+	.volunteer-section .info-block .inner{
+		padding-left:0px;
+		text-align:center;	
+	}
+	
+	.volunteer-section .info-block .icon-box{
+		position:relative;
+		left:0px;
+		top:0px;
+		margin:0 auto 30px;	
+	}
+	
+	.blog-details .comments-area .comment .reply-btn{
+		position:relative;
+		top:5px;	
+	}
+}
+
+@media only screen and (max-width: 499px) {
+	
+	
+	.main-header .main-box .logo-box .logo img{
+		max-width:70%;	
+	}
+	
+	.page-title h1{
+		font-size:24px;	
+	}
+	
+	.prod-tabs .tabs-container .tab{
+		padding:20px 15px;
+	}
+	
+	.blog-details .comments-area .reply-comment,
+	.blog-details .comments-area .comment .comment-inner{
+		padding-left:0px;	
+	}
+	
+	.blog-details .comments-area .comment-box .author-thumb{
+		position:relative;
+		left:0px;
+		top:0px;
+		margin-bottom:20px;	
+	}
+	
+	.cause-box-two .inner-box .lower-content .post-header .pull-right,
+	.cause-details .cause-box-two .more-info .pull-right,
+	.default-event-box .inner-box .post-header .pull-right,
+	.cart-section .cart-options .pull-left,
+	.cart-section .cart-options .pull-right{
+		width:100%;
+		padding-top:10px;
+	}
+	
+	.cart-section .cart-options .theme-btn{
+		width:100%;	
+	}
+	
+	.faqs-section .video-box iframe,
+	.news-style-three .image-box iframe{
+		height:220px;	
+	}
+}

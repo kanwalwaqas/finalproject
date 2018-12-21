@@ -1,0 +1,19 @@
+@media screen and (max-width: 500px){
+	/* Sponsorship */
+
+		#mc_orphan_search .field {
+		    width: 100%;
+		    margin-bottom: 0;
+		}
+		#mc_orphan_search .field.orphan_country_field, #mc_orphan_search .field.orphan_submit {
+			margin-top: 0;
+		}
+
+			#mc_orphan_search .field select {
+			    border-bottom: 0;
+			}
+
+		#results .orphan {
+			width: 100%;
+		}
+}

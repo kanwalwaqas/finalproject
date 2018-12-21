@@ -1,0 +1,136 @@
+﻿@model OLIWS.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @*<h4>Create a new account.</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Register" />
+        </div>
+    </div>*@
+
+    
+
+        <div class="inner-banner has-base-color-overlay text-center" style="background: url(images/background/4.jpg);">
+            <div class="container">
+                <div class="box">
+                    <h1>My Account</h1>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="breadcumb-wrapper">
+            <div class="container">
+                @*<div class="pull-left">
+                    <ul class="list-inline link-list">
+                        <li>
+                            <a href="index-2.html">Home</a>
+                        </li>
+
+
+                        <li>
+                            <a href="shop.html">shop</a>
+                        </li>
+
+
+                        <li>My Account</li>
+                    </ul>
+                </div>*@
+
+
+                <div class="pull-right">
+                    <a class="get-qoute" href="#"><i class="fa fa-arrow-circle-right"></i>Become a Volunteer</a>
+                </div>
+            </div>
+        </div>
+
+
+        <section class="register-section sec-padd-top">
+            <div class="container">
+                <div class="row">
+                    <!--Form Column-->  <div class="form-column column col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="section-title2">
+                            <h3>Register Now</h3>
+                        </div>
+                        <!--Login Form-->
+
+
+                        <div class="styled-form register-form">
+                            <form action="http://steelthemes.com/demo/html/humanity-html/index.html" method="post">
+                                <div class="form-group">
+                                    <span class="adon-icon"><span class="fa fa-user"></span></span> <input name="username" placeholder="Your Name *" type="text" value="">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <span class="adon-icon"><span class="fa fa-envelope-o"></span></span> <input name="useremil" placeholder="Enter Mail id *" type="email" value="">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <span class="adon-icon"><span class="fa fa-unlock-alt"></span></span> <input name="userpassword" placeholder="Enter Password" type="password" value="">
+                                </div>
+
+
+                                <div class="clearfix">
+                                    <div class="form-group pull-left">
+                                        <button class="thm-btn thm-tran-bg" type="button">Register here</button>
+                                    </div>
+
+
+                                    <div class="form-group padd-top-15 pull-right">
+                                        * Free registered user to submit content.
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+        }
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

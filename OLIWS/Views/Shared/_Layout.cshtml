@@ -1,0 +1,705 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<!-- Mirrored from steelthemes.com/demo/html/humanity-html/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Feb 2018 17:50:30 GMT -->
+<head>
+    @Scripts.Render("~/bundles/jquery")
+    <meta charset="UTF-8">
+
+    <title>OLIWS</title><!-- mobile responsive meta -->
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <link href="~/Designing/OLIWSHOME/css/style.css" rel="stylesheet">
+    <link href="~/Designing/OLIWSHOME/css/responsive.css" rel="stylesheet">
+    <link href="~/Designing/OLIWSHOME/images/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="~/Designing/OLIWSHOME/images/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="~/Designing/OLIWSHOME/images/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    
+
+
+    <link href="~/Areas/Styling/Zicros/plugins/bootstrap-sweetalert/sweet-alert.css" rel="stylesheet" type="text/css">
+
+    <!-- App css -->
+    @*<link href="~/Areas/Styling/Zicros/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Areas/Styling/Zicros/assets/css/core.css" rel="stylesheet" type="text/css" />
+    <link href="~/Areas/Styling/Zicros/assets/css/components.css" rel="stylesheet" type="text/css" />
+    <link href="~/Areas/Styling/Zicros/assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="~/Areas/Styling/Zicros/assets/css/pages.css" rel="stylesheet" type="text/css" />
+    <link href="~/Areas/Styling/Zicros/assets/css/menu.css" rel="stylesheet" type="text/css" />
+    <link href="~/Areas/Styling/Zicros/assets/css/responsive.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/Areas/Styling/Zicros/plugins/switchery/switchery.min.css">*@
+
+    <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="~/Areas/Styling/Zicros/assets/js/modernizr.min.js"></script>
+
+
+
+
+
+    <script src="~/ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <link rel="shortcut icon" href="~/139n2d46dnkv2ayx1o36rbqz-wpengine.netdna-ssl.com/wp-content/uploads/2014/04/favicon1.png" type="image/x-icon" />
+   
+    <link rel='stylesheet' id='media-css-css' href='~/139n2d46dnkv2ayx1o36rbqz-wpengine.netdna-ssl.com/wp-content/themes/Avada/css/media.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='animate-css-css' href='~/139n2d46dnkv2ayx1o36rbqz-wpengine.netdna-ssl.com/wp-content/themes/Avada/css/animate-custom.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='iphorm-css' href='~/139n2d46dnkv2ayx1o36rbqz-wpengine.netdna-ssl.com/wp-content/plugins/iphorm-form-builder/css/stylesa71a.css?ver=1.7.10' type='text/css' media='all' />
+    <link rel='stylesheet' id='qtip-css' href='~/139n2d46dnkv2ayx1o36rbqz-wpengine.netdna-ssl.com/wp-content/plugins/iphorm-form-builder/js/qtip2/jquery.qtip.min77e6.css?ver=2.2.1' type='text/css' media='all' />
+    <link rel='stylesheet' id='iphorm-fancybox-css' href='~/139n2d46dnkv2ayx1o36rbqz-wpengine.netdna-ssl.com/wp-content/plugins/iphorm-form-builder/js/fancybox/jquery.fancybox-1.3.4c412.css?ver=1.3.4' type='text/css' media='all' />
+    <link rel='stylesheet' id='iphorm-theme-1-css' href='~/139n2d46dnkv2ayx1o36rbqz-wpengine.netdna-ssl.com/wp-content/plugins/iphorm-form-builder/themes/light/lighta71a.css?ver=1.7.10' type='text/css' media='all' />
+    <link rel='stylesheet' id='jquery-smooth-scroll-css' href='~/139n2d46dnkv2ayx1o36rbqz-wpengine.netdna-ssl.com/wp-content/plugins/jquery-smooth-scroll/css/jss-style20fd.css?ver=4.9.2' type='text/css' media='all' />
+    <link rel='stylesheet' id='widgets-on-pages-css' href='~/139n2d46dnkv2ayx1o36rbqz-wpengine.netdna-ssl.com/wp-content/plugins/widgets-on-pages/public/css/widgets-on-pages-public2fca.css?ver=1.4.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='layerslider-css' href='~/139n2d46dnkv2ayx1o36rbqz-wpengine.netdna-ssl.com/wp-content/themes/Avada/framework/plugins/LayerSlider/static/css/layerslider3c21.css?ver=5.1.1' type='text/css' media='all' />
+    <link rel='stylesheet' id='ls-google-fonts-css' href='https://fonts.googleapis.com/css?family=Lato:100,300,regular,700,900|Open+Sans:300|Indie+Flower:regular|Oswald:300,regular,700&amp;subset=latin,latin-ext' type='text/css' media='all' />
+    <script type='text/javascript' src='~/139n2d46dnkv2ayx1o36rbqz-wpengine.netdna-ssl.com/wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+    <script type='text/javascript' src='~/139n2d46dnkv2ayx1o36rbqz-wpengine.netdna-ssl.com/wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+  
+    <style type="text/css">
+        #tve_editor .ttfm1 {
+            font-family: 'Lato' !important;
+            font-weight: 400 !important;
+        }
+
+        .ttfm1 input, .ttfm1 select, .ttfm1 textarea, .ttfm1 button {
+            font-family: 'Lato' !important;
+            font-weight: 400 !important;
+        }
+
+        #tve_editor .ttfm1.bold_text, .ttfm1 .bold_text, .ttfm1 b, .ttfm1 strong {
+            font-weight: 700 !important;
+        }
+
+            .ttfm1.bold_text, .ttfm1 .bold_text, .ttfm1 b, .ttfm1 strong input, .ttfm1.bold_text, .ttfm1 .bold_text, .ttfm1 b, .ttfm1 strong select, .ttfm1.bold_text, .ttfm1 .bold_text, .ttfm1 b, .ttfm1 strong textarea, .ttfm1.bold_text, .ttfm1 .bold_text, .ttfm1 b, .ttfm1 strong button {
+                font-weight: 700 !important;
+            }
+    </style>
+    <meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress." />
+
+
+</head>
+
+<body>
+    <div class="boxed_wrapper">
+        @*<div class="top-bar">
+            <div class="container">
+                <div class="clearfix">
+                   
+                    <div class="right-column float_right">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+
+        <section class="theme_menu stricky">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="main-logo">
+                            <a href="~/Index/Index"><img alt="" src="~/Designing/OLIWSHOME/images/logo/logo.png"></a>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-9 menu-column">
+                        <nav class="defaultmainmenu" id="main_menu">
+                            <ul class="defaultmainmenu-menu">
+
+                                <li>
+                                    <a href="~/Home/Index">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#">Learn</a>
+                                    <ul class="dropdown">
+                                        <li>
+                                            <a href="~/OLIWS/Zakat" style="padding: 5px 16px">Zakat</a>
+                                        </li>
+                                        <li>
+                                            <a href="~/OLIWS/Calculatezukat" style="padding: 5px 16px">Calculate your Zakat</a>
+                                        </li>
+                                        <li>
+                                            <a href="~/OLIWS/Usher" style="padding: 5px 16px">Usher</a>
+                                        </li>
+                                        <li>
+                                            <a href="~/OLIWS/sadqa" style="padding: 5px 16px">Sadqa</a>
+                                        </li>
+                                        <li>
+                                            <a href="~/OLIWS/Fitrana" style="padding: 5px 16px">Zakat ul Fitr</a>
+                                        </li>
+                                        <li>
+                                            <a href="~/OLIWS/Atia_o_Khairat" style="padding:5px 16px">Atia o Khairat</a>
+                                        </li>
+                                        <li>
+                                            <a href="~/OLIWS/Khums" style="padding: 5px 16px">Khums</a>
+                                        </li>
+
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">About Us</a>
+                                    <ul class="dropdown">
+                                        <li>
+                                            <a href="~/OLIWS/our_story" style="padding: 5px 16px">Our story</a>
+                                        </li>
+                                        <li>
+                                            <a href="~/OLIWS/Vision_And_Mission" style="padding: 5px 16px">Vision and Mission</a>
+                                        </li>
+                                        <li>
+                                            <a href="~/OLIWS/Our_structure" style="padding: 5px 16px">Our Structure</a>
+                                        </li>
+                                        <li>
+                                            <a href="~/OLIWS/Work_with_us" style="padding: 5px 16px">Work with Us</a>
+                                        </li>
+                                        <li>
+                                            <a href="~/OLIWS/Fitrana" style="padding: 5px 16px">Fund raising promises</a>
+                                        </li>
+                                    </ul>
+
+                                </li>
+
+                                <li>
+                                    <a href="#">Our work</a>
+                                    <ul class="dropdown">
+                                        <li>
+                                            <a href="#" style="padding: 5px 16px">Over View</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" style="padding: 5px 16px">Education</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" style="padding: 5px 16px">Health</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" style="padding: 5px 16px">Loan</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="~/OLIWS/Gallary">Gallery</a>
+
+                                </li>
+                                <li>
+                                    <a href="#">Contact us</a>
+
+                                </li>
+
+                                <li>
+    
+    @Html.Partial("_LoginPartial");
+    @if (!Request.IsAuthenticated)
+    {<a>Register</a>
+        <ul class="dropdown">
+            <li>
+                <br /><a href="~/Account/Register">  <button style="padding: 3px 25px;background-color:#FF2A00;color:white">Individual </button></a>
+            </li>
+            <li>
+                <br />  <a href="~/OLIWS/newadd"> <button style="padding: 3px 18px;background-color:#FF2A00;color:white">Organization </button></a>
+            </li>
+            <li>
+                <br />  <a href="~/OLIWS/Volunter"> <button style="padding: 3px 20px;background-color:#FF2A00;color:white">Volunteer </button></a>
+                <a style="font-size:10px;color:blue" href="~/Account/Login">Already have an account</a>
+            </li>
+        </ul>
+    }
+    else
+    {
+    <li>
+        <br /><a href="~/profile/Userprofile">  <button style="padding: 3px 25px;background-color:#FF2A00;color:white">Profile </button></a>
+    </li>
+    }
+                                </li>
+
+                                @*
+            <li>
+                <a href="#">Shop</a>
+
+                <ul class="dropdown">
+                    <li>
+                        <a href="shop.html">Shop Products</a>
+                    </li>
+
+
+                    <li>
+                        <a href="shop-single.html">Single Shop</a>
+                    </li>
+
+
+                    <li>
+                        <a href="shop-cart.html">Shopping Cart</a>
+                    </li>
+
+
+                    <li>
+                        <a href="checkout.html">Checkout</a>
+                    </li>
+
+
+                    <li>
+                        <a href="account.html">My Account</a>
+                    </li>
+                </ul>
+            </li>*@
+
+
+                                @*<li>
+                <a href="blog-1.html">blog</a>
+
+                <ul class="dropdown">
+                    <li>
+                        <a href="blog-1.html">Blog Grid View</a>
+                    </li>
+
+
+                    <li>
+                        <a href="blog-large.html">Blog With Sidebar</a>
+                    </li>
+
+
+                    <li>
+                        <a href="blog-details.html">Single Post</a>
+                    </li>
+                </ul>
+            </li>*@
+
+
+
+
+                                <li>
+                                    @*<a href="#">mega menu</a>*@
+
+                                    <ul class="dropdown"></ul>
+
+
+                                    <div class="megamenu clearfix megamenu-width-100">
+                                        <div class="menu-item">
+                                            <h4 class="title">Quick Links</h4>
+
+
+                                            <ul class="megamenu-dropdown">
+                                                <li>
+                                                    <a class="thm-btn donate-box-btn">Donate Us</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="about.html">About Us</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+
+                                        <div class="event-section2">
+                                            <h4 class="title">Upcoming Events</h4>
+
+
+                                            <div class="item">
+                                                <div class="img-column">
+                                                    <figure class="img-holder">
+                                                        <a href="single-event.html"><img alt="" src="~/Designing/OLIWSHOME/images/resource/12.jpg"></a>
+                                                    </figure>
+                                                </div>
+
+
+                                                <div class="text-column">
+                                                    <div class="lower-content">
+                                                        <a href="single-event.html">
+                                                            <h4>Conducting Marathon 2017: Run for cancer people</h4>
+                                                        </a>
+
+                                                        <div class="post-meta">
+                                                            <i class="fa fa-calendar"></i>Started On: 11.00am<br>
+                                                            <i class="fa fa-map-marker"></i> New Grand Street, California
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="recent-post">
+                                            <h4 class="title">Latest News</h4>
+
+
+                                            <div class="post-list">
+                                                <div class="post">
+                                                    <div class="post-thumb">
+                                                        <a href="blog-details.html"><img alt="" src="~/Designing/OLIWSHOME/images/resource/thumb2.jpg"></a>
+                                                    </div>
+                                                    <a href="blog-details.html">
+                                                        <h5>
+                                                            New Award To Support<br>
+                                                            Children Affected by Crises
+                                                        </h5>
+                                                    </a>
+
+                                                    <div class="post-info">
+                                                        October 21, 2016
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="post">
+                                                    <div class="post-thumb">
+                                                        <a href="blog-details.html"><img alt="" src="~/Designing/OLIWSHOME/images/resource/thumb3.jpg"></a>
+                                                    </div>
+                                                    <a href="blog-details.html">
+                                                        <h5>
+                                                            Help promote girl's Education<br>
+                                                            in the world
+                                                        </h5>
+                                                    </a>
+
+                                                    <div class="post-info">
+                                                        January 14, 2016
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="post">
+                                                    <div class="post-thumb">
+                                                        <a href="blog-details.html"><img alt="" src="~/Designing/OLIWSHOME/images/resource/thumb4.jpg"></a>
+                                                    </div>
+                                                    <a href="blog-details.html">
+                                                        <h5>
+                                                            Clean poor urban areas to<br>
+                                                            protect from pollution.
+                                                        </h5>
+                                                    </a>
+
+                                                    <div class="post-info">
+                                                        December 17, 2015
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+</nav>
+                    </div>
+
+
+                    @*<div class="right-column">
+                        <div class="nav_side_content">
+                            <ul class="social-icon">
+                                <li>
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                </li>
+
+
+                                <li>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                </li>
+
+
+                                <li>
+                                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                                </li>
+                            </ul>
+
+
+                            <div class="search_option">
+                                <button aria-expanded="false" aria-haspopup="true" class="search tran3s dropdown-toggle color1_bg" data-toggle="dropdown" id="searchDropdown"><i aria-hidden="true" class="fa fa-search"></i></button>
+
+                                <form action="#" aria-labelledby="searchDropdown" class="dropdown-menu">
+                                    <input placeholder="Search..." type="text"> <button><i aria-hidden="true" class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>*@
+                </div>
+            </div>
+        </section>
+        <!--Start rev slider wrapper-->
+
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+
+        @RenderBody()
+
+
+
+        <footer class="main-footer">
+            <!--Widgets Section-->
+
+
+            <div class="widgets-section">
+                <div class="container">
+                    <div class="row">
+                        <!--Big Column-->
+
+
+                        <article class="big-column col-md-6 col-sm-12 col-xs-12">
+                            <div class="row clearfix">
+                                <!--Footer Column-->
+
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="footer-widget about-column">
+                                        <div class="section-title">
+                                            <h4>About Us</h4>
+                                        </div>
+
+
+                                        <div class="text">
+                                            <p>We partner with over 320 amazing projects worldwide, and have given over $150 million in cash and product grants to   groups since 2011. We also operate our own dynamic suite of Signature Programs, million in cash and product grants to others</p>
+                                        </div>
+
+
+                                        <div class="link">
+                                            <a class="default_link" href="#">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Footer Column-->
+
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="footer-widget link-column">
+                                        <div class="section-title">
+                                            <h4>Usefull Links</h4>
+                                        </div>
+
+
+                                        <div class="widget-content">
+                                            <ul class="list">
+                                                <li>
+                                                    <a href="about.html">About Our OLIWS</a>
+                                                </li>
+
+
+                                              <li>
+                                                    <a href="volunteer.html">Our Volunteers</a>
+                                                </li>
+
+
+                                                <li>
+                                                    <a href="#">Our Donators</a>
+                                                </li>
+
+
+                                                <li>
+                                                    <a href="#">Sponsers</a>
+                                                </li>
+
+
+                                                <li>
+                                                    <a href="event-1.html">Upcoming Events</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <!--Big Column-->
+
+                        <article class="big-column col-md-6 col-sm-12 col-xs-12">
+                            <div class="row clearfix">
+                                <!--Footer Column-->
+
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="footer-widget post-column">
+                                        <div class="section-title">
+                                            <h4>Recent Post</h4>
+                                        </div>
+
+
+                                        <div class="post-list">
+                                            <div class="post">
+                                                <a href="#">
+                                                    <h5>Educated children photos</h5>
+                                                </a>
+
+                                                <div class="post-info">
+                                                    August 14, 2018
+                                                </div>
+                                            </div>
+
+
+                                            @*<div class="post">
+                                                <a href="#">
+                                                    <h5>Hope Kids Holiday Party</h5>
+                                                </a>
+
+                                                <div class="post-info">
+                                                    February 21, 2017
+                                                </div>
+                                            </div>
+
+
+                                            <div class="post">
+                                                <a href="#">
+                                                    <h5>humanity Bikini Car wash photos</h5>
+                                                </a>
+
+                                                <div class="post-info">
+                                                    January 15, 2017
+                                                </div>
+                                            </div>*@
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Footer Column-->
+
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="footer-widget contact-column">
+                                        <div class="section-title">
+                                            <h4>Get In Touch</h4>
+                                        </div>
+
+
+                                        <ul class="contact-info">
+                                            <li>
+                                                <i class="icon-arrows"></i><span>Address:</span> Pcc LHR<br>
+                                                
+                                            </li>
+
+
+                                            <li>
+                                                <i class="icon-phone"></i> <span>Phone:</span>0900-786-01 &<br>
+                                                0900-786-02
+                                            </li>
+
+
+                                            <li><i class="icon-back"></i><span>Email:</span>OLIWS234@gmail.com</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Footer Bottom-->
+
+        <!-- Scroll Top  -->
+        <button class="scroll-top tran3s color2_bg"><span class="fa fa-angle-up"></span></button> <!-- preloader  -->
+       
+                    <!-- jQuery -->
+                    <script src="~/Designing/OLIWSHOME/js/jquery.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/bootstrap.min.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/menu.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/owl.carousel.min.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/jquery.mixitup.min.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/jquery.fancybox.pack.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/imagezoom.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/jquery.magnific-popup.min.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/jquery.polyglot.language.switcher.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/SmoothScroll.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/jquery.appear.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/jquery.countTo.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/validation.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/wow.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/jquery.fitvids.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/nouislider.js">
+                    </script> <!-- revolution slider js -->
+
+                    <script src="~/Designing/OLIWSHOME/js/rev-slider/jquery.themepunch.tools.min.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/rev-slider/jquery.themepunch.revolution.min.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/rev-slider/revolution.extension.actions.min.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/rev-slider/revolution.extension.carousel.min.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/rev-slider/revolution.extension.kenburn.min.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/rev-slider/revolution.extension.layeranimation.min.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/rev-slider/revolution.extension.migration.min.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/rev-slider/revolution.extension.navigation.min.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/rev-slider/revolution.extension.parallax.min.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/rev-slider/revolution.extension.slideanims.min.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/rev-slider/revolution.extension.video.min.js">
+                    </script>
+                    <script src="~/Designing/OLIWSHOME/js/custom.js">
+                    </script>
+
+        <script>
+            var resizefunc = [];
+        </script>
+
+        <!-- jQuery  -->
+        <script src="~/Areas/Styling/Zicros/assets/js/jquery.min.js"></script>
+        <script src="~/Areas/Styling/Zicros/assets/js/bootstrap.min.js"></script>
+        <script src="~/Areas/Styling/Zicros/assets/js/detect.js"></script>
+        <script src="~/Areas/Styling/Zicros/assets/js/fastclick.js"></script>
+        <script src="~/Areas/Styling/Zicros/assets/js/jquery.blockUI.js"></script>
+        <script src="~/Areas/Styling/Zicros/assets/js/waves.js"></script>
+        <script src="~/Areas/Styling/Zicros/assets/js/jquery.slimscroll.js"></script>
+        <script src="~/Areas/Styling/Zicros/assets/js/jquery.scrollTo.min.js"></script>
+        <script src="~/Areas/Styling/Zicros/plugins/switchery/switchery.min.js"></script>
+
+        <!-- Sweet-Alert  -->
+        <script src="~/Areas/Styling/Zicros/plugins/bootstrap-sweetalert/sweet-alert.min.js"></script>
+        <script src="~/Areas/Styling/Zicros/assets/pages/jquery.sweet-alert.init.js"></script>
+
+        <!-- App js -->
+        <script src="~/Areas/Styling/Zicros/assets/js/jquery.core.js"></script>
+        <script src="~/Areas/Styling/Zicros/assets/js/jquery.app.js"></script>
+
+
+
+
+
+                </div>
+
+
+                <script type='text/javascript' src='~/139n2d46dnkv2ayx1o36rbqz-wpengine.netdna-ssl.com/wp-content/plugins/thrive-visual-editor/thrive-dashboard/js/dist/frontend.min9c6b.js?ver=2.0.16'></script>
+
+<script type="text/javascript">
+
+    $('#alert').click(function () {
+        swal({
+            title: "Are you agree?",
+            text: "You will not be able to recover this imaginary file !",
+            type: "warning",        
+            confirmButtonClass: 'btn-primary btn-md waves-effect waves-light',
+            confirmButtonText: 'Agree!'
+       
+        });
+    });
+    
+
+</script>
+  
+</body>
+
+<!-- Mirrored from steelthemes.com/demo/html/humanity-html/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Feb 2018 17:55:27 GMT -->
+
+
+
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
+</html>

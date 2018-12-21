@@ -1,0 +1,124 @@
+﻿@model IEnumerable<OLIWS.Models.Campaigns>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.volunteer1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.volunteer2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.volunteer3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.volunteer4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.volunteer5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.volunteer6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.volunteer7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.volunteer8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.volunteer9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.volunteer10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.task)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.compaign_area)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Purpose)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timelimit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.volunteer1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.volunteer2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.volunteer3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.volunteer4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.volunteer5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.volunteer6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.volunteer7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.volunteer8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.volunteer9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.volunteer10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.task)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.compaign_area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Purpose)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date_time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timelimit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CampaignsID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CampaignsID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CampaignsID })
+        </td>
+    </tr>
+}
+
+</table>

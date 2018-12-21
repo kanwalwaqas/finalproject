@@ -1,0 +1,153 @@
+﻿@model OLIWS.Models.Campaigns
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Campaigns</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.volunteer1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.volunteer1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.volunteer2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.volunteer2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.volunteer3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.volunteer3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.volunteer4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.volunteer4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.volunteer5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.volunteer5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.volunteer6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.volunteer6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.volunteer7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.volunteer7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.volunteer8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.volunteer8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.volunteer9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.volunteer9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.volunteer10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.volunteer10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.task)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.task)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.compaign_area)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.compaign_area)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Purpose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Purpose)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date_time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.timelimit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.timelimit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

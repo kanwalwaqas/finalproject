@@ -1,0 +1,158 @@
+/* Custom Shortcodes CSS */
+
+.qurbani_form_wrapper{
+    display: inline-block;
+    width: 100%;
+}
+.qurbani_form_wrapper form{
+    position: relative;
+}
+.qf_element{
+    display: inline-block;
+    width: 24%;
+    margin-right: 10px;
+}
+.qf_element select{
+    background: #F7F7F7;
+    border-color: #F3F3F3;
+    border-radius: 5px;
+}
+.qf_element.btns{
+    width: auto;
+    margin-right: 0;
+}
+.qf_element.btns button{
+    background: #F7F7F7;
+    border: 1px solid #f3f3f3;
+    color: #ED493A;
+    padding: 9px 25px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+.qf_element.btns button:hover{
+    background: #ED493A;
+    border: 1px solid #ED493A;
+    color: #F7F7F7;
+}
+.add_more_qurbani{
+    display: inline-block;
+    margin-top: 15px;
+}
+.add_more_qurbani button{
+    color: #ED493A;
+    text-decoration: underline;
+    background: none;
+    border: 0 none;
+}
+.qfoverlay{
+    background: rgba(255, 255, 255, 0.5) url("loading.svg") no-repeat scroll center center / contain ;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.qf_msg{
+    display: inline-block;
+}
+.qf_msg a{
+    background: #46a146;
+    color: #fff !important;
+    padding: 10px;
+    border-radius: 3px;
+
+    display: inline-block;
+}
+
+.qf_element {
+    width: 23.5%;
+}
+.qf_element.last{
+    margin-right: 0;
+}
+.qf_input{
+    background: url(pound.png) no-repeat #f7f7f7;
+    border-color: #f3f3f3;
+    border-radius: 5px;
+    background-size: auto 60%;
+    background-position: 5px center;
+    padding-left: 29px;
+}
+@media (max-width: 991px){
+	.qf_element {
+    		width: 47%;
+    		margin-bottom: 13px;
+	}
+	.qf_element.btns {
+    		width: 100%;
+	}
+}
+@media (max-width: 743px){
+	.qf_element{
+    		width: 100%;
+    		margin-bottom: 15px;
+	}
+	.qf_element.btns {
+    		width: 100%;
+	}
+}
+
+.qfac{
+    display: inline-block;
+}
+.qf_cart{
+    display: inline-block;
+    width: 100%;
+
+}
+.qf_cart ul + a{
+    margin: 10px 0 30px !important;
+    display: inline-block;
+    float: right;
+    background: #46a146;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 3px;
+}
+.qf_cart ul{
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+}
+.qf_cart ul li{
+    border-bottom: 1px dashed;
+    padding: 8px 0px;
+}
+.qf_cart ul li span.itemp{
+    width: 40%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.qf_cart ul li span.itemt{
+    display: none;
+}
+.qf_cart ul li a,
+.qf_cart ul li .itemtotal{
+    display: inline-block;
+    vertical-align: middle;
+}
+.qf_cart ul li span.itemc{
+    display: inline-block;
+    vertical-align: middle;
+    width: 30%;
+}
+@media (max-width: 523px){
+	.qf_cart ul li span.itemp {
+    		width: 48%;
+	}
+}
+@media (max-width: 455px){
+	.qf_cart ul li span.itemp {
+    		width: 68%;
+	}
+	.qf_cart ul li span.itemc {
+    		display: none;
+	}
+}

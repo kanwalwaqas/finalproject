@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Donorpayment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="section-title center">
+    <h2>Donation Information</h2>
+</div>
+
+
+<h4>How much would you like to donate:</h4>
+
+
+<form action="#" class="donate-form default-form">
+    <ul class="chicklet-list clearfix">
+        <li><input id="donate-amount-1" name="donate-amount" type="radio"> <label data-amount="1000" for="donate-amount-1">1000</label></li>
+
+
+        <li><input checked="checked" id="donate-amount-2" name="donate-amount" type="radio"> <label data-amount="2000" for="donate-amount-2">2000</label></li>
+
+
+        <li><input id="donate-amount-3" name="donate-amount" type="radio"> <label data-amount="3000" for="donate-amount-3">3000</label></li>
+
+
+        <li><input id="donate-amount-4" name="donate-amount" type="radio"> <label data-amount="4000" for="donate-amount-4">4000</label></li>
+
+
+        <li><input id="donate-amount-5" name="donate-amount" type="radio"> <label data-amount="5000" for="donate-amount-5">5000</label></li>
+
+
+        <li class="other-amoun">
+            <p style="margin-top:-23px;margin-left:30px;font-size:22px">
+                <div>
+                    <input id="other-amount" placeholder="Other Amount" type="text">
+                </div>
+        </li>
+    </ul>     
+            <div >
+                <div class="form-group" >
+                    <span class="adon-icon">@*<span class="fa fa-envelope-o"></span>*@</span> <input name="AccountName" placeholder="Account Name " type="text" value="">
+                    @*@Html.ValidationMessageFor(n => n.Email, null, new { @class = "text-danger" })*@
+                </div>
+
+            </div>
+
+            <div>
+                <div class="form-group"  ">
+                  @*  <span class="adon-icon"><span class="fa fa-unlock-alt"></span></span> *@<input name="AccountholderName" placeholder="Account holder Name" type="text" value="">
+                    @*@Html.ValidationMessageFor(n => n.Password, null, new { @class = "text-danger" })*@
+                </div>
+
+            </div>
+            <div >
+                <div class="form-group">
+                  @*  <span class="adon-icon"><span class="fa fa-unlock-alt"></span></span> *@<input name="AccountNumber" placeholder="Account Number" type="text" value="" style="margin-left:400px;margin-top:-160px">
+                    @*@Html.ValidationMessageFor(n => n.ConfirmPassword, null, new { @class = "text-danger" })*@
+                </div>
+            </div>
+            <div >
+                <div class="form-group">
+                    <span class="adon-icon">@*<span class="fa fa-unlock-alt"></span>*@</span> <input name="SortCode" placeholder="Sort Code" type="text" value=""style="margin-left:400px">
+                    @*@Html.ValidationMessageFor(n => n.phone, null, new { @class = "text-danger" })*@
+
+                </div>
+            </div>
+
+
+            <div class="left">
+                <button class="thm-btn" type="submit">Donate Now</button>
+            </div>
+        </form>
+        
+    
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+﻿@model OLIWS.Areas.Admin.Models.BalanceReport
+
+@{
+    ViewBag.Title = "AvailableBalanceReports";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AvailableBalanceReports</h2>
+
+
+<style>
+    .table {
+        margin-top: 125px;
+    }
+</style>
+
+<div>
+    <h4>BalanceReport</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Education)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Education)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Health)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Health)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Others)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Others)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Team)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Team)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Admin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Admin)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")*@
+</p>

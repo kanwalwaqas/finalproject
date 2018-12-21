@@ -1,0 +1,292 @@
+﻿
+@{
+    ViewBag.Title = "indexdata";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("indexdata", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+
+    <link href="~/Areas/Styling/Design/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Areas/Styling/Design/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Areas/Styling/Design/css/animate.min.css" rel="stylesheet" type="text/css" media="all" /><!-- animation -->
+    <link href="~/Areas/Styling/Design/css/menu.css" rel="stylesheet" type="text/css" media="all" /> <!-- menu style -->
+    <!-- //Custom Theme files -->
+    <!-- font-awesome icons -->
+    <link href="~/Areas/Styling/Design/css/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome icons -->
+    <!-- js -->
+    <script src="~/Areas/Styling/Design/js/jquery-2.2.3.min.js"></script>
+    <script src="~/Areas/Styling/Design/js/jquery-scrolltofixed-min.js" type="text/javascript"></script><!-- fixed nav js -->
+
+    <script>
+    $(document).ready(function() {
+
+        // Dock the header to the top of the window when scrolled past the banner. This is the default behaviour.
+
+        $('.header-two').scrollToFixed();
+        // previous summary up the page.
+
+        var summaries = $('.summary');
+        summaries.each(function(i) {
+            var summary = $(summaries[i]);
+            var next = summaries[i + 1];
+
+            summary.scrollToFixed({
+                marginTop: $('.header-two').outerHeight(true) + 10,
+                zIndex: 999
+            });
+        });
+    });
+    </script>
+    <!-- //js -->
+    <!-- web-fonts -->
+    <link href='~/Areas/Styling/Design/fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='~/Areas/Styling/Design/fonts.googleapis.com/css?family=Lovers+Quarrel' rel='stylesheet' type='text/css'>
+    <link href='~/Areas/Styling/Design/fonts.googleapis.com/css?family=Offside' rel='stylesheet' type='text/css'>
+    <!-- web-fonts -->
+    <!-- start-smooth-scrolling -->
+    <script type="text/javascript" src="~/Areas/Styling/Design/js/move-top.js"></script>
+    <script type="text/javascript" src="~/Areas/Styling/Design/js/easing.js"></script>
+    <script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script type="text/javascript">
+		$(document).ready(function() {
+
+			var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+			};
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+		});
+    </script>
+    <body background="~/Areas/Styling/Design/one.JPG ">
+        <div class="login-page">
+            <div class="container">
+                <h3 class="w3ls-title w3ls-title1">Create your account</h3>
+                <div class="login-body">
+                    <form action="#" method="post">
+                        <input type="text" class="user" name="cat_title" id="vfname" maxlength="15" @*onkeyup="validate_name('vfname', 'verror', 2, 'N', 'For valid name enter elphabet only')"*@ placeholder="Category Title" title="Category Title" required="">
+                        <span id="verror"></span>
+                        <input type="text" class="user" name="cat_decsription" placeholder="Category Description" title="Category Description" id="vlname" maxlength="15" @*onkeyup="validate_name('vlname', 'vLerror', 2, 'N', 'For valid name enter elphabet only')"*@ required="">
+                        <span id="vLerror"></span>
+                        <input type="text" class="user" name="vol_title" placeholder="Volenteer Title" title="Volenteer Title" id="vemail" @*onkeyup="validate_name('vemail','vEerror','', 'E', 'Email formate should be abc@xyz.com')"*@ required="">
+                        <span id="vEerror"></span>
+                        <input type="text" class="user" name="vol_description" placeholder="Volenteer Description" title="Volenteer Description" id="vpass" @*onkeyup="validate_name('vpass', 'vPerror', 6, 'P', 'please enter atleast 1 capital letter & contain these(#$%^&)')"*@ required="">
+                        <span id="vPerror"></span>
+                        <input type="text" class="user" name="team_title" placeholder="Team Title" title="Team Title" id="vCpass" @*onkeyup="pass_match('vpass', 'vCpass', 'vCPerror')"*@ required="">
+                        <span id="vCPerror"></span>
+                        <input type="text" class="user" name="team_description" placeholder="Tetam Description" title="Tetam Description" id="cnic" @*onkeyup="validate_name('cnic', 'CNPerror', 14, 'C', 'Type CNIC with dashes')"*@ required="">
+                        <span id="CNPerror"></span>
+                        <div class="form-group col-md-6 col-lg-push-2" style="margin-top:150px">
+                            <div>
+                                <label>category img</label>
+                                <input type="file" name="file" id="file" multiple />
+
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6 col-lg-push-2" style="margin-top:150px">
+                            <div>
+                                <label>volenteer img</label>
+                                <input type="file" name="file1" id="file1" />
+                                @ViewBag.Message
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6 col-lg-push-2" style="margin-top:150px">
+                            <div>
+                                <label>team img</label>
+                                <input type="file" name="file2" id="file2" />
+                                @ViewBag.Message
+                            </div>
+                        </div>
+
+
+
+
+                    </form>
+                    <input type="submit" value="Sign Up " @*onclick="return Check_AllFields()"*@>
+                    <div class="forgot-grid">
+                        <div class="forgot">
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+
+                <h6>Already have an account? <a href="login.html">Login Now »</a> </h6>
+            </div>
+        </div>
+    </body>
+    <script src="~/Areas/Styling/Design/js/minicart.js"></script>
+    <script src="~/Areas/Styling/Design/js/jquery.menu-aim.js"> </script>
+    <script src="~/Areas/Styling/Design/js/main.js"></script> <!-- Resource jQuery -->
+    <!-- //menu js aim -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="~/Areas/Styling/Design/js/bootstrap.js"></script>
+
+}
+
+
+
+@{
+    ViewBag.Title = "indexdata";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("indexdata", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+
+    <link href="~/Areas/Styling/Design/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Areas/Styling/Design/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Areas/Styling/Design/css/animate.min.css" rel="stylesheet" type="text/css" media="all" /><!-- animation -->
+    <link href="~/Areas/Styling/Design/css/menu.css" rel="stylesheet" type="text/css" media="all" /> <!-- menu style -->
+    <!-- //Custom Theme files -->
+    <!-- font-awesome icons -->
+    <link href="~/Areas/Styling/Design/css/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome icons -->
+    <!-- js -->
+    <script src="~/Areas/Styling/Design/js/jquery-2.2.3.min.js"></script>
+    <script src="~/Areas/Styling/Design/js/jquery-scrolltofixed-min.js" type="text/javascript"></script><!-- fixed nav js -->
+
+    <script>
+    $(document).ready(function() {
+
+        // Dock the header to the top of the window when scrolled past the banner. This is the default behaviour.
+
+        $('.header-two').scrollToFixed();
+        // previous summary up the page.
+
+        var summaries = $('.summary');
+        summaries.each(function(i) {
+            var summary = $(summaries[i]);
+            var next = summaries[i + 1];
+
+            summary.scrollToFixed({
+                marginTop: $('.header-two').outerHeight(true) + 10,
+                zIndex: 999
+            });
+        });
+    });
+    </script>
+    <!-- //js -->
+    <!-- web-fonts -->
+    <link href='~/Areas/Styling/Design/fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='~/Areas/Styling/Design/fonts.googleapis.com/css?family=Lovers+Quarrel' rel='stylesheet' type='text/css'>
+    <link href='~/Areas/Styling/Design/fonts.googleapis.com/css?family=Offside' rel='stylesheet' type='text/css'>
+    <!-- web-fonts -->
+    <!-- start-smooth-scrolling -->
+    <script type="text/javascript" src="~/Areas/Styling/Design/js/move-top.js"></script>
+    <script type="text/javascript" src="~/Areas/Styling/Design/js/easing.js"></script>
+    <script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script type="text/javascript">
+		$(document).ready(function() {
+
+			var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+			};
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+		});
+    </script>
+    <body background="~/Areas/Styling/Design/one.JPG ">
+        <div class="login-page">
+            <div class="container">
+                <h3 class="w3ls-title w3ls-title1">Create your account</h3>
+                <div class="login-body">
+                    <form action="#" method="post">
+                        <input type="text" class="user" name="cat_title" id="vfname" maxlength="15" @*onkeyup="validate_name('vfname', 'verror', 2, 'N', 'For valid name enter elphabet only')"*@ placeholder="Category Title" title="Category Title" required="">
+                        <span id="verror"></span>
+                        <input type="text" class="user" name="cat_decsription" placeholder="Category Description" title="Category Description" id="vlname" maxlength="15" @*onkeyup="validate_name('vlname', 'vLerror', 2, 'N', 'For valid name enter elphabet only')"*@ required="">
+                        <span id="vLerror"></span>
+                        <input type="text" class="user" name="vol_title" placeholder="Volenteer Title" title="Volenteer Title" id="vemail" @*onkeyup="validate_name('vemail','vEerror','', 'E', 'Email formate should be abc@xyz.com')"*@ required="">
+                        <span id="vEerror"></span>
+                        <input type="text" class="user" name="vol_description" placeholder="Volenteer Description" title="Volenteer Description" id="vpass" @*onkeyup="validate_name('vpass', 'vPerror', 6, 'P', 'please enter atleast 1 capital letter & contain these(#$%^&)')"*@ required="">
+                        <span id="vPerror"></span>
+                        <input type="text" class="user" name="team_title" placeholder="Team Title" title="Team Title" id="vCpass" @*onkeyup="pass_match('vpass', 'vCpass', 'vCPerror')"*@ required="">
+                        <span id="vCPerror"></span>
+                        <input type="text" class="user" name="team_description" placeholder="Tetam Description" title="Tetam Description" id="cnic" @*onkeyup="validate_name('cnic', 'CNPerror', 14, 'C', 'Type CNIC with dashes')"*@ required="">
+                        <span id="CNPerror"></span>
+                        <div class="form-group col-md-6 col-lg-push-2" style="margin-top:150px">
+                            <div>
+                                <label>category img</label>
+                                <input type="file" name="file" id="file" multiple />
+
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6 col-lg-push-2" style="margin-top:150px">
+                            <div>
+                                <label>volenteer img</label>
+                                <input type="file" name="file1" id="file1" />
+                                @ViewBag.Message
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6 col-lg-push-2" style="margin-top:150px">
+                            <div>
+                                <label>team img</label>
+                                <input type="file" name="file2" id="file2" />
+                                @ViewBag.Message
+                            </div>
+                        </div>
+
+
+
+
+                    </form>
+                    <input type="submit" value="Sign Up " @*onclick="return Check_AllFields()"*@>
+                    <div class="forgot-grid">
+                        <div class="forgot">
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+
+                <h6>Already have an account? <a href="login.html">Login Now »</a> </h6>
+            </div>
+        </div>
+    </body>
+    <script src="~/Areas/Styling/Design/js/minicart.js"></script>
+    <script src="~/Areas/Styling/Design/js/jquery.menu-aim.js"> </script>
+    <script src="~/Areas/Styling/Design/js/main.js"></script> <!-- Resource jQuery -->
+    <!-- //menu js aim -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="~/Areas/Styling/Design/js/bootstrap.js"></script>
+
+}
+
+

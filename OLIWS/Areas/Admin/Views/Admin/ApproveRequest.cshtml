@@ -1,0 +1,370 @@
+﻿@model OLIWS.Areas.Admin.Models.ApprovalItems
+
+@{
+    ViewBag.Title = "ApproveRequest";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>ApproveRequest</h2>
+
+<div class="container" style="margin:150px">
+    <div class="row">
+
+        <div>
+            <h4>ApprovalItems</h4>
+
+            <input type="text" value="@Model.ReceiverID" style="display:none" id="RecieverID"/>
+           <input type="text" value="@Model.RequiredAmount" style="display:none" id="AmountRequested"/>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Status)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Status)
+                </dd>
+
+                @*<dt>
+                    @Html.DisplayNameFor(model => model.ReceiverID)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ReceiverID)
+                </dd>*@
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Contact)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Contact)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+                @if (Model.RequiredForEducation != null)
+                {
+                    <dt>
+                        @Html.DisplayNameFor(model => model.RequiredForEducation)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.RequiredForEducation)
+                    </dd>
+
+                }
+                @if (Model.RequiredForHealth != null)
+                {
+                    <dt>
+                        @Html.DisplayNameFor(model => model.RequiredForHealth)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.RequiredForHealth)
+                    </dd>
+                }
+                @if (Model.RequiredForothers != null)
+                {
+                    <dt>
+                        @Html.DisplayNameFor(model => model.RequiredForothers)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.RequiredForothers)
+                    </dd>
+                }
+                <dt>
+                    @Html.DisplayNameFor(model => model.RequiredAmount)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.RequiredAmount)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.frequency)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.frequency)
+                </dd>
+                @if (Model.RequiredForEducation != null)
+                {
+                    <dt>
+                        @Html.DisplayNameFor(model => model.AdmissionFee)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.AdmissionFee)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Uniform)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Uniform)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Accessories)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Accessories)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.fee_cat)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.fee_cat)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.semesterFee)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.semesterFee)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Annual)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Annual)
+                    </dd>
+                }
+                @if (Model.RequiredForHealth != null)
+                {
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Minor_Surgury)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Minor_Surgury)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Medicine)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Medicine)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Test_Reports)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Test_Reports)
+                    </dd>
+                }
+                @if (Model.RequiredForothers != null)
+                {
+                    <dt>
+                        @Html.DisplayNameFor(model => model.GaudianKey)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.GaudianKey)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Gardian_Name)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Gardian_Name)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Gardian_Members)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Gardian_Members)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Gardian_Income)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Gardian_Income)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Gardian_Occupation)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Gardian_Occupation)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Gardian_Oranization)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Gardian_Oranization)
+                    </dd>
+                }
+            </dl>
+        </div>
+        @*<p>
+          
+           
+            @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>*@
+        @*<input type="button" value="Click Me" onclick="getConfirmation();" />*@
+    </div>
+</div>
+<button id="myBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" type="button" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Are You Sure You want to Approve?</p>
+        <button  type="button" id="YesSure">Yes</button>
+        <button  type="button" id="NoNot">No</button>
+    </div>
+
+</div>
+
+<style>
+    .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+
+<script>
+
+    var modal = document.getElementById('myModal');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    var btnYes = document.getElementById("YesSure");
+    var btnNo = document.getElementById("NoNot");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+
+    // When the user clicks on the button, open the modal 
+    btn.onclick = function () {
+        modal.style.display = "block";
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    btnNo.onclick = function (e) {
+        modal.style.display = "none";
+        e.preventDefault();
+        e.stopPropagation();
+    }
+    btnYes.onclick = function (e) {
+        //e.preventDefault();
+        e.preventDefault();
+        e.stopPropagation();
+        modal.style.display = "none";
+        var obj = {};
+        obj.RecieverID = $("#RecieverID").val();
+        obj.AmountRequested = $("#AmountRequested").val();
+
+        results = $.ajax({
+            type: "POST",
+            url: "/Admin/Admin/ProcessRecieverRequests",
+            data: JSON.stringify(obj),
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            processData: false,
+            success: function (data) {
+                alert(data.message);
+            },
+            error: function (data) {
+                alert(JSON.stringify(data));
+            }
+        });
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    //window.onclick = function (event) {
+    //    if (event.target == modal) {
+    //        modal.style.display = "none";
+    //    }
+    //}
+
+
+    function getConfirmation() {
+    }
+
+
+    function postApproval() {
+
+       
+
+
+    }
+
+</script>

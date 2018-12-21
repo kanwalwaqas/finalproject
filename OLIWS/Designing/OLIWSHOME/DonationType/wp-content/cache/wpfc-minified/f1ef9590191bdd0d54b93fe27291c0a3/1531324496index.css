@@ -1,0 +1,3138 @@
+@font-face {
+font-family: 'MuseoSans5';
+src: url(../../../themes/muslim-charity/fonts/museo/MuseoSansRounded-500.otf);
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: 'MuseoSans';
+src: url(../../../themes/muslim-charity/fonts/museo/MuseoSansRounded-100.otf);
+font-weight: 100;
+font-style: normal;
+}
+@font-face {
+font-family: 'MuseoSans7';
+src: url(../../../themes/muslim-charity/fonts/museo/MuseoSansRounded-700.otf);
+font-weight: bold;
+font-style: normal;
+}
+@font-face {
+font-family: 'MuseoSansRounded300';
+src: url(../../../themes/muslim-charity/fonts/MuseoSansRounded-300.eot);
+src: url(../../../themes/muslim-charity/fonts/MuseoSansRounded-300d41d.eot?#iefix) format('embedded-opentype'),
+url(../../../themes/muslim-charity/fonts/MuseoSansRounded-300.woff2) format('woff2'),
+url(../../../themes/muslim-charity/fonts/MuseoSansRounded-300.woff) format('woff'),
+url(../../../themes/muslim-charity/fonts/MuseoSansRounded-300.ttf) format('truetype'),
+url(../../../themes/muslim-charity/fonts/MuseoSansRounded-300.svg#MuseoSansRounded-300) format('svg');
+font-weight: 300;
+font-style: normal;
+}
+@font-face {
+font-family: 'MuseoSansRounded900';
+src: url(../../../themes/muslim-charity/fonts/MuseoSansRounded-900.eot);
+src: url(../../../themes/muslim-charity/fonts/MuseoSansRounded-900d41d.eot?#iefix) format('embedded-opentype'),
+url(../../../themes/muslim-charity/fonts/MuseoSansRounded-900.woff2) format('woff2'),
+url(../../../themes/muslim-charity/fonts/MuseoSansRounded-900.woff) format('woff'),
+url(../../../themes/muslim-charity/fonts/MuseoSansRounded-900.ttf) format('truetype'),
+url(../../../themes/muslim-charity/fonts/MuseoSansRounded-900.svg#MuseoSansRounded-900) format('svg');
+font-weight: bold;
+font-style: normal;
+}
+@font-face {
+font-family: 'MuseoSansRounded500';
+src: url(../../../themes/muslim-charity/fonts/MuseoSansRounded-500.eot);
+src: url(../../../themes/muslim-charity/fonts/MuseoSansRounded-500d41d.eot?#iefix) format('embedded-opentype'),
+url(../../../themes/muslim-charity/fonts/MuseoSansRounded-500.woff2) format('woff2'),
+url(../../../themes/muslim-charity/fonts/MuseoSansRounded-500.woff) format('woff'),
+url(../../../themes/muslim-charity/fonts/MuseoSansRounded-500.ttf) format('truetype'),
+url(../../../themes/muslim-charity/fonts/MuseoSansRounded-500.svg#MuseoSansRounded-500) format('svg');
+font-weight: normal;
+font-style: normal;
+} * {
+transition: all linear 0.1s; }
+html {
+overflow-x: hidden;
+}
+html a {
+text-decoration: none;
+color: #46a146;
+}
+html a:focus, html a:hover {
+text-decoration: none;
+color: #e53d2f;
+}
+img {
+height: auto;
+}
+button.donate_button {
+border: 0;
+background: #46a146;
+color: #ffffff;
+padding: 5px 15px;
+text-align: center;
+text-transform: uppercase;
+font-weight: bold;
+line-height: 30px;
+font-size: 18px;
+width: 100%;
+height: 40px;
+border-top: 1px #46a146 solid;
+}
+button.donate_button:hover {
+background: #ffffff;
+color: #e53d2f;
+border-color: #ffffff;
+}
+body .container {
+padding: 0;
+}
+.sep_container {
+}
+.sep_container .container {
+border-bottom: 1px solid #cacaca;
+padding-top: 30px;
+padding-bottom: 30px;
+}
+.red_container {
+}
+.red_container h2 {
+color: #ee3b33;
+}
+.wrapper {
+width: calc(100% + 15px);
+}
+div h2, div h3 {
+text-transform: uppercase;
+margin: 0;
+}
+div h2 {
+margin-bottom: 20px;
+font-weight: bold;
+}
+div * > input, div * > select, div * > textarea {
+width: 100%;
+padding: 10px;
+border: 1px solid #cbcbcb;
+margin-bottom: 10px;
+}
+input[type="submit"] {
+text-transform: uppercase;
+width: auto;
+padding: 10px 40px;
+background: #ee3b33;
+color: white;
+font-weight: bold;
+}
+div#page_content {
+padding: 0;
+position: relative;
+z-index: 1;
+}
+.vc_row {
+width: 100%;
+} header#header {
+padding: 0;
+position: relative;
+z-index: 2;
+}
+section#header_top {
+padding: 20px 0;
+position: relative;
+z-index: 2;
+background: #ffffff;
+}
+#header_top .container {
+padding: 0;
+}
+div#logo {
+padding: 6px 30px 0 0;
+}
+div#logo img {
+width: 100%;
+}
+div#header_meta {
+margin-top: 15px;
+padding-right: 0;
+text-align: right;
+}
+div#header_meta .search {
+padding: 0 10px 0 0;
+display: inline-block;
+position: relative; vertical-align: top;
+}
+div#header_meta .search form {
+position: relative;
+}
+div#header_meta .search label.submit {
+background: transparent;
+color: transparent;
+float: left;
+}
+div#header_meta .search label.submit:after {
+content: "\f002";
+font-family: "FontAwesome";
+color: #e53d2f;
+position: absolute;
+top: 0;
+right: 0;
+padding: 10px;
+font-size: 20px;
+line-height: 20px;
+cursor: pointer;
+z-index: 1;
+}
+div#header_meta .search label.submit:hover:after {
+background: #e53d2f;
+color: #ffffff;
+}
+div#header_meta .search input[type="search"] {
+width: 100%;
+padding: 10px 40px 10px 10px;
+border: 1px solid #cbcbcb;
+height: 40px;
+}
+div#header_meta .search input[type="submit"] {
+display: none;
+}
+div#header_meta .donate {
+padding: 0 10px 0 0;
+display: inline-block;
+position: relative; vertical-align: top;
+}
+div#header_meta .socials {
+padding: 0;
+display: inline-block;
+position: relative; vertical-align: top;margin-top: 9px; }
+div#header_meta .socials .social {
+display: inline-block; }
+div#header_meta .socials .social:last-of-type {
+padding: 0;
+}
+div#header_meta .socials .social i.fa {
+display: inline-block;
+line-height: 40px;
+width: 20px;
+text-align: center;
+font-size: 18px;
+color: #46a146;
+}
+div#header_meta .socials .social a:hover i {
+color: #e53d2f;
+} section#header_bottom {
+background: #46a146;
+position: relative;
+z-index: 1;
+}
+section#header_bottom .menu_icon {
+display: none;
+}
+nav#main_menu {
+}
+nav#main_menu ul {
+list-style: none;
+margin: 0;
+padding: 0;
+text-align: center;
+font-size: 0;
+}
+nav#main_menu li {
+display: inline-block;
+font-size: 13px;
+position: relative;
+padding: 0;
+}
+nav#main_menu li:hover a {
+background: #e53d2f;
+}
+nav#main_menu ul li:before {
+font-family: "FontAwesome";
+color: #ffffff;
+display: none;
+}
+nav#main_menu li > ul.sub-menu {
+position: absolute;
+top: 100%;
+left: 0;
+z-index: 1;
+text-align: left;
+width: 200%;
+background-color: #46a146;
+max-width: 200%;
+visibility: hidden;
+opacity: 0;
+transform: translateY(-100%);
+transition: all linear 0.25s;
+}
+nav#main_menu li:hover > ul.sub-menu {
+visibility: visible;
+opacity: 1;
+transform: translateY(0);
+}
+nav#main_menu li ul.sub-menu li {
+width: 100%;
+}
+nav#main_menu li ul.sub-menu li a {
+width: 100%;
+max-width: 200%;
+height: auto;
+background-color: #46a146;
+}
+nav#main_menu li ul.sub-menu li:hover a {
+background-color: #e53d2f;
+}
+nav#main_menu li a {
+color: #ffffff;
+text-transform: uppercase;
+display: inline-block;
+width: 100%;
+height: 100%;
+padding: 20px 14px;
+position: relative;
+z-index: 2;
+background-color: #46a146;
+}
+ul#menu-main-menu > li > a {
+z-index: 2;
+} #footer {
+margin-top: 45px;
+}
+#footer #footer_top {
+font-size: 0;
+text-align: center;
+margin-bottom: 45px;
+}
+#footer_top .container {
+padding: 0;
+}
+#footer_top .footer_logo {
+display: inline-block;
+padding-right: 28px;
+}
+#footer_top .footer_logo img {
+width: auto;
+height: auto;
+}
+#footer_top .footer_logo:last-of-type {
+padding-right: 0;
+}
+#footer #footer_main {
+}
+#footer_main .container {
+padding: 20px 0;
+border-top: 1px solid #cacaca;
+border-bottom: 1px solid #cacaca;
+position: relative;
+}
+#footer_main #footer_menus {
+padding: 0;
+}
+#footer_menus .footer_menu {
+padding-left: 0;
+color: #909090;
+}
+#footer_menus .footer_menu h4 {
+margin-bottom: 20px;
+text-transform: uppercase;
+font-size: 14px;
+font-weight: bold;
+color: #46a146;
+}
+#footer_menus .footer_menu ul {
+padding-left: 0;
+list-style: none;
+font-size: 11px;
+text-transform: uppercase;
+}
+#footer_menus .footer_menu ul li {
+line-height: 22px;
+}
+#footer_menus .footer_menu a {
+color: #909090;
+}
+#footer_menus .footer_menu a:hover {
+color: #e53d2f;
+}
+#footer_main #footer_summary {
+padding: 0;
+position: static;
+}
+#footer_summary .text {
+padding-left: 0;
+text-align: right;
+color: #909090;
+font-size: 10px;
+margin-top: 10px;
+}
+#footer_summary .text .quote {
+padding-bottom: 20px;
+line-height: 22px;
+font-size: 18px;
+border-bottom: 1px solid #f1f1f1;
+}
+#footer_summary .text .contact {
+}
+#footer_summary .text .contact a {
+color: #909090;
+}
+#footer_summary .text .contact a:hover {
+color: #e53d2f;
+}
+#footer_summary .logo {
+padding: 0;
+position: static;
+text-align: right;
+}
+#footer_summary .logo img {
+width: 100px;
+display: inline-block;
+}
+#footer #footer_bottom {
+}
+#footer_bottom .container {
+padding: 0;
+margin-bottom: 20px;
+}
+#footer_bottom #copyright {
+padding: 0;
+color: #909090;
+margin-top: 6px;
+font-size: 12px;
+}
+#footer_bottom .socials {
+padding: 0;
+display: inline-block;
+position: relative;
+top: 6px;
+text-align: right;
+}
+#footer_bottom .socials .social {
+display: inline-block; }
+#footer_bottom .socials .social:last-of-type {
+padding: 0;
+}
+#footer_bottom .socials .social i.fa {
+display: inline-block;
+line-height: 30px;
+width: 30px;
+text-align: center;
+font-size: 16px; }
+#footer_bottom .socials .social a:hover i { }   .wpb_revslider_element.appeals_slider {
+display: none;
+} .card_container {
+overflow: hidden;
+}
+.card_container .container {
+padding-right: 0;
+padding-bottom: 15px;
+padding-left: 0;
+}
+.card_container .card {
+padding-left: 0;
+padding-bottom: 15px;
+}
+.card .content {
+background-color: #ee3e33;
+background-blend-mode: multiply;
+position: relative;
+background-size: cover;
+background-repeat: no-repeat;
+}
+.card_container .card:hover .content {
+background-color: transparent;
+background-blend-mode: none;
+}
+.card a {
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+z-index: 2;
+}
+.card img {
+opacity: 0;
+width: 100%;
+height: auto;
+}
+.card h3 {
+font-size: 30px;
+line-height: 30px;
+margin: 0;
+position: absolute;
+bottom: 30px;
+left: 30px;
+width: 50%;
+color: #ffffff;
+z-index: 1;
+} #news {
+overflow: hidden;
+}
+#news .container {
+padding-right: 0;
+padding-left: 0;
+}
+#news h2 {
+color: #46a146;
+font-weight: bold;
+}
+#news .container .row {
+margin: 0;
+}
+#news .news_item {
+padding-left: 0;
+padding-bottom: 15px;
+}
+.news_item img {
+padding: 0 0 15px;
+width: 100%;
+}
+.news_item .title {
+padding: 0 15px 0 0;
+}
+.news_item .title a:hover {
+}
+.news_item .title a:hover span{
+color: #46a146;
+}
+.news_item .title h3 a:hover span.highlight {
+color: #ee3b33;
+}
+.news_item .title h3 {
+font-size: 18px;
+}
+.news_item .title h3 span {
+display: block;
+color: #000000;
+}
+.news_item .title h3 span.highlight {
+display: block;
+color: #46a146;
+}
+.news_item .date {
+padding: 0;
+text-align: right;
+font-size: 12px;
+} #social {
+margin-top: 30px;
+overflow: hidden;
+}
+#social .container {
+padding-right: 0;
+padding-left: 0;
+box-sizing: border-box;
+}
+#social h2 {
+color: #ee3b33;
+font-weight: bold;
+}
+#social #facebook {
+padding: 15px;
+box-sizing: border-box; border: 1px solid #e1e1e1;
+border-right: 0;
+}
+#facebook .mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+background-color: rgba(238, 59, 51, 0.2);
+}
+#facebook .mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar, #facebook .mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+background-color: rgba(238, 59, 51, 0.5);
+}
+#facebook .fb_post {
+padding: 0;
+box-sizing: border-box;
+position: relative; overflow: hidden;
+}	
+#facebook a:hover {
+color: #ee3b33;
+}
+#facebook .fb_post {
+padding: 0 0 15px;
+margin-bottom: 15px;
+box-sizing: border-box;
+color: #333;
+border-bottom: 1px solid #333;
+}
+#facebook .fb_post:last-of-type {
+border: 0;
+margin: 0;
+padding: 0;
+}
+.fb_post a {
+color: #46a146;
+}
+.fb_post a:hover {
+color: #ee3b33;
+}
+.fb_post .title {
+margin-bottom: 10px;
+font-size: 14px;
+text-transform: uppercase;
+}
+.fb_post .title img {
+max-width: 30px;
+margin-right: 5px;
+}
+.fb_post .title i {
+padding: 5px;
+background: #ffffff;
+color: #46a146;
+width: 24px;
+text-align: center;
+}
+.fb_post .title a:hover i {
+background: #5a8eca;
+color: #ffffff;
+}
+.fb_post .title span.date {
+font-size: 14px;
+text-transform: none;
+}
+.fb_post .content {
+margin-bottom: 10px;
+font-size: 12px; overflow: hidden;
+}
+.fb_post .image {
+margin-bottom: 15px;
+}
+.fb_post .image img {
+width: 100%;
+}
+.fb_post .link {
+float: left;
+text-transform: uppercase;
+font-weight: bold;
+}
+.fb_post .link i {
+margin-left: 7px;
+}
+.fb_post .link a:hover i {
+margin-left: 14px;
+}
+#facebook .fb_post .fb_header {
+padding: 10px;
+box-sizing: border-box;
+font-size: 0;
+overflow: hidden;
+}
+#facebook .fb_post .fb_header img.profile {
+max-height: 40px;
+display: inline-block;
+float: left;
+}
+#facebook .fb_post .fb_header .meta_text {
+display: inline-block;
+font-size: 12px;
+margin-left: 10px;
+float: left;
+margin-top: 3px;
+}
+#facebook .fb_post .fb_header .meta_text span.user {
+display: block;
+}
+#facebook .fb_post .fb_header .meta_text span.created {
+display: block;
+}
+.fb_post .fb_img {
+padding: 0 15px;
+box-sizing: border-box;
+}
+.fb_post .fb_img img {
+width: 100%;
+}
+.fb_post .fb_text {
+padding: 0 15px;
+box-sizing: border-box;
+overflow: hidden;
+}
+.fb_post .expand {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+text-transform: uppercase;
+padding: 15px 0 15px;
+background: #ffffff
+font-weight: bold;
+z-index: 1;
+padding-left: 15px;
+display: none;
+}
+.fb_post .expand a {
+color: #666666; 
+}
+.fb_post .expand a:hover {
+color: #ee3b33; 
+}
+.fb_post .expand i {
+margin-left: 7px;
+}
+.fb_post .expand a:hover i {
+margin-left: 14px;
+color: #46a146;
+}
+#social #twitter {
+padding: 15px;
+box-sizing: border-box;
+background-color: #ee3b33;
+position: relative;
+background-size: cover;
+}
+#twitter:after {
+content: "";
+background: #ec1d23;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+opacity: 0.75;
+z-index: 1;
+display: none;
+}
+#social #twitter iframe {
+border: 1px solid #e9ebee!important;
+}
+#twitter a:hover {
+color: #46a146;
+}
+.tweet_container {
+position: relative;
+z-index: 2;
+overflow: hidden;
+}
+#twitter .tweet {
+padding: 0 0 15px;
+margin-bottom: 15px;
+box-sizing: border-box;
+color: #ffffff;
+border-bottom: 1px solid #ffffff;
+}
+#twitter .tweet:last-of-type {
+border: 0;
+margin: 0;
+padding: 0;
+}
+.tweet a {
+color: #ffffff;
+}
+.tweet a:hover {
+color: #ffffff;
+}
+.tweet .title {
+margin-bottom: 10px;
+font-size: 14px;
+text-transform: uppercase;
+}
+.tweet .title i {
+padding: 5px;
+background: #ffffff;
+color: #ec1d23;
+width: 24px;
+text-align: center;
+}
+.tweet .title a:hover i {
+background: #5a8eca;
+color: #ffffff;
+}
+.tweet .title span.date {
+font-size: 14px;
+text-transform: none;
+}
+.tweet .content {
+margin-bottom: 10px;
+font-size: 12px;
+height: 34px;
+overflow: hidden;
+}
+.tweet .link {
+float: left;
+text-transform: uppercase;
+font-weight: bold;
+}
+.tweet .link a:hover {
+color: #46a146;
+}
+.tweet .link i {
+margin-left: 7px;
+}
+.tweet .link a:hover i {
+margin-left: 14px;
+} div#banner {
+background-position: center center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+#banner h1 {
+margin: 10% 0;
+color: #e53d2f;
+font-size: 48px;
+font-weight: lighter;
+}
+div#banner_foreground {
+text-align: right;
+}
+#banner_foreground img {
+width: auto;
+height: auto;
+}
+#page_content > .container, #tribe-events > .container {
+margin-top: 40px;
+}
+#page_content #sidebar {
+}
+#sidebar .menu_icon {
+display: none;
+}
+#sidebar ul {
+padding: 0;
+list-style: none;
+}
+#sidebar ul li {
+padding-left: 10px;
+}
+#sidebar ul li.main_menu_item {
+padding-left: 0;
+}
+#sidebar ul li:last-of-type > a {
+border-bottom: 0;
+}
+#sidebar ul li.main_menu_item > a {
+font-size: 16px;
+padding-left: 0;
+}
+#sidebar ul li a {
+color: #999999;
+display: inline-block;
+padding: 10px 10px 10px 0;
+width: 100%;
+font-size: 12px;
+transition: all linear 0.25s;
+background-color: transparent;
+text-transform: uppercase;
+border-bottom: 1px solid #d5d5d5;
+cursor: pointer;
+}
+#sidebar ul.sub_menu_section {
+padding-left: 10px;
+transition: all linear 0.25s;
+overflow: hidden;
+opacity: 0;
+height: 0;
+}
+#sidebar ul.sub_menu_section.expand {
+opacity: 1;
+height: auto;
+}
+#sidebar li:last-of-type ul.sub_menu_section {
+border-top: 1px solid #d5d5d5;
+}
+#sidebar ul li ul.sub_menu_section li > a {
+font-size: 11px;
+}
+#sidebar ul li:hover > a, #sidebar ul li.active > a, #sidebar ul li.current-menu-item > a {
+color: #ffffff;
+padding-left: 10px;
+background-color: #46a146;
+}
+#sidebar h3 { font-size: 19px;
+margin-top: 25px;
+margin-bottom: 6px;
+}
+#sidebar.active h3.highlight {
+color: #ffffff;
+padding: 10px;
+background-color: #46a146;
+margin-bottom: 20px;
+}
+#sidebar h4.highlight {
+color: #e53d2f;
+text-transform: uppercase;
+}
+#sidebar h5 {
+color: #999999;
+margin: 0;
+font-size: 14px;
+}
+#sidebar .section {
+}
+#sidebar .section .contact_section {
+padding: 10px 0;
+border-bottom: 1px solid #d5d5d5;
+}
+#sidebar .section .contact_section:last-of-type {
+border-bottom: 0;
+}
+#sidebar .section p {
+margin: 0;
+color: #999999;
+}
+#sidebar .section .contact_section strong {
+font-size: 14px;
+color: #999999;
+}
+#page_content #content {
+font-size: 16px;
+}
+div#recent_projects { } 
+div#recent_projects .project {
+padding-left: 0;
+}
+#recent_projects .project .content {
+background-color: #ee3e33;
+background-blend-mode: multiply;
+position: relative;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+min-height: 264px;
+}
+#recent_projects .project:hover .content {
+background-color: #ffffff;
+}
+#recent_projects .project:hover .content:after {
+content: "";
+display: block;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 0;
+background-color: rgba(255,255,255,0.0);
+}
+#recent_projects .project a {
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+z-index: 2;
+}
+#recent_projects .project img {
+opacity: 0;
+width: 100%;
+height: auto;
+}
+#page_content #content #recent_projects .project h3,
+#page_content #recent_projects .project h3 {
+font-size: 20px;
+line-height: 30px;
+margin: 0;
+position: absolute;
+bottom: 30px;
+left: 5%; color: #ffffff !important;
+z-index: 1;
+font-weight: bold;
+width: 90%;
+text-align: left;
+padding: 5px;
+}
+#page_content #content #recent_projects .project:hover .content h3,
+#page_content #recent_projects .project:hover .content h3 { color: #fff !important;
+background: rgba(238, 62, 51, 0.9);
+} div#orphan_sponsorship {
+padding: 0;
+} form#mc_orphan_search {
+margin-left: -15px;
+margin-right: -15px;
+margin-bottom: 30px;
+overflow: hidden;
+}
+#mc_orphan_search span.label {
+display: block;
+color: #ee3b33;
+text-align: left;
+margin: 0 0 10px;
+padding: 0 15px;
+font-size: 18px;
+text-transform: uppercase;
+}
+#mc_orphan_search .field {
+}
+#mc_orphan_search .field.orphan_submit {
+}
+#mc_orphan_search .field input, #mc_orphan_search .field select {
+margin-bottom: 0;
+}
+#mc_orphan_search .field.orphan_submit input {
+width: 100%;
+} div#results {
+margin-left: -15px;
+margin-right: -15px;
+}
+#results .orphan {
+margin-bottom: 30px;
+}
+#results .orphan .wrapper {
+width: 100%;
+overflow: hidden;
+border-top: 3px solid #46a146;
+}
+#results .orphan:hover .wrapper {
+border-top-color: #ee3b33;
+}
+#results .orphan .image {
+padding: 0;
+filter: grayscale(1);
+-ms-filter: grayscale(1);
+-moz-filter: grayscale(1);
+-webkit-filter: grayscale(1);
+-o-filter: grayscale(1);
+}
+#results .orphan:hover .image {
+filter: grayscale(0);
+-ms-filter: grayscale(0);
+-moz-filter: grayscale(0);
+-webkit-filter: grayscale(0);
+-o-filter: grayscale(0);
+}	
+#results .orphan .image img {
+width: 100%;
+}
+#results .orphan .content {
+padding: 20px;
+text-align: center;
+background-color: #008e56;
+color: #ffffff;
+}
+#results .orphan:hover .content {
+background-color: #bc1f18;
+}
+#results .orphan .content h3 {
+font-weight: bold;
+}
+#results .orphan .meta {
+}
+#results .orphan .meta span.age:before {
+content: " | ";
+}
+#results .orphan .meta span.age {
+font-weight: bold;
+}
+#results .orphan .donation {
+padding: 20px;
+background-color: #46a146;
+color: #ffffff;
+}
+#results .orphan:hover .donation {
+background-color: #ee3b33;
+}
+#results .orphan .donation label {
+width: 100%;
+margin-bottom: 10px;
+overflow: hidden;
+}
+#results .orphan .donation label input {
+width: auto;
+margin: 3px 10px 0 0;
+float: left;
+}
+#results .orphan .donation input[type="submit"] {
+width: 100%;
+margin: 10px 0 0;
+border: 0;
+}
+#results .orphan:hover .donation input[type="submit"] {
+background-color: #46a146;
+} #news .navigation {
+text-align: center;
+font-size: 0;
+}
+#news .navigation ul {
+display: block;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+#news .navigation ul li {
+display: inline-block;
+font-size: 0;
+}
+#news .navigation ul li a {
+padding: 5px;
+display: inline-block;
+font-size: 12px;
+border: 1px solid transparent;
+color: #e53d2f;
+}
+#news .navigation ul li a:hover {
+color: #46a146;
+}
+#news .navigation ul li.active a {
+border-color: #e53d2f;
+border-left-width: 1px;
+}
+#news .navigation ul li.active a:hover {
+border-color: #46a146;
+} article#post {
+}
+article#post h1 {
+margin-top: 0;
+text-transform: uppercase;
+margin-bottom: 0;
+}
+article#post h1 span.highlight {
+display: block;
+color: #46a146;
+}
+article#post .post_meta {
+text-align: left;
+margin-bottom: 20px;
+}
+article#post .post_meta .date {
+}
+article#post .image {
+margin-bottom: 20px;
+}
+article#post .image img {
+width: 100%;
+}
+article#post .content {
+} #results .orphan .donation input[type="text"], #results .orphan .donation select {
+color: #333;
+position: relative;
+}
+#results .orphan .donation input[type="text"]:before {
+content: "£";
+position: absolute;
+left: 0;
+top: 0;
+z-index: 1;
+color: #ee3b33;
+}
+#results .orphan .donation .field {
+position: relative;
+} html .events-list .tribe-events-loop, html .single-tribe_organizer .tribe-events-loop, html .single-tribe_venue .tribe-events-loop, html .tribe-events-day .tribe-events-loop {
+max-width: 100%;
+}
+html #tribe-events-content .tribe-events-tooltip h4, html #tribe_events_filters_wrapper .tribe_events_slider_val, html .single-tribe_events a.tribe-events-gcal, html .single-tribe_events a.tribe-events-ical {
+color: #46a146;
+}
+html #tribe-bar-form .tribe-bar-submit input[type=submit]:hover, html #tribe-events .tribe-events-button, html #tribe-events .tribe-events-button:hover, html #tribe_events_filters_wrapper input[type=submit], html .tribe-events-button, html .tribe-events-button.tribe-active:hover, html .tribe-events-button.tribe-inactive, html .tribe-events-button:hover, html .tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-], html .tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-]>a {
+background-color: #ee3b33;
+}
+html #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option.tribe-bar-active a:hover, html .tribe-events-calendar thead th, html #tribe-bar-form .tribe-bar-submit input[type=submit], html #tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option a:hover {
+background-color: #46a146;
+}
+.tribe-bar-views-list a:hover span.tribe-icon-day, .tribe-select2-results-views a:hover span.tribe-icon-day, .tribe-bar-views-list a:hover span.tribe-icon-month, .tribe-select2-results-views a:hover .tribe-icon-month, .tribe-bar-view-list  a:hover span[class^=tribe-icon-], .tribe-bar-views-list a:hover span.tribe-icon-list, .tribe-select2-results-views a:hover span.tribe-icon-list {
+filter: brightness(0) invert(1);
+-webkit-filter: brightness(0) invert(1);
+-moz-filter: brightness(0) invert(1);
+-ms-filter: brightness(0) invert(1);
+-o-filter: brightness(0) invert(1);
+color: #ffffff;
+}
+html .single-tribe_events .tribe-events-venue-map {
+width: 100%;
+}
+html .tribe-events-event-meta .column, html .tribe-events-event-meta .tribe-events-meta-group {
+padding: 0 15px;
+} html #tribe-events-content {
+margin-bottom: 0;
+}
+html .tribe-events-schedule {
+margin: 0 0 20px;
+}
+html .single-tribe_events .tribe-events-single-event-title {
+font-size: 36px;
+text-transform: uppercase;
+}
+html .tribe-events-event-image img {
+width: 100%;
+}
+html .single-tribe_events .tribe-events-event-meta {
+margin-bottom: 0;
+}
+html .events-list #tribe-events-footer,
+html .single-tribe_events #tribe-events-footer,
+html .tribe-events-day #tribe-events-footer,
+html .tribe-events-map #tribe-events-footer,
+html .tribe-events-photo #tribe-events-footer {
+display: none;
+}
+.tribe-events-event-meta .tribe-events-meta-group.tribe-events-meta-group-details,
+.tribe-events-event-meta .tribe-events-meta-group.tribe-events-meta-group-venue{
+width: 100%;
+margin-bottom: 0;
+}
+.tribe-events-event-meta .tribe-events-meta-group.tribe-events-meta-group-gmap {
+width: 50%;
+margin-bottom: 0;
+} .donation_box{
+border-top: 4px solid #2c652c;
+margin-bottom: 35px;
+}
+.donation_box > img{}
+.donation_inner{}
+#page_content .donation_inner h2{
+margin: 0;
+display: inline-block;
+width: 100%;
+text-align: center;
+padding: 12px 10px;
+font-size: 20px;
+background: #2c652c;
+color: #fff !important;
+}
+.donation_detail{
+display: inline-block;
+width: 100%;
+padding: 18px;
+background: #46a146;
+}
+.donation_element{}
+.donation_radios{
+margin: 0;
+padding: 0;
+list-style: none;
+text-align: center;
+}
+.donation_radios li{
+display: inline-block;
+width: 24.4%;
+}
+.donation_radios li > label{
+margin: 0;
+}
+.donation_radios li label.label2{
+color: #fff;
+font-size: 22px;
+}
+.donation_element {
+}
+.dother{
+text-align: center;
+padding: 15px;
+}
+.donation_element span{
+display: inline-block;
+width: auto;
+line-height: normal;
+vertical-align: middle;
+color: #fff;
+font-size: 20px;
+font-weight: bold;
+margin-right: 15px;
+}
+.donation_element .damount{
+display: inline-block;
+width: 48%;
+margin: 0;
+background: url(../../../themes/muslim-charity/images/pound.png) #fff;
+background-size: auto 64%;
+background-position: 8px center;
+background-repeat: no-repeat;
+padding: 5px;
+padding-left: 35px;
+font-size: 20px;
+line-height: normal;
+}
+.donation_element select{
+margin-bottom: 15px;
+}
+.donation_element .form-submit{
+width: 100%;
+}
+.msgbox ul{
+border: 1px solid red;
+color: red;
+list-style: disc inside none ;
+padding: 10px;
+}
+.msgbox ul li{
+margin: 0;
+}
+.donation_overlay{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: url(../../../themes/muslim-charity/images/loading.svg) rgba(255,255,255,0.8) no-repeat center;
+z-index: 100;
+display: none;
+}
+.msgbox_cart{
+border: 1px solid #1B9D71;
+padding: 15px;
+margin-bottom: 15px;
+font-size: 16px;
+}
+.msgbox_cart span{
+color: #e53d2f;
+font-weight: bold;
+}
+.msgbox_cart a{
+background: #46a146;
+color: #fff;
+padding: 5px 15px;
+margin-top: 0;
+display: inline-block;
+}
+.dinner h3{
+color: #656565;
+text-align: center;
+}
+.loading-img{
+background: rgba(255, 255, 255, 0.75) url(../../../themes/muslim-charity/images/ajax-loader.html) no-repeat scroll center center;
+height: 100%;
+left: 0;
+position: absolute;
+top: 0;
+width: 100%;
+z-index:11;
+display: none;
+}
+.dcart{
+list-style: outside none none;
+margin: 0;
+padding: 0;
+}
+.dcart li{
+border-bottom: 1px dashed #ccc;
+padding: 8px 0;
+position: relative;
+}
+.dcart li a{
+font-size: 15px;
+width: 5%;
+display: inline-block;
+}
+.dcart li span{ width: 20%;
+display: inline-block;
+}
+.dcart li span.itemc{
+width: 30%;
+}
+.dcart li span.itemt{
+width: 22%;
+}
+.dcart li .itemtotal{
+width: 21.5%;
+float: right;
+text-align: right;
+}
+.dcart li.first span,
+.dcart li.lastt span{
+font-size: 16px;
+font-weight: bold;
+}
+.cbtn1{
+display: inline-block !important;
+margin-top: 15px;
+border: 1px solid #46a146 !important;
+}
+.cbtn2{
+background: #46a146;
+color: #fff;
+display: inline-block;
+margin-top: 15px;
+}
+.cbc{
+display: inline-block;
+width: auto;
+vertical-align: top;
+}
+#donation_page_confirm fieldset{
+padding: 15px;
+}
+#subbtn,#subbtn2{
+width: auto;
+background: #fff;
+border: 2px solid #e53d2f;
+color: #e53d2f;
+height: auto;
+}
+#subbtn span{
+font-size: 14px;
+line-height: normal;
+}
+#subbtn i,#subbtn2 i{
+display: none;
+margin-right: 15px;
+} .regular-radio {
+display: none;
+}
+.regular-radio + label {
+-webkit-appearance: none;
+background-color: #fff;  padding: 9px;
+border-radius: 50px;
+display: inline-block;
+position: relative;
+}
+.regular-radio:checked + label:after {
+content: ' ';
+width: 12px;
+height: 12px;
+border-radius: 50px;
+position: absolute;
+top: 3px;
+background: #ee3b33; text-shadow: 0px;
+left: 3px;
+font-size: 32px;
+}
+.regular-radio:checked + label {
+background-color: #fff;
+color: #fff;  }
+.regular-radio + label:active, .regular-radio:checked + label:active { }
+.regular-checkbox {
+display: none;
+}
+.regular-checkbox + label {
+background-color: #fff;
+border: 2px solid #e53d2f;
+box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+padding: 9px;
+border-radius: 3px;
+display: inline-block;
+position: relative;
+}
+.regular-checkbox + label:active, .regular-checkbox:checked + label:active {
+box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+.regular-checkbox:checked + label {
+background-color: #fff;
+border: 2px solid #46a146;
+box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+color: #99a1a7;
+}
+.regular-checkbox:checked + label:after {
+content: '\2714';
+font-size: 14px;
+position: absolute;
+top: 0px;
+left: 3px;
+color: #46a146;
+}
+.big-checkbox + label {
+padding: 18px;
+}
+.big-checkbox:checked + label:after {
+font-size: 28px;
+left: 6px;
+}
+.don_rec_header{
+display: none;
+}
+.pp1{
+margin: 1em 0; line-height: 34px;
+}
+#trans_msg{
+margin: 1em auto;
+width:80%;
+text-align:center;
+} #create_pdf,#create_pdf2{
+background: url(../../../themes/muslim-charity/images/filetype_pdf.png) #fff;
+border: 0;
+padding: 9px 15px;
+color: #e53d2f;
+background-size: 29px;
+background-position: 5px center;
+background-repeat: no-repeat;
+padding-left: 42px;
+border: 2px solid #e53d2f;
+}
+.page-template-page-complete #page-content{
+margin-top: 45px;
+}
+.payment-errors:not(:empty){
+border: 1px solid red;
+color: red;
+padding: 10px;
+background: url(../../../themes/muslim-charity/images/error.png) no-repeat 6px center;
+background-size: 20px;
+padding-left: 35px;
+}
+div#recent_projects .project {
+margin-bottom: 15px;
+}
+.appended{
+margin: 0 15px;
+display: none;
+vertical-align: top !important;
+}
+.appended span{}
+.appended input{
+margin: 0;
+width: 45px;
+padding: 5px;
+color: #444;
+text-align: center;
+}
+.dimage{
+display: inline-block;
+height: 191px;
+vertical-align: top;
+width: 100%;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+} .dor{
+font-size: 45px;
+position: relative;
+}
+.dor:before{
+content: " ";
+position: absolute;
+width: 50px;
+height: 2px;
+border-top: 1px solid #000;
+left: -63px;
+top: 50%;
+}
+.dor:after{
+content: " ";
+position: absolute;
+width: 50px;
+height: 2px;
+border-top: 1px solid #000;
+right: -63px;
+top: 50%;
+}
+.regular_donation{
+border: 1px solid;
+padding: 15px;
+display: inline-block;
+width: 100%;
+margin-top: 25px;
+}
+.regular_donation h2{
+color: #46a146;
+margin: 15px 0;
+}
+.regular_donation p{}
+.regular_donation button{}
+.deesc{
+display: inline-block;
+width: 100%;
+vertical-align: top;
+margin-top: -6px;
+font-size: 12px;
+margin-bottom: 25px;
+}
+#page_content #content {
+font-family: 'MuseoSansRounded500';
+color: #545454;
+font-size: 14px;
+}
+#page_content #content strong,
+#page_content #content b{
+color: #000;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+font-family: inherit;
+font-weight: 700 !important;
+line-height: normal !important;
+color: inherit;
+color: #000;
+}
+.h1, .h2, .h3, .h4, .h5, .h6{
+text-transform: uppercase;
+}
+.h4, h4 {
+font-size: 16px !important;
+}
+#page_content #content .h1,
+#page_content #content .h2,
+#page_content #content .h3,
+#page_content #content .h4,
+#page_content #content .h5,
+#page_content #content .h6,
+#page_content #content h1,
+#page_content #content h2,
+#page_content #content h3,
+#page_content #content h4,
+#page_content #content h5,
+#page_content #content h6{
+color: #000 !important;
+}
+#banner h1 {
+margin: 10% 0;
+color: #e53d2f;
+font-size: 48px;
+font-weight: 700;
+text-transform: uppercase;
+}
+img{
+max-width: 100%;
+height:auto;
+display: inline-block;
+}
+.campaigns_heading{
+text-transform: uppercase;
+font-size: 20px !important;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+.campaigns_accrd{}
+.campaigns_accrd .vc_tta-panel-heading{
+background: none !important;
+border: 1px solid #46a147 !important;
+}
+.campaigns_accrd .vc_tta-panel-heading .vc_tta-panel-title > a {
+color: #46a147 !important;
+}
+.campaigns_accrd .vc_tta-panel-heading .vc_tta-panel-title > a i:before,
+.campaigns_accrd .vc_tta-panel-heading .vc_tta-panel-title > a i:after{
+border-color: #46a147 !important;
+}
+.campaigns_accrd .vc_active .vc_tta-panel-heading{
+background: none !important;
+border: 1px solid #e53d2f !important;
+}
+.campaigns_accrd .vc_active .vc_tta-panel-heading .vc_tta-panel-title > a {
+color: #e53d2f !important;
+}
+.campaigns_accrd .vc_active .vc_tta-panel-heading .vc_tta-panel-title > a i:before,
+.campaigns_accrd .vc_active .vc_tta-panel-heading .vc_tta-panel-title > a i:after{
+border-color: #e53d2f !important;
+}
+.campaigns_accrd .vc_active .vc_tta-panel-body strong,
+.campaigns_accrd .vc_active .vc_tta-panel-body b{
+color: #46a147;
+font-size: 19px;
+}
+.campaigns_accrd .vc_active .vc_tta-panel-body a{
+background: #46a147;
+color: #fff;
+padding: 5px 15px;
+display: inline-block;
+margin-top: 5px;
+}
+.campaigns_accrd .vc_active .vc_tta-panel-body a:hover{
+background: #e53d2f ;
+}
+.postid-378 .campaigns_accrd .vc_tta-panel-heading,
+.campaigns_accrd .vc_tta-panel-heading{
+background: #46a146 !important;
+border: 1px solid #fff!important;
+}
+.postid-378 .campaigns_accrd .vc_tta-panel-heading .vc_tta-panel-title > a,
+.campaigns_accrd .vc_tta-panel-heading .vc_tta-panel-title > a {
+color: #fff !important;
+}
+.postid-378 .campaigns_accrd .vc_tta-panel-heading .vc_tta-panel-title > a i:before,
+.postid-378 .campaigns_accrd .vc_tta-panel-heading .vc_tta-panel-title > a i:after,
+.campaigns_accrd .vc_tta-panel-heading .vc_tta-panel-title > a i:before,
+.campaigns_accrd .vc_tta-panel-heading .vc_tta-panel-title > a i:after{
+border-color: #fff !important;
+}
+.postid-378 .campaigns_accrd .vc_active .vc_tta-panel-heading,
+.campaigns_accrd .vc_active .vc_tta-panel-heading{
+background: #fff !important;
+border: 1px solid #46a146 !important;
+}
+.postid-378 .campaigns_accrd .vc_active .vc_tta-panel-heading .vc_tta-panel-title > a,
+.campaigns_accrd .vc_active .vc_tta-panel-heading .vc_tta-panel-title > a {
+color: #46a146 !important;
+}
+.postid-378 .campaigns_accrd .vc_active .vc_tta-panel-heading .vc_tta-panel-title > a i:before,
+.postid-378 .campaigns_accrd .vc_active .vc_tta-panel-heading .vc_tta-panel-title > a i:after,
+.campaigns_accrd .vc_active .vc_tta-panel-heading .vc_tta-panel-title > a i:before,
+.campaigns_accrd .vc_active .vc_tta-panel-heading .vc_tta-panel-title > a i:after{
+border-color: #46a146 !important;
+}
+.postid-378 .campaigns_accrd .vc_active .vc_tta-panel-body strong,
+.postid-378 .campaigns_accrd .vc_active .vc_tta-panel-body b,
+.campaigns_accrd .vc_active .vc_tta-panel-body strong,
+.campaigns_accrd .vc_active .vc_tta-panel-body b{
+color: #46a146;
+}
+.postid-378 .campaigns_accrd .vc_active .vc_tta-panel-body a,
+.campaigns_accrd .vc_active .vc_tta-panel-body a{
+background: #46a146;
+color: #fff;
+padding: 5px 15px;
+display: inline-block;
+margin-top: 5px;
+border: 1px solid #fff;
+}
+.postid-378 .campaigns_accrd .vc_active .vc_tta-panel-body a:hover,
+.campaigns_accrd .vc_active .vc_tta-panel-body a:hover{
+background: #fff ;
+color: #46a146;
+border: 1px solid #46a146;
+}
+.postid-378 #sidebar ul li.current-menu-item > a {
+color: #ffffff;
+padding-left: 10px;
+background-color: #46a146;
+}
+.postid-366 .campaigns_accrd .vc_tta-panel-heading{
+background: #b11f82 !important;
+border: 1px solid #fff!important;
+}
+.postid-366 .campaigns_accrd .vc_tta-panel-heading .vc_tta-panel-title > a {
+color: #fff !important;
+}
+.postid-366 .campaigns_accrd .vc_tta-panel-heading .vc_tta-panel-title > a i:before,
+.postid-366 .campaigns_accrd .vc_tta-panel-heading .vc_tta-panel-title > a i:after{
+border-color: #fff !important;
+}
+.postid-366 .campaigns_accrd .vc_active .vc_tta-panel-heading{
+background: #fff !important;
+border: 1px solid #b11f82  !important;
+}
+.postid-366 .campaigns_accrd .vc_active .vc_tta-panel-heading .vc_tta-panel-title > a {
+color: #b11f82 !important;
+}
+.postid-366 .campaigns_accrd .vc_active .vc_tta-panel-heading .vc_tta-panel-title > a i:before,
+.postid-366 .campaigns_accrd .vc_active .vc_tta-panel-heading .vc_tta-panel-title > a i:after{
+border-color: #b11f82 !important;
+}
+.postid-366 .campaigns_accrd .vc_active .vc_tta-panel-body strong,
+.postid-366 .campaigns_accrd .vc_active .vc_tta-panel-body b{
+color: #b11f82;
+}
+.postid-366 .campaigns_accrd .vc_active .vc_tta-panel-body a{
+background: #b11f82;
+color: #fff;
+padding: 5px 15px;
+display: inline-block;
+margin-top: 5px;
+border: 1px solid #fff;
+}
+.postid-366 .campaigns_accrd .vc_active .vc_tta-panel-body a:hover{
+background: #fff ;
+color: #b11f82;
+border: 1px solid #b11f82;
+}
+.postid-366 #sidebar ul li.current-menu-item > a {
+color: #ffffff;
+padding-left: 10px;
+background-color: #b11f82;
+}
+.postid-369 .campaigns_accrd .vc_tta-panel-heading{
+background: #f47735 !important;
+border: 1px solid #fff!important;
+}
+.postid-369 .campaigns_accrd .vc_tta-panel-heading .vc_tta-panel-title > a {
+color: #fff !important;
+}
+.postid-369 .campaigns_accrd .vc_tta-panel-heading .vc_tta-panel-title > a i:before,
+.postid-369 .campaigns_accrd .vc_tta-panel-heading .vc_tta-panel-title > a i:after{
+border-color: #fff !important;
+}
+.postid-369 .campaigns_accrd .vc_active .vc_tta-panel-heading{
+background: #fff !important;
+border: 1px solid #f47735 !important;
+}
+.postid-369 .campaigns_accrd .vc_active .vc_tta-panel-heading .vc_tta-panel-title > a {
+color: #f47735 !important;
+}
+.postid-369 .campaigns_accrd .vc_active .vc_tta-panel-heading .vc_tta-panel-title > a i:before,
+.postid-369 .campaigns_accrd .vc_active .vc_tta-panel-heading .vc_tta-panel-title > a i:after{
+border-color: #f47735 !important;
+}
+.postid-369 .campaigns_accrd .vc_active .vc_tta-panel-body strong,
+.postid-369 .campaigns_accrd .vc_active .vc_tta-panel-body b{
+color: #f47735;
+}
+.postid-369 .campaigns_accrd .vc_active .vc_tta-panel-body a{
+background: #f47735;
+color: #fff;
+padding: 5px 15px;
+display: inline-block;
+margin-top: 5px;
+border: 1px solid #fff;
+}
+.postid-369 .campaigns_accrd .vc_active .vc_tta-panel-body a:hover{
+background: #fff ;
+color: #f47735;
+border: 1px solid #f47735;
+}
+.postid-369 #sidebar ul li.current-menu-item > a {
+color: #ffffff;
+padding-left: 10px;
+background-color: #f47735;
+}
+.postid-369 .facts{
+text-align: left;
+display: inline-block;
+margin-bottom: 45px;
+padding: 0;
+list-style: none;
+}
+.postid-369 .facts li{
+padding-left: 65px;
+background-size: 55px;
+background-position: center left;
+background-repeat: no-repeat;
+color: #000;
+padding-top: 10px;
+padding-bottom: 10px;
+margin-bottom: 25px;
+}
+.postid-369 .facts li.fact1 {
+background-image: url(../../../themes/muslim-charity/images/icon1.png);
+}
+.postid-369 .facts li.fact2 {
+background-image: url(../../../themes/muslim-charity/images/icon2.png);
+}
+.postid-369 .facts li.fact3 {
+background-image: url(../../../themes/muslim-charity/images/icon3.png);
+}
+.postid-369 .facts li.fact4 {
+background-image: url(../../../themes/muslim-charity/images/icon4.png);
+}
+.postid-369 .facts li span {
+display: inline-block;
+width: 100%;
+line-height: 18px;
+}
+.postid-369 .facts li span.mtxt {
+color: #f47735;
+font-size: 21px;
+font-weight: 700;
+line-height: normal;
+}
+ul#menu-main-menu > li > a {
+padding: 20px 35px;
+}
+#page_content #sidebar .menu{}
+#page_content #sidebar .menu > li{}
+#page_content #sidebar .menu > li:before,
+#page_content #sidebar .menu > li ul{
+display: none;
+}
+#banner:before{
+content: " ";
+}
+#banner h1 {
+color: #fff;
+}
+div#banner,
+div#banner .container {
+min-height: 300px;
+}
+div#banner{
+position: relative;
+}
+#banner > .container:before {
+position: absolute;
+content: " ";
+width: 28%;
+height: 67px;
+background-color: rgba(238, 62, 51, 1);
+left: 0;
+bottom: 0;
+}
+#banner h1 {
+background-color: rgba(238, 62, 51, 1);
+bottom: 0;
+color: #fff;
+margin: 0;
+position: absolute;
+width: auto;
+font-size: 35px;
+padding: 13px 15px;
+height: 67px;
+line-height: normal;
+z-index: 1;
+}
+div#banner_foreground {
+float: right;
+}
+.wpcf7-form-control-wrap.dob{
+height: 40px;
+}
+.page-id-666 #banner > .container:before,
+.postid-366 #banner > .container::before,
+.postid-369 #banner > .container::before,
+.postid-378 #banner > .container::before {
+display: none;
+}
+.page-id-666 #banner h1 {
+visibility: hidden;
+}
+body .tribe-events-loop .type-tribe_events {
+border-bottom: 1px solid #c2c2c2 !important;
+padding-bottom: 24px;
+padding-left: 80px;
+padding-top: 0 !important;
+margin-bottom: 24px !important;
+background: url(../../../themes/muslim-charity/images/CalendarIcon.png) no-repeat;
+background-position: 15px 3px;
+margin-top: 24px !important;
+}
+body .tribe-events-loop .type-tribe_events h2 a{
+color: #e53d2f;
+}
+body .tribe-events-loop .type-tribe_events .tribe-events-event-meta{
+display: none;
+}
+body .tribe-events-loop .type-tribe_events .tribe-events-event-image{
+display: none;
+}
+.tribe-events-list .tribe-events-loop .tribe-events-content {
+width: 100% !important;
+}
+body.single-tribe_events{
+font-family: "MuseoSans", sans-serif !important;
+}
+html .single-tribe_events .tribe-events-event-meta {
+display: none;
+}
+.otwsp p:first-child strong{
+padding: 13px;
+padding-left: 45px;
+background-repeat: no-repeat;
+margin-bottom: 4px !important;
+display: inline-block;
+width: 100%;
+}
+.otwsp .otwsp1 p:first-child strong{
+background-image: url(../../../themes/muslim-charity/images/phone.png);
+}
+.otwsp .otwsp2 p:first-child strong{
+background-image: url(../../../themes/muslim-charity/images/post.png);
+padding-left: 55px;
+}
+.otwsp .otwsp3 p:first-child strong{
+background-image: url(../../../themes/muslim-charity/images/money.png);
+padding-left: 55px;
+}
+div#recent_projects {
+padding: 0 8px;
+}
+div#recent_projects .project { padding: 0 7px;
+}
+.conts_block,
+.conts_block .cont_row{
+display: inline-block;
+width: 100%;
+}
+.conts_block .cont_row{ margin-bottom: 20px;
+}
+#page_content #content .conts_block .cont_row h6 {
+display: inline-block;
+width: auto;
+font-size: 28px;
+color: #fff !important;
+padding: 7px 15px;
+}
+.conts_block .cont_row h6 + p{
+display: inline-block;
+vertical-align: bottom;
+border: 2px solid #46a146;
+padding: 8px 15px;
+margin-left: 10px;
+border-radius: 2px;
+}
+.conts_block .cont_row h6 + p a{
+}
+.conts_block .cont_row p:first-child{
+display: inline-block;
+color: #000;
+font-size: 16px;
+width: 100%;
+text-align: left;
+vertical-align: top;
+}
+.conts_block .cont_row p:last-child{
+display: inline-block;
+width: 100%;
+vertical-align: top;
+}
+.conts_block .cont_row p:last-child a{
+color: #fff;
+padding: 5px 10px;
+display: inline-block;
+}
+.conts_block .cont_row h6,
+.conts_block .cont_row p:last-child a{
+background: #46a146;
+}
+.postid-366 .conts_block .cont_row h6,
+.postid-366 .conts_block .cont_row p:last-child a{
+background: #b11f82;
+}
+.postid-369 .conts_block .cont_row h6,
+.postid-369 .conts_block .cont_row p:last-child a{
+background: #f47735;
+}
+.postid-366 .conts_block .cont_row h6 + p{
+border-color: #b11f82;
+}
+.postid-366 .conts_block .cont_row h6 + p a{
+color: #b11f82 !important;
+}
+.postid-369 .conts_block .cont_row h6 + p{
+border-color: #f47735;
+}
+.postid-369 .conts_block .cont_row h6 + p{
+color: #f47735 !important;
+}
+.social a{
+width: 25px;
+height: 25px;
+display: inline-table;
+border-radius: 50%;
+color: #fff !important
+}
+header .social a{
+background: #46a146;
+}
+footer .social a{
+background: #46a146;
+width: 20px;
+height: 20px;
+}
+header .social a:hover,
+footer .social a:hover{
+background: #e53d2f;
+}
+.social a span{
+display: table-cell;
+width: 100%;
+height: 100%;
+vertical-align: middle;
+text-align: center;
+}
+.social a span i{
+font-size: 14px !important;
+line-height: normal !important;
+color: #fff !important;
+}
+footer .social a span i {
+font-size: 12px !important;
+line-height: normal !important;
+color: #fff !important;
+width: 100% !important;
+}
+.googft-info-window{
+visibility: hidden;
+font-size: 0;
+}
+.googft-info-window > b{}
+.gmap-pp-info{
+visibility: visible;
+font-size: 14px;
+}
+.gmap-pp-info > b{
+width: 100%;
+display: inline-block;
+margin-bottom: 10px;
+color: #46a146;
+}
+.gmap-pp-info div b{
+display: inline-block;
+width: 100%;
+margin-bottom: 5px;
+}
+.gmap-pp-info div a{
+color: #000;
+line-height: 21px;
+position: relative;
+background: url(../../../themes/muslim-charity/images/mbullets.png) no-repeat left center;
+padding-left: 12px;
+}
+.gmap-pp-info div a:after{
+}
+#chimpmate-2.widget{
+margin-left: -25px;
+max-width: 300px;
+}
+#chimpmate-2.widget h4{
+color: #46a146;
+}
+.wpmchimpa_para{
+font-size: 11px !important;
+color: #909090 !important;
+margin-top: 10px !important;
+display: inline-block;
+}
+.wpmchimpa_para div{
+color: #909090 !important;
+}
+#wpmchimpaw-1 form{
+position: relative;
+}
+#wpmchimpaw-1  .wpmchimpa-field{
+margin-bottom: 0 !important;
+}
+#wpmchimpaw-1  .wpmchimpa-field input,
+#wpmchimpa input[type="text"]{
+box-shadow: 0 0px 8px rgba(0, 0, 0, 0.15) inset;
+border-radius: 6px !important;
+border-color: #ccc !important;
+padding: 15px 12px !important;
+height: auto !important;
+font-family: arial;
+font-size: 14px !important;
+color: #999999;
+line-height: normal !important;
+}
+#wpmchimpaw-1 input[type="text"] ~ .inputlabel,
+#wpmchimpa input[type="text"] ~ .inputlabel {
+font-size: 12px !important;
+padding: 15px 13px !important;
+height: auto !important;
+line-height: normal !important;
+}
+#wpmchimpaw-1 .wpmchimpa-subs-button,
+#wpmchimpa .wpmchimpa-subs-button{
+position: absolute !important;
+top: 4px;
+margin: 0 !important;
+width: auto !important;
+right: 4px;
+border: 1px solid #46a146 !important;
+border-radius: 5px !important;
+background: linear-gradient(to bottom,#46a146, #46a146) !important;
+padding: 0 10px;
+color: #fff !important; text-transform: uppercase;
+font-size: 12px !important;
+}
+#wpmchimpaw-1 .wpmchimpa-subs-button:hover,
+#wpmchimpa .wpmchimpa-subs-button:hover{
+background: #e53d2f !important;
+color: #fff !important;
+border-color: transparent !important; }
+.wpmchimpa-tag{
+display: none;
+}
+.wpmchimpa-signalc{
+display: none;
+}
+#wpmchimpaw-1 .wpmchimpa-feedback,
+#wpmchimpa .wpmchimpa-feedback {
+margin: 5px 0 0px !important;
+color: #999 !important;
+height: 18px;
+font-size: 12px !important;
+}
+.wpmchimpa-overlay-bg .wpmchimpa-wrapper {
+width: 420px !important;
+max-width: 90% !important;
+min-width: 320px !important;
+margin: 0 auto;
+background: #fff;
+box-shadow: 0 0px 11px rgba(0,0,0,0.8);
+border-radius: 10px;
+}
+.wpmchimpa-overlay-bg #wpmchimpa-newsletterform #wpmchimpa {
+padding: 20px 20px 15px !important;
+}
+#wpmchimpa h3 {
+font-size: 18px !important;
+font-weight: 900 !important;
+padding-bottom: 0 !important;
+margin: 0 auto 15px auto !important;
+width: 100% !important;
+}
+#wpmchimpa .wpmchimpa_para, #wpmchimpa .wpmchimpa_para * {
+line-height: normal !important;
+color: #909090 !important;
+}
+#wpmchimpa form {
+position: relative;
+width: 90%;
+margin: 0 auto;
+}
+#wpmchimpa .wpmchimpa-field {
+width: 100% !important;
+}
+#wpmchimpa input[type="text"] {
+padding: 18px 12px !important;
+text-align: left !important;
+}
+#wpmchimpa input[type="text"] ~ .inputlabel {
+padding: 18px 12px !important;
+text-align: left;
+}
+.wpmchimpa-overlay-bg .wpmchimpa-close-button {
+border: 0.1em solid #28AC5E !important;
+background-color: #28AC5E !important;
+}
+.wpmchimpa-overlay-bg .wpmchimpa-close-button::before,
+.wpmchimpa-overlay-bg .wpmchimpa-close-button::after {
+background-color: #fff !important;
+}
+.wpmchimpa-overlay-bg.wpmchimpselector {
+background: rgba(0,0,0,0.7) !important;
+}
+#wpmchimpa .wpmchimpa-feedback {
+color: #999 !important;
+}
+.rmp{
+color: #fff;
+left: 5% !important;
+position: absolute;
+bottom: 10px;
+padding-left: 5px;
+}
+.hnews_image{
+display: inline-block;
+width: 100%;
+height: 265px;
+background-position: center;
+background-size: cover;
+}
+#quick_donation{
+background: #ECEAEB;
+padding: 25px 0;
+}
+#quick_donation h2{
+color: #e53d2f;
+}
+#quick_donation form{}
+.qd_elems{
+width: 85%;
+margin: 0 auto;
+}
+.qd_elems .qd_elem{
+width: 100%;
+border: 3px solid #e53d2f;
+padding: 15px;
+color: #999999;
+font-family: MuseoSansRounded300;
+font-size: 18px;
+min-height: 55px;
+}
+.qd_elems input.qd_elem{
+background: url(../../../themes/muslim-charity/images/qt_pound.png) no-repeat 5px center #fff;
+padding-left: 40px;
+}
+.qd_elems select.qd_elem{
+line-height: 60px;
+height: 60px;
+-webkit-appearance: menulist-button;
+}
+.qd_elems input.qd_elem.qd_submit{
+color: #fff;
+background: #e53d2f;
+padding: 13px;
+} .dpopup_box{
+overflow: hidden;
+position: fixed;
+top: 0px;
+right: 0px;
+background: rgba(0, 171, 103, 0.87);
+width: 0;
+z-index: 3;
+max-width:100%;
+}
+.dpopup_box-inner{
+width: 400px;
+padding: 45px 0px 0px;
+max-width:100%;
+}
+.dpopup_box-inner .hide-dpopup{
+background: url(../../../themes/muslim-charity/images/close.png);
+width: 35px;
+height: 35px;
+border: 0 none;
+background-size: contain;
+position: absolute;
+right: 0;
+top: 10px;
+}
+.dpopup_box-inner h4{
+margin: 0 6%;
+text-align: center;
+color: #fff;
+text-transform: uppercase;
+border-bottom: 1px solid #fff;
+padding-bottom: 10px;
+margin-bottom: 10px;
+font-family: MuseoSansRounded300;
+font-size: 25px !important;
+}
+.dpopup_box-inner .qd_donations{
+margin: 0 6%;
+}
+.dpopup_box-inner .qd_donations > div{
+color: #fff;
+font-family: MuseoSansRounded500; 
+}
+.dpopup_box-inner .qd_donations .qd_overlay{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: url(../../../themes/muslim-charity/images/loading.svg) rgba(255,255,255,0.8) no-repeat center;
+z-index: 100;
+display: none;
+}
+.dpopup_box-inner .qd_donations ul{
+padding: 0;
+margin: 0;
+list-style: none;
+}
+.dpopup_box-inner .qd_donations ul li{
+padding: 5px 0;
+font-size: 15px;
+}
+.dpopup_box-inner .qd_donations ul li.last{
+margin-top: 45px;
+border-top: 2px solid #fff;
+}
+.dpopup_box-inner .qd_donations ul li a{
+color: #fff;
+margin-right: 10px;
+width: 15px;
+display: inline-block;
+vertical-align: middle;
+}
+.dpopup_box-inner .qd_donations ul li .qdt{}
+.dpopup_box-inner .qd_donations ul li .qda{
+float: right;
+font-family: MuseoSansRounded900;
+font-size: 17px;
+}
+.dpopup_box-inner .qd_donations ul li.last .qdt{
+font-family: MuseoSansRounded900;
+font-size: 17px;
+}
+.dpopup_box-inner .qd_donations ul li.last .qda{}
+.dpopup_box-inner .qd_donations ul li.last a{}
+.dpopup_box-inner .qd_checkout{
+margin: 15px 6%;
+text-align: center;
+}
+.dpopup_box-inner .qd_checkout a{
+background: #ee3b33;
+padding: 6px 15px;
+display: inline-block;
+color: #fff;
+text-transform: uppercase;
+font-family: MuseoSansRounded500;
+font-size: 19px; 
+}
+.show-dpopup{
+background: url(../../../themes/muslim-charity/images/qd_btn3.png) #e53d2f;
+width: 35px;
+height: 194px;
+font-size: 0;
+border: 0 none;
+background-repeat: no-repeat;
+background-position: center;
+position: fixed;
+top: 50%;
+right: 0;
+z-index: 2;
+transition: all 0.5s ease;
+}
+.show-dpopup:hover{
+background-color: #46a146;
+transition: all 0.5s ease;
+}
+.widget_tag_cloud .tagcloud{}
+.widget_tag_cloud .tagcloud a{
+display: inline-block;
+width: auto !important;
+border: 0 none !important;
+background: #46a146 !important;
+color: #fff !important;
+padding: 5px 7px !important;
+margin-top: 5px;
+margin-right: 5px;
+text-transform: capitalize !important;
+font-size: 12px !important;
+}  .qd_border{
+width: 100%;
+position: fixed;
+bottom: 0;
+height: 5px;
+background: #e53d2f;
+left: 0;
+z-index: 2;
+}
+.show-qdpopup{ text-transform: uppercase;
+height: 38px;
+font-size: 17px;
+border: 0 none;
+color: #fff;
+position: fixed;
+bottom: 5px;
+left: 50%;
+z-index: 2;
+transform: translate(-50%);
+background-repeat: no-repeat !important;
+background-position: center !important;
+width: 174px;
+transition: all 0.5s ease;
+font-weight: 300;
+padding-right: 26px;
+}
+.qdpopup_box h2{
+color: #e53d2f;
+}
+.show-qdpopup.inactive{ background: url(../../../themes/muslim-charity/images/qdarr.png) #e53d2f;
+background-position: 94% center !important;
+}
+.show-qdpopup.proactive{ background: url(../../../themes/muslim-charity/images/qdarr2.png) #e53d2f;
+background-position: 94% center !important;
+}
+.show-qdpopup:hover{
+background-color: #46a146;
+transition: all 0.5s ease;
+}
+.qdpopup_box{
+display: inline-block;
+width: 100%;
+background: #ECEAEB;
+position: fixed;
+left: 0;
+bottom: 0;
+z-index: 1;
+}
+.qdpopup_box .container{
+padding: 25px 15px 50px;
+}
+button{
+outline: none !important;
+} .page-num{
+float: right;
+}
+.page-numbers{}
+a.page-numbers{}
+span.page-numbers{}
+.custom-pagination{
+margin-top: 15px;
+border-top: 1px solid #ccc;
+padding-top: 25px;
+padding-left: 15px;
+padding-right: 15px;
+}
+.wpb_wrapper h4{
+font-family: MuseoSansRounded900 !important;	
+}
+.vc_tta-panel-title span{}
+.vc_tta-panel-title{
+position: relative;
+}
+.vc_tta-panel-title .smlclose{
+position: absolute !important;
+right: 0;
+top: 0;
+z-index: 1;
+cursor: pointer !important;
+display: none !important;
+}
+.vc_tta-panel-title .smlclose i{
+color: #e53d2f;
+}
+.vc_tta-panel.vc_active .smlclose{
+display: block !important;
+}
+.apss-social-share .apss-single-icon{
+display: inline-block;
+}
+.apss-theme-2 .apss-social-text {
+display: none !important;
+}
+.apss-theme-2 .apss-icon-block {
+min-width: 0 !important;
+}
+.apss-theme-2 .apss-single-icon .fa {
+border-right: 0 none !important;
+}
+.apss-theme-2 .apss-single-icon a {
+margin: 2px 2px !important;
+}
+.apss-whatsapp .apss-icon-block {
+background-color: #25D366;
+}
+.apss-whatsapp{
+display: none !important;
+}
+.apss-print{ }
+.apss-theme-2 .apss-single-icon .fa {
+font-size: 15px !important;
+line-height: 21px !important;
+min-width: 26px !important;
+height: 26px !important;
+}
+figure:empty{
+}
+nav#main_menu li > ul.sub-menu ul {
+top: 0px;
+width: 100%;
+left: 100%;
+visibility: hidden !important;
+opacity: 0 !important;
+transform: translateY(-100%) !important;
+background:#46A146 !important;
+transition: all linear 0.25s;
+}
+nav#main_menu li > ul.sub-menu ul a{
+background:#46A146 !important;
+}
+nav#main_menu ul li li:hover ul{
+visibility: visible !important;
+opacity: 1 !important;
+transform: translateY(0) !important;
+}
+nav#main_menu ul li li:hover ul li:hover a{
+background:#E53D2F !important;
+}
+.hbariv > .container:before{
+display: none;
+}
+.postid-1316 #page_content #content .wpb_wrapper h2{
+color: #EC483A !important;
+font-size: 25px;
+font-weight: 900 !important;
+text-transform: none;
+}
+.rate_blocks{
+display: inline-block;
+width: 100%;
+}
+.rate_block{
+display: inline-table;
+width: 19%;
+height: 65px;
+vertical-align: middle;
+}
+.rate_block > div{
+display: table-cell;
+height: 100%;
+vertical-align: middle;
+background: url(../../../themes/muslim-charity/images/bd.png) left center no-repeat;
+padding-left: 45px;
+font-size: 11px;
+color: #262422;
+}
+.rate_block .c_title{
+font-family: MuseoSansRounded500;
+font-weight: bold;
+display: block;
+}
+.rate_block .c_amount{
+display: block;
+}
+.rate_block br{
+display: none;
+}
+.ratebycountry h2{
+margin-top: 10px;
+margin-bottom: 10px;
+}
+@media (min-width: 768px){
+.home .wpb_button,
+.home  .wpb_content_element {
+margin-bottom: 0px !important;
+}
+.single article#post .post_meta {
+margin-bottom: 5px;
+}
+.apss-social-share {
+display: inline-block;
+vertical-align: middle;
+width: auto;
+text-align: right;
+width: 79%;
+}
+.single article#post .post_meta .date {
+display: inline-block;
+vertical-align: middle;
+line-height: 35px;
+width: 20%;
+}
+.spcimgs{
+display: none !Important;
+}
+}
+@media only screen and (max-width: 600px){
+#wpmchimpa input[type='text'],
+#wpmchimpa input[type='text']+.inputlabel {
+padding: 15px 12px !important;
+}
+.wpmchimpa-overlay-bg #wpmchimpa .wpmchimpa_para {
+margin-bottom: 25px !important;
+}
+}
+@media (max-width: 390px){
+#wpmchimpa .wpmchimpa_para, #wpmchimpa .wpmchimpa_para * {
+font-size: 9px !important;
+}
+}
+@media (min-width: 768px){
+.vc_column_container > .vc_column-inner {
+padding-left: 7px !important;
+padding-right: 7px !important;
+}
+.page-id-697 .vc_column_container > .vc_column-inner {
+padding-left: 15px !important;
+padding-right: 15px !important;
+}
+.wpb_button, .wpb_content_element{
+margin-bottom: 15px !important;
+}
+.single-tribe_events .tribe-events-event-image{
+display: inline-block;
+width: 48%;
+padding: 0 7px;
+margin: 0 !important;
+vertical-align: top;
+}
+.single-tribe_events .tribe-events-event-image + .tribe-events-single-event-description{
+display: inline-block;
+width: 50% !important;
+padding: 0 7px !important;
+vertical-align: top;
+}
+}
+@media screen and (max-width: 768px){
+#page_content #sidebar {
+padding: 0;
+}
+#chimpmate-2.widget {
+margin-left: 0px;
+max-width: 100%;
+}
+#footer_newsletter{
+padding: 0;
+}
+#banner h1 {
+font-size: 20px !Important;
+}
+.apss-whatsapp{
+display: inline-block !important;
+}
+.single-campaign div#banner,
+.single-campaign div#banner .container,
+.page-id-666 div#banner,
+.page-id-666 div#banner .container {
+min-height: 0;
+}
+div#logo img {
+max-width: 90% !Important;
+width: auto !Important;
+}
+.home .show-qdpopup,
+.home .qd_border{
+display: none;
+}
+.home.scrolled786 .show-qdpopup,
+.home.scrolled786 .qd_border{
+display: block;
+}
+}
+@media screen and (max-width: 730px){
+#slide-1-layer-5,#slide-4-layer-5{
+display: none !important;
+}
+#slide-1-layer-3,#slide-4-layer-3{
+margin-top: 0px !important;
+}
+.tp-caption.MC_SubTitle, .MC_SubTitle {
+margin-top: -15px !important;
+}
+.tp-caption.MC_Button2, .MC_Button2 {
+margin-top: -12px !important;
+}
+#news h2 {
+padding: 0 15px;
+}
+#news .news_item {
+padding: 0 15px 15px;
+}
+#news .wrapper {
+width: auto;
+}
+#social h2 {
+padding: 0 15px;
+}
+#social .mwrap{    padding: 0 15px;}
+#social #facebook {
+border: 1px solid #e1e1e1 !important;
+}
+#social #twitter{
+}
+.single-post #sidebar{
+display: none; 
+}
+.single-post #page_content #content {
+padding: 0;
+}
+}
+@media (max-width: 536px){
+.conts_block .cont_row p:first-child,
+.conts_block .cont_row p:last-child{
+width: 100%;
+}
+.text-xs-center{
+text-align: center !important;
+}
+#wpmchimpa input[type='text'],
+#wpmchimpa input[type='text']+.inputlabel {
+padding: 13px 12px !important;
+}
+.wpb_revslider_element.main_slider,
+.forcefullwidth_wrapper_tp_banner#rev_slider_1_1_forcefullwidth,
+.home .fullwidthbanner-container,
+.rev_slider li.tp-revslider-slidesli,
+.fullwidthbanner-container .fullwidthabanner {
+min-height: 250px;
+}
+#slide-4-layer-11 img,
+#slide-1-layer-11 img{
+min-height: 260px;
+}
+#slide-1-layer-2.tp-caption.MC_SubTitle,
+#slide-4-layer-2.tp-caption.MC_SubTitle
+{
+font-size: 24px !important;
+line-height: normal !important;
+margin-top: 10px !important;
+}
+#slide-1-layer-3.tp-caption.MC_Title,
+#slide-4-layer-3.tp-caption.MC_Title
+{
+font-size: 23px !important;
+margin-top: 45px !important;
+line-height: normal !important;
+}
+.tp-caption.MC_Button2, .MC_Button2 {
+margin-top: 60px !important;
+}
+}
+@media (max-width: 400px){
+.mobile-logo{
+display: block !Important;
+}
+.desk-logo{
+display: none !Important;
+}
+}
+.rate_block.mn > div{
+background-image: url(../../../themes/muslim-charity/images/mn.png);
+}
+.rate_block.gh > div{
+background-image: url(../../../themes/muslim-charity/images/gh.png);
+}
+.rate_block.gr > div{
+background-image: url(../../../themes/muslim-charity/images/gr.png);
+}
+.rate_block.in  > div{
+background-image: url(../../../themes/muslim-charity/images/in.png);
+}
+.rate_block.kn > div{
+background-image: url(../../../themes/muslim-charity/images/kn.png);
+}
+.rate_block.lb > div{
+background-image: url(../../../themes/muslim-charity/images/lb.png);
+}
+.rate_block.np > div{
+background-image: url(../../../themes/muslim-charity/images/np.png);
+}
+.rate_block.uk > div{
+background-image: url(../../../themes/muslim-charity/images/uk.png);
+}
+.rate_block.mw > div{
+background-image: url(../../../themes/muslim-charity/images/mw.png);
+}
+.rate_block.ng > div{
+background-image: url(../../../themes/muslim-charity/images/ng.png);
+}
+.rate_block.pk > div{
+background-image: url(../../../themes/muslim-charity/images/pk.png);
+}
+.rate_block.pl > div{
+background-image: url(../../../themes/muslim-charity/images/pl.png);
+}
+.rate_block.sg > div{
+background-image: url(../../../themes/muslim-charity/images/sg.png);
+}
+.rate_block.sm > div{
+background-image: url(../../../themes/muslim-charity/images/so.png);
+}
+.rate_block.sl > div{
+background-image: url(../../../themes/muslim-charity/images/sl.png);
+}
+.rate_block.sr > div{
+background-image: url(../../../themes/muslim-charity/images/sy.png);
+}
+.rate_block.tz > div{
+background-image: url(../../../themes/muslim-charity/images/tz.png);
+}
+.rate_block.ye > div{
+background-image: url(../../../themes/muslim-charity/images/ye.png);
+}
+@media (max-width: 1199px){
+.rate_block{
+width: 24%;
+}
+}
+@media (max-width: 991px){
+.rate_block{
+width: 32%;
+}
+}
+@media (max-width: 767px){
+.rate_block{
+width: 24%;
+}
+}
+@media (max-width: 630px){
+.rate_block{
+width: 32%;
+}
+}
+@media (max-width: 496px){
+.rate_block{
+width: 49%;
+}
+}
+.postid-1316 .green{
+color: #46a146;
+font-weight: 900 !important;
+}
+@media (max-width: 536px){
+.qcss img{ height: 250px !important;
+}
+}
+.wpcf7-response-output{
+display: inline-block;
+width: 100%;
+}
+.cake_campaign_wrapper{
+border: 1px solid #ccc;
+display: inline-block;
+width: 100%;
+border-radius: 5px;
+padding: 15px;
+}
+.cake_campaign_wrapper h2{
+font-size: 22px;
+position: relative;
+}
+.cake_campaign_wrapper h2:after {
+border-top: 3px solid #000;
+bottom: -5px;
+content: " ";
+height: 1px;
+left: 0;
+position: absolute;
+width: 50px;
+}
+.cake-selector,
+.payment-selector{
+margin-top: 10px;
+display: inline-block;
+width: 100%;
+margin-bottom: 10px;
+}
+.cake-selector .regular-radio + label,
+.payment-selector .regular-radio + label{
+border: 2px solid #ccc;
+vertical-align: middle;
+margin: 0;
+border-radius: 0;
+}
+.cake-selector .regular-radio:checked + label:after,
+.payment-selector .regular-radio:checked + label:after{
+content: '\f00c';
+font-family: FontAwesome;
+width: 12px;
+height: 12px;
+border-radius: 50px;
+position: absolute;
+top: -3px;
+background: none;
+text-shadow: 0 0;
+left: 1px;
+font-size: 18px;
+color: #46a146;
+}
+.cake-selector .regular-radio + label + label,
+.payment-selector .regular-radio + label + label{
+vertical-align: middle;
+margin: 0;
+padding-left: 10px;
+}
+.cake-selector label span,
+.payment-selector label span{
+color: #ee3b34;
+}
+.cake-selector > .col-sm-6{
+}
+.inline-field{
+position: relative;
+}
+.inline-field label{
+margin-bottom: 5px;
+margin-top: 5px;
+}
+.inline-field input{}
+.cake_campaign_wrapper #total{
+background: url(../../../themes/muslim-charity/images/pound.png) #fff;
+background-size: auto 26px;
+background-repeat: no-repeat;
+background-position: 5px center;
+padding-left: 32px;
+}
+.payment-selector .regular-radio + label{
+border: 2px solid #ccc;
+vertical-align: middle;
+margin: 0;
+border-radius: 0;
+}
+.payment-selector .regular-radio:checked + label:after{
+content: '\f00c';
+font-family: FontAwesome;
+width: 12px;
+height: 12px;
+border-radius: 50px;
+position: absolute;
+top: -3px;
+background: none;
+text-shadow: 0 0;
+left: 1px;
+font-size: 18px;
+color: #46a146;
+}
+#order_now{
+background: #46a146;
+border: 1px solid #46a146;
+border-radius: 0;
+display: inline-block;
+margin-top: 25px;
+font-size: 20px;
+text-transform: uppercase;
+margin-bottom: 20px;
+padding: 10px 30px;
+} #page_content .woocommerce{
+max-width: 1100px;
+margin: 0 auto;
+margin-top: 45px;
+}
+.woocommerce .button,
+.woocommerce .coupon .button,
+.woocommerce .checkout-button{
+border: 0 none !important;
+border-radius: 0 !important;
+color: #fff !important;
+}
+.woocommerce .button,
+body .woocommerce .coupon .button:hover,
+body .woocommerce .checkout-button:hover{
+background: #46a146 !important;
+}
+.woocommerce .button:hover,
+.woocommerce .coupon .button,
+.woocommerce .checkout-button{
+background: #e53d2f !important;
+}
+body .woocommerce-info {
+border-top-color: #e53d2f !important;
+}
+body .woocommerce-info::before {
+color: #e53d2f !important;
+}
+body .select2-container--default .select2-selection--single {
+border: 1px solid #cbcbcb;
+display: inline-block;
+width: 100%;
+height: auto;
+border-radius: 0;
+}
+body .select2-container--default .select2-selection--single .select2-selection__arrow {
+height: 37px;
+}
+body .select2-container--default .select2-selection--single .select2-selection__rendered {
+line-height: 17px;
+padding: 10px;
+}
+body .select2-dropdown {
+border: 1px solid #cbcbcb;
+border-radius: 0;
+margin-top: -9px;
+}
+body .woocommerce form .form-row label.checkbox,
+body .woocommerce-page form .form-row label.checkbox {
+display: inline-block;
+width: 100%;
+}
+body .woocommerce form .form-row .input-checkbox,
+#ship-to-different-address-checkbox {
+display: inline-block;
+margin: 0;
+text-align: center;
+vertical-align: middle;
+width: auto;
+position: relative;
+}
+body .woocommerce h3 {
+font-size: 20px;
+position: relative;
+margin-bottom: 15px;
+}
+body .woocommerce h3:after {
+content: "";
+width: 50px;
+height: 3px;
+background: #e53d2f;
+position: absolute;
+bottom: -6px;
+left: 0;
+}
+body #ship-to-different-address{
+font-size: 14px;
+text-transform: none;
+}
+body #ship-to-different-address:after{
+display: none;
+}
+body .woocommerce .wc_payment_method input{
+width: auto;
+}
+body #add_payment_method #payment,
+body.woocommerce-cart #payment, 
+body.woocommerce-checkout #payment {
+background: #fff;
+border-radius: 5px;
+border: 1px solid #cbcbcb;
+}
+body #add_payment_method #payment div.payment_box::before, 
+body.woocommerce-cart #payment div.payment_box::before, 
+body.woocommerce-checkout #payment div.payment_box::before {
+border: 1em solid #f5f5f5;
+border-right-color: transparent;
+border-left-color: transparent;
+border-top-color: transparent;
+}
+body #add_payment_method #payment div.payment_box, 
+body.woocommerce-cart #payment div.payment_box, 
+body.woocommerce-checkout #payment div.payment_box {
+background-color: #f5f5f5;
+}
+body #onlineworldpay_container {
+border: 0;
+padding: 0;
+}
+body .coupon,
+.calculated_shipping h2,
+.related.products > h2{
+display: none !important;
+} select:disabled {
+background: #cbcbcb;
+}
+.page-id-1850 #banner > .container:before,
+.page-id-1850 .ptitle {
+display: none !important;
+}
+.page-id-1850 div#banner {
+background-position: 50% 43%;
+}
+.page-id-1850 div#banner .container {
+}
+.page-id-1850 div#banner {
+min-height: 0;
+}
+.page-id-1850 div#banner .container {
+min-height: 0;
+}
+.page-id-1850 div#banner {
+text-align: center;
+background: none !important;
+}
+.page-id-1850 div#banner .spcimgs {
+display: inline-block !Important;
+}
+body .vc_separator.vc_sep_color_black .vc_sep_line {
+border-color: #6E6E6E !Important;
+}
+.sep_block{
+max-width: 900px;
+margin-left: auto !important;
+margin-right: auto !important;
+margin-bottom: 35px;
+}
+.wiR_blocks{
+}
+.wiR_blocks img{
+height: 80px !important;
+width: auto;
+}
+.wiR_blocks .wpb_text_column{
+font-family: MuseoSans5;
+font-size: 18px;
+}
+@media (min-width: 768px){
+.wiR_blocks .vc_column_container.vc_col-sm-6 >.vc_column-inner,
+.wiR_blocks .vc_column_container.vc_col-sm-6:last-child >.vc_column-inner {
+width: 100%;
+max-width: 390px;
+}
+.wiR_blocks .vc_column_container.vc_col-sm-6 >.vc_column-inner {
+float: left;
+}
+.wiR_blocks .vc_column_container.vc_col-sm-6:last-child >.vc_column-inner {
+float: right;
+}
+}
+@media (max-width: 767px){
+.wiR_row .wpb_single_image.vc_align_left,
+.wiR_blocks .wpb_single_image.vc_align_left,
+.wiR_blocks .wpb_text_column {
+text-align: center;
+}
+.wiR_blocks, body .mb0,
+.sep_block .wpb_video_widget {
+margin-bottom: 0 !important;
+margin-left: 0;
+margin-right: 0;
+}
+}
+.wiR_row h4{
+font-family: MuseoSans7 !important;
+font-size: 23px !important;
+color: #333;
+}
+.wiR_row img{
+max-width: 340px !Important;
+width: 100%;
+}
+#opt-in .form-element-radio{
+display: inline-block;
+width: 100%;
+margin-bottom: 10px;
+}
+#opt-in .form-element-radio h4{
+margin: 0;
+display: inline-block;
+width: 75px;
+text-align: left;
+}
+#opt-in .form-element-radio .new_radios{
+display: inline-block;
+vertical-align: middle;
+text-align: left;
+width: 75px;
+}
+#opt-in .form-element-radio .new_radios .regular-radio + label {
+background-color: #fff;
+border: 1px solid #00ab67;
+margin-bottom: 0px;
+}
+#opt-in .form-element-radio .new_radios .regular-radio {
+position: relative;
+}
+#opt-in .form-element-radio .new_radios .regular-radio:checked + label {
+background-color: #00ab67;
+color: #00ab67;
+}
+#opt-in .form-element-radio .new_radios .regular-radio:checked + label:after {
+background: #fff;
+}
+#opt-in .form-element-radio .new_radios .label2{
+margin: 0;
+vertical-align: top;
+margin-top: 1px;
+margin-left: 5px;
+}
+.postid-1316 #banner{
+background: none; 
+}
+.postid-1316 #banner img{
+display: block !important;
+}
+.postid-1316 div#banner,
+.postid-1316 div#banner .container{
+min-height: 0;
+}

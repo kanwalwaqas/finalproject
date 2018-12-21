@@ -1,0 +1,35 @@
+﻿@model Microsoft.AspNet.Identity.EntityFramework.IdentityRole
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Areas/Script/Validation.js"></script>
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Roles</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group" style="padding-left:2%;padding-right:2%;">
+            <div class="form-group form-control-default required">
+                <label for="name">Role Name</label>
+                <input type="text" class="form-control" name="Name" id="Name" value="@Model.Name" placeholder="Enter Role Name" maxlength="25" onkeyup="return validate_name('Name', 'Error_name', 3, 'N', 'Only Alphabets And Two Spaces Allowed.')" onchange="CheckAvailability('Name', 'Error_name', 'Check_Roles', 'result')" />
+                <span id="Error_name"></span>
+                <span id="result" style="display:none"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-1 col-md-10">
+                <input type="submit" value="Create" class="btn btn-success" onclick="return Empty_Exists('Name','Error_name','Check_Roles','result','Role Already Exists.')" onchange="CheckAvailability('Name', 'Error_name', 'Check_Roles', 'result')" /> | @Html.ActionLink("Back to List", "Index", null, htmlAttributes: new { @class = "btn btn-inverse" })
+            </div>
+        </div>
+
+    </div>
+}

@@ -1,0 +1,64 @@
+﻿@model OLIWS.Models.team_asigned_jobs
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    OLIWS.Models.ApplicationDbContext db = new OLIWS.Models.ApplicationDbContext();
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>team_asigned_jobs</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            User To Verify
+        </dt>
+
+        <dd>
+            @db.Users.FirstOrDefault(s=>s.Id==Model.Id).UserName
+        </dd>
+
+        <dt>
+            Team Member
+        </dt>
+
+        <dd>
+            @db.team.FirstOrDefault(d=>d.TeamID==Model.TeamID).team_title
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job_status)
+        </dt>
+
+        <dd>
+            @if (Model.Job_status == 1)
+            {
+                <label style="color:green">Active</label>
+            }
+            else if (Model.Job_status == 0)
+            {
+                <label>In-Active</label>
+            }
+            else
+            {
+                <label>Not Varified</label>
+            }
+
+        </dd>
+
+        <dt>
+            Assigned Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.currentdate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

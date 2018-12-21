@@ -1,0 +1,74 @@
+﻿@model IEnumerable<OLIWS.Areas.Admin.Models.RecieverReports>
+
+@{
+    ViewBag.Title = "ViewRecieverRequests";
+    Layout = "~/Views/Shared/profile_Layout.cshtml";
+}
+
+<h2>ViewRecieverRequests</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequiredForEducation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequiredForHealth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequiredForothers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequiredAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequiredForEducation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequiredForHealth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequiredForothers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequiredAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+    </tr>
+}
+
+</table>

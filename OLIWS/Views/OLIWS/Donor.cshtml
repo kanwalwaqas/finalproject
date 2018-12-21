@@ -1,0 +1,264 @@
+﻿@model OLIWS.Models.DonorViewModel
+@{
+    ViewBag.Title = "Donor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Donor", "OLIWS", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="inner-banner has-base-color-overlay text-center" style="background: @Url.Content("~/Designing/OLIWSHOME/images/background/10.jpg");">
+        <div class="container">
+            <div class="box">
+                <h1>Zakat</h1>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="register-section sec-padd-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-push-3">
+                    <form name="reg-form" class="register-form" method="post">
+                        <div class="icon-box mb-0 p-0">
+                            <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                                <i class="pe-7s-users"></i>
+                            </a>
+                            <h1 class="text-gray pt-10 mt-0 mb-30">Donor Information</h1>
+                        </div>
+                        <hr>
+                        <div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <div class="form-group" style="margin-right:20px">
+                                        <div>
+                                            <input type="checkbox" name="Zakat" value="Zakat" style="zoom:1.5"><p style="margin-top:-23px;margin-left:30px;font-size:22px"><b>Zakat</b></p> <br>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <div class="form-group" style="margin-bottom:20px">
+                                        <div>
+                                            <input type="checkbox" name="Sadaqah" value="Sadaqah" style="zoom:1.5"><p style="margin-top:-23px;margin-left:30px;font-size:22px"><b>Sadaqah</b></p> <br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <div class="form-group" style="margin-right:20px">
+                                        <div>
+                                            <input type="checkbox" name="Usher" value="Usher" style="zoom:1.5"><p style="margin-top:-23px;margin-left:30px;font-size:22px"><b>Usher</b></p> <br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <div class="form-group" style="margin-bottom:20px">
+                                        <div>
+                                            <input type="checkbox" name="zakat_ul_fitr" value="zakat_ul_fitr" style="zoom:1.5"><p style="margin-top:-23px;margin-left:30px;font-size:22px"><b>Zakat-ul-Fitr</b></p> <br>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group ">
+                                    <div>
+
+                                        <label class="checkbox-inline" style="margin-right:30px;margin-left:15px">
+                                            <input type="checkbox" name="Atia_o_Khairat" value="Atia_o_Khairat" style="zoom:1.5"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Atia-o-khairat</p> <br>
+                                        </label>
+                                        <label class="checkbox-inline" style="margin-bottom:5px">
+                                            <input type="checkbox" name="khums" value="khums" style="zoom:1.5;margin-right:100px"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Khums</p> <br>
+                                        </label>
+                                        <label class="checkbox-inline" style="margin-left:35px;margin-bottom:10px">
+                                            <input type="checkbox" name="Other" value="Other" style="zoom:1.5;margin-right:80px"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Other</p> <br>
+                                        </label>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <br />
+                        <div class="form-group ">
+                            <div class="row">
+                                <div class="icon-box mb-0 p-0">
+                                    <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                                        <i class="pe-7s-users"></i>
+                                    </a>
+                                    <h3 class="text-gray pt-10 mt-0 mb-30">Donation Type</h3>
+                                </div>
+                                <br>
+
+                                <ul class="chicklet-list clearfix">
+                                    <li><input id="donate-amount-1" class="form-control" name="frequency" value="once" type="radio"> <label data-amount="1000" for="donate-amount-1">Once</label></li>
+
+
+                                    <li><input checked="checked" class="form-control" id="donate-amount-2" name="frequency" value="monthly" type="radio"> <label data-amount="2000" for="donate-amount-2">Monthly</label></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div style="">
+                            <div class="icon-box mb-0 p-0">
+                                <h3>Donation Category</h3>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group ">
+
+                                    <label class="checkbox-inline" style="margin-right:30px;margin-left:15px">
+                                        <input type="checkbox" name="Education" value="Education" style="zoom:1.5"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Education</p> <br>
+                                    </label>
+                                    <label class="checkbox-inline" style="margin-bottom:5px">
+                                        <input type="checkbox" name="Health" value="Health" style="zoom:1.5;margin-right:100px"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Health</p> <br>
+                                    </label>
+                                    <label class="checkbox-inline" style="margin-left:35px;margin-bottom:10px">
+                                        <input type="checkbox" name="Other" value="Other" style="zoom:1.5;margin-right:80px"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Other</p> <br>
+                                    </label>
+
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="icon-box mb-0 p-0">
+                                <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                                    <i class="pe-7s-users"></i>
+                                </a>
+                                <h3 class="text-gray pt-10 mt-0 mb-30">How much you want to donate</h3>
+                            </div>
+                            <div class="row">
+                                <div class="form-group ">
+                                    <ul class="chicklet-list clearfix">
+
+
+                                        <li><input id="donate-amount-1" class="form-control" name="Amount" value="500" type="radio"> <label data-amount="500" for="donate-amount-1">500</label></li>
+                                        <li><input id="donate-amount-1" class="form-control" name="Amount" value="1000" type="radio"> <label data-amount="1000" for="donate-amount-1">1000</label></li>
+
+                                        <li><input checked="checked" class="form-control" id="donate-amount-2" name="Amount" value="2000" type="radio"> <label data-amount="2000" for="donate-amount-2">2000</label></li>
+
+                                        <li><input id="donate-amount-1" class="form-control" name="Amount" value="3000" type="radio"> <label data-amount="3000" for="donate-amount-1">3000</label></li>
+
+
+                                        <li><input class="form-control" id="donate-amount-2" name="Amount" value="5000" type="radio"> <label data-amount="5000" for="donate-amount-2">5000</label></li>
+
+                                        <li>
+                                            <input name="Amount" class="form-control" placeholder="Other Amount" type="text" style="height:45px;width:260px">
+
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        @*<div class="col-md-6 col-sm-6 col-xs-12" style="margin-right:30px;margin-bottom:40px">
+                            <div class="form-group " style="margin-right:20px">
+                                <div>
+                                    <h3>Donation Type</h3>
+                                    <ul class="chicklet-list clearfix">
+                                        <li><input id="donate-amount-4" name="donate-amount" type="radio"> <label data-amount="4000" for="donate-amount-4" style="margin-left:150px">4000</label></li>
+
+
+                                        <li><input id="donate-amount-5" name="donate-amount" type="radio"> <label data-amount="5000" for="donate-amount-5" style="margin-top:-400px">5000</label></li>
+
+                                    </ul>
+                                        <div class="col-md-6 col-sm-6 col-xs-12" style="margin-right:30px;margin-bottom:40px">
+                                            <div class="form-group " style="margin-right:20px">
+                                                <div>
+                                                    <h3>Donation Type</h3>
+                                                    <ul class="chicklet-list clearfix">
+                                                        <li><input id="donate-amount-1" name="donate-amount" type="radio"> <label data-amount="1000" for="donate-amount-1">1000</label></li>
+
+
+                                                        <li><input checked="checked" id="donate-amount-2" name="donate-amount" type="radio"> <label data-amount="2000" for="donate-amount-2">2000</label></li>
+                                                    </ul>*@
+
+                        @*<label class="radio-inline" style="margin-right:30px">
+                                <input type="radio" name="Once" value="Once" style="zoom:1.5"><p style="font-size:20px;font-weight:bolder">Once</p> <br>
+                            </label>
+                            <label class="radio-inline" style="margin-bottom:0px">
+                                <input type="radio" name="Once" value="Month" style="zoom:1.5"><p style="font-size:20px;font-weight:bolder">Month</p> <br>
+                            </label>
+
+                                    </div>
+
+                                </div>
+                            </div>*@
+                        <div class="icon-box mb-0 p-0">
+                            <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                                <i class="pe-7s-users"></i>
+                            </a>
+                            <h3 class="text-gray pt-10 mt-0 mb-30">Account Information</h3>
+                        </div>
+                        <br />
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label>Account Holder Name</label>
+                                <input name="AccountName" class="form-control" value="" type="text" style="height:45px;width:260px">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Account Number </label>
+                                <input name="AccountNumber" class="form-control" value="" type="text" style="height:45px;width:260px">
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label>Expiry Date</label>
+                                <input name="duration" class="form-control" value="" type="number" max="100" min="1" style="height:45px;width:260px">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Sort Code</label>
+                                <input name="SortCode" class="form-control" value="" type="text" style="height:45px;width:260px">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group" style="margin-right:20px">
+                            <button style="background-color:#FF2A00;color:white;width:150px;height:43px" value="Donate Now" id="btn2">Donate Now </button>
+
+                        </div>
+
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <
+    <script>
+    function myFunction() {
+        var checkBox = document.getElementById("chk1");
+        var text = document.getElementById("edu");
+        if (checkBox.checked == true) {
+            text.style.display = "block";
+        }
+        else {
+            text.style.display = "none";
+        }
+
+    }
+    </script>
+    <script>
+    function Function() {
+        var checkBox = document.getElementById("chk2");
+        var text = document.getElementById("hlt");
+        if (checkBox.checked == true) {
+            text.style.display = "block";
+        }
+        else {
+            text.style.display = "none";
+        }
+
+    }
+    </script>
+}

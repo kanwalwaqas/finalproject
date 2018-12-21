@@ -1,0 +1,271 @@
+﻿
+@{
+    ViewBag.Title = "Sadakah";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page-title-container">
+    <div class="page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-captions">
+                <ul class="breadcrumbs"><li> <a href="../index.html">Home</a></li><li>Sadaqah</li></ul>                                        					<h1 class="entry-title">
+                    Sadaqah
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- yahan band hua-->
+<!-- yahan say copy kia -->
+
+<div id="main" class="clearfix " style="">
+    <div class="avada-row" style="">
+        <div id="content" style="float:left;">
+            <div id="post-235" class="post-235 page type-page status-publish hentry">
+                <div class="post-content">
+                    <h2>Give your sadaqah to the poor through Islamic Aid</h2>
+                    <p>Sadaqah (voluntary charity) is a virtuous deed in Islam. In fact, it is considered as a proof of one&#8217;s eeman (faith). The Prophet (s.a.w.s.) sallallaahu &#8216;alayhi wa sallam said in the following authentic  hadeeth:</p>
+                    <p>Abu Malik al-Ashari (r.a.) (radhi Allahu anhu) narrated that Allah&#8217;s Messenger (s.a.w.s.)  said:  &#8220;Cleanliness is half of faith.  Alhamdulillah (Praise be to Allah) fills the scale. SubhanAllah (Glory be to Allah) and Alhamdulillah (Praise be to Allah) fill up what is between the heavens and the earth.  Prayer is a light. Charity is proof (of one&#8217;s faith). Endurance is a brightness and the Qur&#8217;an is a proof on your behalf or against you. All men go out early in the morning and sell themselves, thereby setting themselves free or destroying themselves.&#8221; (Muslim, 432)</p>
+                    <form action="https://donate.islamicaid.com/?site=uk&amp;catId=235&amp;cat_Type=P" name="frm_home" id="frm_inner" target="_parent" method="get">
+                        <div class="donateTitle">Donate today, to help save a life</div><div class="inlinedonatewidget">
+                            <div class="currencytype">
+                                <input type="hidden" id="wpapp" name="wpapp" value="home" />
+                                <input type="hidden" value="2" name="wp_section_id" id="Donation_wp_section_id">
+                                <input type="hidden" id="Donation_is_general" name="is_general" value="0" />
+                                <input type="hidden" id="donation_from" name="donation_from" value="widget" />
+                                <select id="ddlDoller" class="inputFields" name="currency">
+                                    <option value="pound">£</option>
+                                    <option value="dollar">$</option>
+                                    <option value="euro">€</option>
+                                </select>
+                            </div>
+                            <div class="donateamount">
+                                <input id="txtAmount" class="numeric amount" onblur="if(value=='') value = 'Amount'" onfocus="if(value=='Amount') value = ''"
+                                       type="text" size="7" maxlength="8" value="Amount" name="total_amount">
+                            </div>
+                            <div class="donatetype">
+                                <select id="ddlDonationType1" class="inputFields" style="width:155px" onchange="toggleProjects('#ddlDonationType1', '#ddlProjects1');" name="donation_type_id">
+                                    <option value='Aqiqah'>Aqiqah</option>
+                                    <option value='Eid Gift'>Eid Gift</option>
+                                    <option value='Fitrana'>Fitrana</option>
+                                    <option value='Fidya'>Fidya</option>
+                                    <option selected='selected' value='General Fund'>General Fund</option>
+                                    <option value='Interest Money'>Interest Money</option>
+                                    <option value='Kafarah'>Kafarah</option>
+                                    <option value='Lillah'>Lillah</option>
+                                    <option value='Qurbani'>Qurbani</option>
+                                    <option value='Sadaqah'>Sadaqah</option>
+                                    <option value='Sadaqah Jariyah'>Sadaqah Jariyah</option>
+                                    <option value='Sadaqah Sacrifice'>Sadaqah Sacrifice</option>
+                                    <option value='Sehar & Iftar'>Sehar & Iftar</option>
+                                    <option value='Waqf'>Waqf</option>
+                                    <option value='Zakah'>Zakah</option>
+                                </select>
+                            </div>
+                            <div class="country">
+                                <select id="ddlCountry1" class="inputFields" style="width:155px" onchange="changecountry()" name="country_id">
+                                    <option value='Afghanistan'>Afghanistan</option>
+                                    <option value='Africa'>Africa</option>
+                                    <option value='Bangladesh'>Bangladesh</option>
+                                    <option value='Burma (Myanmar)'>Burma (Myanmar)</option>
+                                    <option value='India'>India</option>
+                                    <option value='Kashmir'>Kashmir</option>
+                                    <option value='Kenya'>Kenya</option>
+                                    <option value='Lebanon'>Lebanon</option>
+                                    <option value='Libya'>Libya</option>
+                                    <option value='Malawi'>Malawi</option>
+                                    <option value='Mauritius'>Mauritius</option>
+                                    <option selected='selected' value='Most in Need'>Most in Need</option>
+                                    <option value='Pakistan'>Pakistan</option>
+                                    <option value='Palestine'>Palestine</option>
+                                    <option value='Philippines'>Philippines</option>
+                                    <option value='Serbia'>Serbia</option>
+                                    <option value='Somalia'>Somalia</option>
+                                    <option value='Sri Lanka'>Sri Lanka</option>
+                                    <option value='Sudan'>Sudan</option>
+                                    <option value='Syria'>Syria</option>
+                                    <option value='Yemen'>Yemen</option>
+                                </select>
+                            </div>
+                            <div class="projects">
+                                <select id="ddlProjects1" class="inputFields" style="width:155px" name="program_id">
+                                    <option selected='selected' value='Most in Need'>Most in Need</option>
+                                    <option value='Administration'>Administration</option>
+                                    <option value='Child Sponsorship'>Child Sponsorship</option>
+                                    <option value='Children'>Children</option>
+                                    <option value='Clothes'>Clothes</option>
+                                    <option value='Cow'>Cow</option>
+                                    <option value='Disabled'>Disabled</option>
+                                    <option value='Education'>Education</option>
+                                    <option value='Elderley welfare'>Elderley welfare</option>
+                                    <option value='Emergency Relief'>Emergency Relief</option>
+                                    <option value='Eye Operations'>Eye Operations</option>
+                                    <option value='Feed the fasting'>Feed the fasting</option>
+                                    <option value='Food and Water'>Food and Water</option>
+                                    <option value='Food for the poor'>Food for the poor</option>
+                                    <option value='Food Parcels'>Food Parcels</option>
+                                    <option value='Goats'>Goats</option>
+                                    <option value='Healthcare'>Healthcare</option>
+                                    <option value='Hospital Construction'>Hospital Construction</option>
+                                    <option value='Livelihoods'>Livelihoods</option>
+                                    <option value='Orphans Welfare'>Orphans Welfare</option>
+                                    <option value='Prisoners Welfare'>Prisoners Welfare</option>
+                                    <option value='Quran'>Quran</option>
+                                    <option value='Refugees'>Refugees</option>
+                                    <option value='Sanitation'>Sanitation</option>
+                                    <option value='School Building'>School Building</option>
+                                    <option value='Sehr & Iftaar'>Sehr & Iftaar</option>
+                                    <option value='Sewing Machnie'>Sewing Machnie</option>
+                                    <option value='Skills Training'>Skills Training</option>
+                                    <option value='Tree Plantation'>Tree Plantation</option>
+                                    <option value='Water'>Water</option>
+                                    <option value='Widows Welfare'>Widows Welfare</option>
+                                    <option value='Women Welfare'>Women Welfare</option>
+                                    <option value='Income Generation'>Income Generation</option>
+                                    <option value='Poverty Alleviation'>Poverty Alleviation</option>
+                                </select>
+                            </div>
+                            <div class="last"><a href="#" onclick="return pageSubmit2();" class="inlinedonatebutton">Donate</a></div>
+                        </div>
+                    </form>
+
+                    <script type="text/javascript">jQuery(".numeric").numeric();</script>
+                    <script type="text/javascript">
+         function toggleProjects(srcCtl,trgCtl) {
+            var arr = [1,2,4,5,9,11]
+            if( arr.indexOf(parseInt(jQuery(srcCtl).val()))>=0 ){
+                jQuery(trgCtl).val("").attr("disabled","disabled");
+            }
+            else{
+                jQuery(trgCtl).removeAttr("disabled");
+            }
+         }
+
+         jQuery(function(){
+            if(jQuery("#ddlDonationType1").val() == 9) {
+              jQuery("#ddlProjects1").val("").attr("disabled","disabled");
+            }
+            else{
+                jQuery("#ddlProjects1").removeAttr("disabled");
+            }
+         });
+
+                    </script>
+                    <p>The more we give sadaqah  the more we increase our eeman and thus, expect Allah&#8217;s rewards both in this world and in the life hereafter. Giving charity out of our wealth does not decrease our wealth but instead Allah (s.w.t.) increases it:</p>
+                    <p>&#8220;Allah will deprive usury of all blessing, but will give increase for deeds of charity: for He loves not creatures ungrateful and sinner.&#8221; (Qur&#8217;an, 2: 276)</p>
+                    <p>&#8220;That which you give in usury for increase through the property of (other) people, will have no increase with Allah: but that which you give for charity, seeking the Countenance of Allah, (will increase); it is those who will get a recompense multiplied.&#8221; (Qur&#8217;an, 30:39)</p>
+                    <p>Abu Hurairah (r.a.) reported Allah&#8217;s Messenger (s.a.w.s.) as saying: &#8220;Charity does not in any way decrease the wealth and the servant who forgives, Allah adds to his respect; and the one who shows humility, Allah elevates him in the estimation (of the people).&#8221; (Muslim Vol. 4, Hadith  6264)</p>
+                    <p>Sadaqah is not restricted to giving part of our wealth or material possessions or any special deed of righteousness.  Islam considers all good deeds as sadaqah that increase our eeman:</p>
+                    <p>Abu Musa narrated that the Prophet (s.a.w.s.) said, &#8220;Every Muslim has to give in sadaqah (charity).&#8221; The people asked, &#8220;O Allah&#8217;s Messenger (s.a.w.s.)! If someone has nothing to give, what will he do?&#8221; He said, &#8220;He should work with his hands and benefit himself and also give in charity (from what he earns).&#8221; The people further asked, &#8220;If he cannot do even that?&#8221; He replied, &#8220;Then he should help the needy who appeal for help.&#8221; Then the people asked, &#8220;If he cannot do that?&#8221; He replied, &#8220;Then he should perform all that is good and keep away from all that is evil and this will be regarded as charitable deeds.&#8221; (Bukhari Vol. 2, Hadith 524)</p>
+                    <p>The Messenger of Allah (s.a.w.s.) said: &#8220;To smile in the company of your brother is charity. To command to do good deeds and to prevent others from doing evil is charity.  To guide a person in a place where he can not get  astray is charity.  To remove troublesome things like thorns and bones from the road is charity.  To pour water from your jug into the jug of your brother is charity.  To guide a person with defective vision is charity for you.&#8221; (Bukhari)</p>
+                    <p>Since sadaqah is not limited to giving of money or part of our wealth, every Muslim can therefore earn  rewards from Allah. Sadaqah  is an easy way to increase our eeman. Every Muslim whether poor or wealthy can give sadaqah at all times. The Prophet (s.a.w.s.) tells us that dhikr (remembrance of Allah) is a form of sadaqah. We read in the following Ahadeeth:</p>
+                    <p>Abu Hurairah narrated that &#8220;Abu Dharr said to the Messenger of Allah, &#8216;The wealthy people have all the rewards; they pray as we pray; they fast as we fast; and they have surplus wealth which they give in charity; but we have no wealth which we may give in charity.&#8217; Allah&#8217;s Messenger (s.a.w.s.) said: &#8216;Abu Dharr, should I not teach you phrases by which you acquire the rank of those who excel you? No one can acquire your rank except one who acts like you.&#8217; He said, Why not, Allah&#8217;s Messenger (s.a.w.s.)? He said: &#8216;Exalt Allah say: &#8220;Allahu Akbar&#8221; (Allah is Most Great) after each prayer thirty-three times; and praise Him say: &#8220;Alhamdulillah&#8221; (Praise be to Allah) thirty-three times; and glorify Him say: &#8220;Subhan Allah&#8221; (Glory be to Allah) thirty-three times; and end it by saying, &#8220;La ilâha illallâhu wahdahu la shareeka lahu, lahul mulku wa lahul hamdu yuhyi wa yomeetu wa Huwa &#8216;ala kulli shai&#8217;in Qadeer.&#8221; (There is no god but Allah alone, He has no partner, to Him belongs the Kingdom, to Him praise is due and He has power over everything.) Your sins will be forgiven, even if they are like the foam of the sea.'&#8221; (Abu Dawud 1499)</p>
+                    <p>Abu Dharr narrated that Allah&#8217;s Messenger (s.a.w.s.) said, &#8220;In the morning charity is due from every bone in the body of every one of you. Every utterance of Allah&#8217;s glorification is an act of charity. Every utterance of praise of Him is an act of charity; every utterance of profession of His Oneness is an act of charity; every utterance of profession of His Greatness is an act of charity; enjoining good is an act of charity; forbidding what is disreputable is an act of charity; and two rak&#8217;ahs which one prays in the forenoon will suffice.&#8221; (Muslim 1557)</p>
+                    <p>For our own success, we should spend time, money and efforts in giving sadaqah for the pleasure of Allah as the rewards of sadaqah is nothing but success, especially in the Hereafter:</p>
+                    <p>&#8220;The likeness of those who spend for Allah&#8217;s sake is as the likeness of a grain of corn, it grows seven ears every single ear has a hundred grains, and Allah multiplies (increases the reward of) for whom He wills, and Allah is sufficient for His creatures&#8217; needs, All-Knower).&#8221; (Qur&#8217;an, 2:261)</p>
+                    <p>&#8220;Those who (in charity) spend of their goods by night and by day, in secret and in public have their reward with their Rabb (only God and Sustainer). On them shall be no fear nor shall they grieve.&#8221;   (Qur&#8217;an, 2:274)</p>
+                    <p>&#8220;…that which you give for charity, seeking the Countenance of Allah, (will increase); it is those who will get a recompense multiplied.&#8221; (Qur&#8217;an, 30:39)</p>
+                    <p>&#8220;Only those who believe in Our Signs, who when they are recited to them fall down in adoration, and celebrate the praises of their Rabb (only God and Sustainer), nor are they (ever) puffed up with pride. They forsake their beds of sleep, the while they call on their Rabb (only God and Sustainer), in  Fear and Hope.  And they spend (in charity) out of the sustenance which We have bestowed on them. Now no person knows what delights of the eye are kept hidden (in reserve) for them &#8212; as a reward for their (good) Deeds. Is then the man who believes no better than the man who is rebellious and wicked? Not equal are they. For those who believe and do righteous deeds are Gardens as hospitable Homes, for their (good) deeds.&#8221; (Qur&#8217;an, 32:15-19)</p>
+                    <p>&#8220;For Muslim men and women, for believing men and women for devout men and women for true men and women, for men and women who are patient and constant, for men and women who humble themselves, for men and women who give in charity, for men and women who fast, for men and women who guard their chastity, and for men and women who engage much in Allah&#8217;s remembrance for them has Allah  prepared forgiveness and great reward.&#8221; (Qur&#8217;an, 33:35)</p>
+                    <p>Qais ibn Abu Hazim narrated that&#8230;. Allah&#8217;s Messenger (s.a.w.s.) said,  &#8220;A Muslim is rewarded (in the Hereafter) for whatever he spends except for something that he spends on building.&#8221; (Bukhari, Vol. 7, Hadith 576)</p>
+                    <p>Mu&#8217;aadh bin Jabal (r.a.) related from the Prophet (s.a.w.s.) &#8220;Sadaqah extinguishes sin as water extinguishes fire.&#8221; (Ahmad, Tirmidhi and Ibn Majah) The Prophet (s.a.w.s.) also said: &#8220;The believer&#8217;s shade on the Day of Resurrection will be his Sadaqah.&#8221; (Ahmad)</p>
+                    <p>To be able to enjoy Allah&#8217;s tremendous rewards for every sadaqah that we give, we need to observe the following teachings:  1. Sadaqah must be done sincerely for the pleasure of Allah and not out of riya&#8217;  (show off) to gain praise or recognition from others:  &#8220;O you who believe! Do not render vain your charity by reminders of your generosity or by injury, like him who spends his wealth to be seen of men and he does not believe in Allah nor in the last Day.&#8221; (Qur&#8217;an, 2: 264)</p>
+                    <p>Sa&#8217;d ibn Abu Waqqas narrated that Allah&#8217;s  Messenger (s.a.w.s.) said, &#8220;&#8230;whatever you spend (for Allah&#8217;s  sake) you will be rewarded for it, even for a morsel of food which you may put in the mouth of your wife.&#8221;  (Bukhari, Vol. 8, Hadith 725; Vol.1, Hadith 53)</p>
+                    <h3>2. It is better to conceal what we give or do as sadaqah:</h3>
+                    <p>&#8220;And whatever you spend in charity or whatever vow you make, be sure Allah knows it all.  But the wrongdoers have no helpers.  If you disclose (acts of) charity, even so it is well, but if you conceal them and make them reach those (really) in need, that is best for you. It will remove from you some of your (stains of) evil.  And Allah is well acquainted with what you do.&#8221; (Qur&#8217;an, 2:270-271)</p>
+                    <p>Prophet Muhammad (s.a.w.s.) said, &#8220;Seven people will be shaded by Allah under His shade on the day when there will be no shade except His.  They are: 1. a just ruler, 2. a youth who grew up in the worship of Allah, 3. a man whose heart is attached to the mosque, 4. two men who love each other for Allah&#8217;s sake,  meeting for that and parting for that. 5. a man who is called by  a woman of beauty and position but he says,  &#8220;I fear Allah&#8221;, 6. a man who gives in charity and hides it, such that his left hand does not know what his right hand gives in charity, and 7. a man who remembered Allah in private and so his eyes shed tears.&#8221; (Sahih Al-Bukhari (Eng. translation) vol.2, hadeeth no. 504)</p>
+                    <h3>3. Sadaqah must be from halal (lawful) source:</h3>
+                    <p>Abu Hurairah (r.a.) narrated that Allah&#8217;s Messenger (s.a.w.s.) said, &#8220;If one gives in charity what equals one date-fruit from the honestly earned money and Allah accepts only the honestly earned money Allah takes it in His Right (hand).  And then, enlarges its reward for that person (who has given it), as anyone of you brings up his baby horse, so much so that it becomes as big as a mountain.&#8221; (Bukhari, Vol.2, Hadith 491)</p>
+                    <h3>4. Begin charity with your dependents:</h3>
+                    <p>Hakim ibn Hizam narrated that the Prophet (s.a.w.s.) said: &#8220;The upper hand is better than the lower hand, (i.e., he who gives charity is better than him who takes it). One should start giving first to his dependents. And the best object of charity is that which is given by a wealthy person (from the money which is left after his expenses.)  And whoever abstains from asking others for some financial help, Allah will give him and save him from asking others, Allah will make him self-sufficient.&#8221; (Bukhari, Vol.2, Hadith 508)</p>
+                    <p>Abu Umamah (r.a.) narrated that Allah&#8217;s Messenger  said: &#8220;O son of Adam, it is better for you if you spend your surplus (wealth), but if you withhold it, it is evil for you. There is (however) no reproach for you (if you withhold means necessary) for a living. And begin (charity) with your dependents; and the upper hand is better than the lower hand.&#8221; (Muslim, 2256)</p>
+                    <h3>5. Not to delay giving of sadaqah nor show lethargy or negligence in giving sadaqah:</h3>
+                    <p>And spend something (in charity) out  of the substance which We have bestowed on you, before death should come to any of you and he should say, &#8220;O my Rabb (only God and Sustainer)!  Why do you not give me respite for a little while? I should then have given (largely) in charity, and I should have been one of the doers of good.&#8221; (Qur&#8217;an, 63:10)</p>
+                    <p>Haritha ibn Wahb narrated that he heard the Prophet (s.a.w.s.)  saying, &#8220;O people! Give in charity as a time will come upon you when a person will wander about with his object of charity and will not find anybody to accept it, and anyone (who will be requested to take it) will say, &#8220;If you had brought it yesterday, I would have taken it, but today I am not in need of it.&#8221; (Bukhari Vol. 2, Hadith 492)</p>
+                    <p>Abu Hurairah (r.a.) narrated that a  man came to the Prophet (s.a.w.s.) and asked, &#8220;O Allah&#8217;s Messenger which charity is the most superior in reward?&#8221; He replied, &#8220;The charity which you practice while you are healthy, niggardly and afraid of poverty and wish to become wealthy. Do not delay it to the time of approaching death and then say, &#8216;Give so much to such and such, and so much to such and such.&#8217; (And it has already belonged to such and such (his heirs).&#8221; (Bukhari Vol. 2, Hadith 500)</p>
+                    <p>&#8220;Do not show lethargy or negligence in giving alms and charity till your last breath.&#8221; (Bukhari and Muslim)</p>
+                    <h3>6. Do not count the sadaqah you give:</h3>
+                    <p>&#8220;Spend in charity and do not keep count for then Allah will also keep count in giving you provision.&#8221; (Bukhari and Muslim)</p>
+                    <h3>7.  Seek only the desire to see Allah, which is the supreme success in Paradise.</h3>
+                    <p>Do not expect favor or reward from any person for the sadaqah you give: &#8220;Those who spend their wealth for increase in self-purification, and have in their minds no favor from anyone for which a reward is expected in return, but only the desire to seek for the Countenance of their Creator Most High; and soon will they attain (complete) satisfaction.&#8221; (Qur&#8217;an, 92:18-21)</p>
+                    <p>From the above virtuous teachings, we can conclude that indeed, Islam opens for us many ways of increasing our eeman and good deeds through sadaqah. We can perform easy good deeds like smiling and dhikr (remembrance of Allah), which we can do at anytime and get rewards. The rich among us can earn more rewards if we give part of our wealth to the poor members of our relatives, friends, neighbors and the society at large.  If we have the ability to extend sadaqah especially to other poor Muslims outside our community or country then we must  extend our help.  Another virtuous way of giving sadaqah is by supporting individuals and groups who are doing Da&#8217;wah (inviting people to Islam or the Truth) for the pleasure of Allah the Almighty. Let us take inspiration from the following Qur&#8217;anic ayah:</p>
+                    <p>&#8220;And he who brings the Truth and he who confirms (and supports) it &#8212; such are the men who do right.  They shall have all that they wish for, with their Rabb (Only God, Cherisher and Sustainer). Such is the reward of those who do good: so that Allah will remit from them (even) the worst in their deeds and give them their reward according to the best of what they have done.&#8221; (Qur&#8217;an 39:33-35)  Let us hasten to give sadaqah for life in this world is short and temporary while the world in the</p>
+                    <p>Hereafter is everlasting.  We never know when death has been decreed for us. Today we live and we never know how long we will enjoy the pleasure of this world. But one thing is certain: life in this world is nothing compared to the everlasting life in the Hereafter. Allah (s.w.t.) tells us: &#8220;Nothing is the life of this world but play and amusement, but best is the Home in the Hereafter, for those who are righteous, will you not then understand?&#8221; (Qur&#8217;an, 6:32)</p>
+                    <p>&#8220;Allah does enlarge, or grant by (strict) measure, the sustenance (which He gives) to whom so He pleases &#8212; (the worldly) rejoice in the life of this world. But the life of this world is but little comfort compared to the Hereafter.&#8221; (Qur&#8217;an, 13:26)</p>
+                    <p>Let us prepare ourselves for the  everlasting world to come. Let us be among those who will earn Allah&#8217;s rewards in Jannah (the Garden of Bliss or Paradise) through giving sadaqah in many ways. Let us continue earning Allah&#8217;s rewards of our good deeds by giving sadaqah that continues to benefit others.  Let us think of giving sadaqah to support Islamic projects like building of mosques, Islamic schools, Islamic libraries, orphanage and da&#8217;wah centers. If Allah has blessed us with wealth, let us not delay to build any or all of the said Islamic projects for the sole pleasure of Allah. If we do so, we will certainly attain the rewards of doing good deeds continuously even after  we die. Let us be inspired to give sadaqah with the following authentic hadeeth:</p>
+                    <p>Abu Hurairah (r.a.) narrated that Allah&#8217;s  Messenger (s.a.w.s.) said: &#8220;Verily what a believer continues to receive (in the form of reward) for his action and his virtues after his death is the knowledge which he acquired and then disseminated; the pious son that he left behind him;  or a copy of the Qur&#8217;an which he left as a legacy; or the mosques that he had built;  or the inn that he had built for the wayfarers; or the canal that he caused to flow, or a sadaqah which he gave out of his property in the state when he was healthy and alive. (These are the acts of goodness the reward of which) reaches him even after his death.&#8221; (Tirmidhi, 254; Ibn Majah and Bayhaqi)</p>
+                    <p>For those who are wealthy but miser or negligent in giving sadaqah may they take admonitions from the following words of Allah and His Messenger (s.a.w.s.):  So he who gives (in charity) and fears (Allah), and (in all sincerity) testifies to the Best, We will indeed make smooth for him the path to Ease. But he who is a greedy miser and thinks himself self-sufficient, and gives the lie to the Best, &#8212; We will indeed make smooth for him the Path of Misery; nor will his wealth profit him when he falls headlong (into the Pit). Verily We take upon Us to guide, and verily unto Us (belong) the End and the Beginning.  Therefore do I warn you of a Fire blazing fiercely; none shall burn therein but those most unfortunate ones who give the lie to Truth and turn their backs. But those most devoted to Allah shall be removed far from it. (Qur&#8217;an, 92:4-17)</p>
+                    <p>Abu Hurairah (r.a.) narrated that the Prophet (s.a.w.s.) said, &#8220;The example of a miser and the one who gives in charity, is like the example of two men wearing iron cloaks so tightly that their arms are raised forcibly towards their collar-bones. So, whenever a charitable person wants to give in charity, his cloak spreads over his body so much so that it wipes out his traces. But whenever the miser wants to give in charity, the rings (of the iron cloak) come closer to each other and press over his body and his hands get connected to his collar-bones. Abu Huraira heard the Prophet (s.a.w.s.) saying, &#8220;The miser then tries to widen it but in vain.&#8221; (Bukhari, Vol. 4, Hadith 166; also see Vol. 2, Hadith 523)</p>
+                    <p>Abu Hurairah (r.a.) narrated that the Prophet (s.a.w.s.) said, &#8220;Every day two angels come down from Heaven and one of them says, &#8216;O Allah! Compensate every person who spends in Your cause&#8217;, and the other (angel) says, &#8216;O Allah! Destroy every miser.'&#8221; (Bukhari, Vol. 2, Hadith 522)</p>
+                    <p>Abu Dharr (r.a.) narrated that&#8230; Allah&#8217;s Messenger (s.a.w.s.) said, &#8220;Those who have much wealth (in this world) will be the least rewarded (in the Hereafter) except those who do like this and like this (i.e., spend their money in charity).&#8221; (Bukhari, Vol. 8, Hadith 285)</p>
+                    <p>Abu Bakr As-Siddiq (r.a.) narrated that Allah&#8217;s  Messenger (s.a.w.s.) said, &#8220;A crafty one, a miser, and one who keeps reminding people of what he has given, will not enter Paradise.&#8221; (Tirmidhi, 1873)</p>
+                    <p>May Allah the Most Gracious, the Most Merciful give us opportunities to do many ways of giving sadaqah for His pleasure and reward us best life, especially in the Hereafter.  May we spend our lives, time, money and efforts or everything in us to do deeds that Allah accepts as forms of sadaqah solely for His Sake. May our Rabb save us from the Hell-Fire by protecting us from being miser. Ameen.</p>
+                </div>
+            </div>
+        </div>
+        <div id="sidebar" style="float:right;">
+            <div id="nav_menu-11" class="widget widget_nav_menu">
+                <div class="heading"><h3>Learning zone</h3></div><div class="menu-learning-zone-3-container">
+                    <ul id="menu-learning-zone-3" class="menu">
+                        <li id="menu-item-2558" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2558"><a href="../zakat-zakah/index.html">Zakat (Zakah)</a></li>
+                        <li id="menu-item-2559" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2559"><a href="../zakat-calculator/index.html">Calculate your Zakat</a></li>
+                        <li id="menu-item-2561" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-235 current_page_item menu-item-2561"><a href="index.html">Sadaqah</a></li>
+                        <li id="menu-item-2560" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2560"><a href="../zakatul-fitr/index.html">Zakat ul fitr</a></li>
+                        <li id="menu-item-2562" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2562"><a href="../fidya/index.html">Fidya</a></li>
+                        <li id="menu-item-2563" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2563"><a href="../kafara/index.html">Kafarah</a></li>
+                        <li id="menu-item-2564" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2564"><a href="../aqiqah/index.html">Aqiqah</a></li>
+                        <li id="menu-item-2565" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2565"><a href="../qurbani/index.html">Qurbani</a></li>
+                        <li id="menu-item-2566" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2566"><a href="../waqf-fund/index.html">Waqf fund</a></li>
+                        <li id="menu-item-2567" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2567"><a href="../islamic-will/index.html">Islamic Will</a></li>
+                        <li id="menu-item-2568" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2568"><a href="../sadaqa-e-jarya/index.html">Sadaqa-e-Jarya</a></li>
+                        <li id="menu-item-2569" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2569"><a href="../bank-interest-money/index.html">Bank interest money</a></li>
+                    </ul>
+                </div>
+            </div><div id="simpleimage-9" class="widget widget_simpleimage">
+                <div class="heading"><h3>Calculate Your Zakat</h3></div>
+                <p class="simple-image">
+                    <a href="../zakat-calculator/index.html"><img width="220" height="200" src="~/139n2d46dnkv2ayx1o36rbqz-wpengine.netdna-ssl.com/wp-content/uploads/2015/06/zakat-calculatar.jpg" class="attachment-full size-full" alt="" /></a>
+                </p>
+
+            </div><div id="text-18" class="widget widget_text">
+                <div class="heading"><h3>Newsletter</h3></div>			<div class="textwidget">
+                    <div class="sidebar_enews">
+                        <div style="padding: 6px; padding-bottom: 0px;" class="form">
+                            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td width="">
+                                            <input type="text" name="NewsletterSubscription[email]" class="numeric amount" value="" maxlength="150" id="email" style="width:92% !important;display:block !important;padding:6px !important; border:1px #b9b9b9 solid !important;font-family: " Open Sans",Arial,Helvetica,sans-serif !important;font-size:13px;-webkit-box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.75);-moz-box-shadow:1px 1px 2px 0px rgba(50, 50, 50, 0.75);box-shadow:1px 1px 2px 0px rgba(50, 50, 50, 0.75);">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" style="padding-top:10px">
+                                            <a id="atag" class="wmp" onclick="return isValidEmail();" "width:300,height:410">
+                                                <input style="border:0px" type="button" class="iasubscribe" value="Subscribe" />
+                                        </td>
+                                        </a>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <script type="text/javascript" src="~/139n2d46dnkv2ayx1o36rbqz-wpengine.netdna-ssl.com/wp-content/plugins/ia-e-news-signup/js/jquery.watermark.min.js"></script>
+                        <script type="text/javascript">
+        jQuery(function($) {
+    jQuery("#email").watermark("Email", {useNative: false}, {className:"greyText"});
+    });
+
+    function isValidEmail()
+    {
+        jQuery("#atag").removeAttr("rel");
+        jQuery("#atag").attr("rel","width:300,height:410");
+        jQuery("#atag").attr("href","../IA_Donate/index2263.html?r=Subscribe/iFrameSignUp/email="+jQuery("#email").val());
+        jQuery("#email").val("");
+        return true;
+     }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

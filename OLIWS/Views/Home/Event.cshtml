@@ -1,0 +1,78 @@
+﻿@model OLIWS.Models.work_sub_cat
+@{
+    ViewBag.Title = "Event";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="inner-banner has-base-color-overlay text-center" style="background:@Url.Content("~/Designing/OLIWSHOME/images/background/charitable-giving.jpg")">
+    <div class="container">
+        <div class="box">
+            <h1>Detail</h1>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<div class="breadcumb-wrapper">
+    <div class="container">
+
+
+
+        <div class="pull-right">
+            <a class="get-qoute" href="#"><i class="fa fa-arrow-circle-right"></i>Become a Volunteer</a>
+        </div>
+    </div>
+</div>
+<section class="about sec-padd2 style-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 left-column">
+                <div class="row padd-bottom-30">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="img-box">
+                            <img src="@Url.Content(Model.event_image)" style="height:290px;width:350px" alt="Error">
+                        </div>
+                    </div>
+                    <center>
+                        <h3 style="color:black;font-size:20px;margin-left:400px">Name:&nbsp;&nbsp;&nbsp;@Model.Name</h3>
+
+                        <h3 style="color:black;font-size:20px;margin-left:400px">Tittle:&nbsp;&nbsp;&nbsp;@Model.Title</h3>
+
+                    </center><h3 style="margin-left:400px">Detail</h3>
+                    <p style="color:black;font-size:20px;margin-left:400px;width:600px">@Model.detail</p>
+                    <h3 style="margin-left:400px">Description</h3>
+                    <div>
+                        <p style="color:black;font-size:20px;margin-left:400px;width:600px">@Model.Description</p><div /><br />
+                        <p style="color:black;font-size:20px;margin-left:400px">@Model.Date</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+@*<article class="item">
+
+        <div class="inner-box">
+            <img src="@Url.Content(Model.event_image)" style="height:290px;width:350px" alt="Error">
+
+            <div class="overlay">
+                <div class="top">
+                    <div class="box">
+                        <div class="content">
+                            <a class="img-popup thm-btn" data-group="1" href="@Url.Content(item.event_image)">view project</a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bottom">
+                    <a href="single-gallery.html">
+                        <h4>Clean poor urban areas to protect from pollution.</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>}*@

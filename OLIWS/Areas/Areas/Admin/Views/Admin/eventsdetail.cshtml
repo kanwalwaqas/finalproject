@@ -1,0 +1,46 @@
+﻿@model IEnumerable<OLIWS.Models.work_events>
+@{
+    ViewBag.Title = "eventsdetail";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table" style="margin-top:400px">
+    <tr>
+
+
+
+        <th>
+            <label>Events</label>
+
+        </th>
+        <th>
+
+            <label>Campaign</label>
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.events)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.campigns)
+            </td>
+
+            <td class="text-right">
+                <a href="~/Admin/Admin/eventstatus/@item.work_eventsID" class="btn btn-success btn-xs" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil"></i></a>
+
+            </td>
+        </tr>
+    }
+
+</table>
+
+

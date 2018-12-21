@@ -1,0 +1,202 @@
+﻿@model OLIWS.Models.ApplicationUser
+@{
+    ViewBag.Title = "Userblock";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>ApplicationUser</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+                    
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+            <input type="hidden" name="FirstName" value="@Model.FirstName" /> 
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="hidden" name="LastName" value="@Model.LastName" /> 
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+           
+        </div>
+
+        <div class="form-group">
+            <input type="hidden" name="Phone" value="@Model.Phone" /> 
+                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+            </div>
+       
+
+        <div class="form-group">
+            <input type="hidden" name="Gender" value="@Model.Gender" /> 
+                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+            </div>
+     
+
+        <div class="form-group">
+            <input type="hidden" name="Date_of_birth" value="@Model.Date_of_birth" /> 
+                @Html.ValidationMessageFor(model => model.Date_of_birth, "", new { @class = "text-danger" })
+            </div>
+     
+
+        <div class="form-group">
+            <input type="hidden" name="CNIC" value="@Model.CNIC" /> 
+                @Html.ValidationMessageFor(model => model.CNIC, "", new { @class = "text-danger" })
+            </div>
+       
+
+        <div class="form-group">
+            <input type="hidden" name="Selected_city" value="@Model.Selected_city" /> 
+                @Html.ValidationMessageFor(model => model.Selected_city, "", new { @class = "text-danger" })
+            </div>
+       
+
+        <div class="form-group">
+            <input type="hidden" name="Selected_Area" value="@Model.Selected_Area" /> 
+                @Html.ValidationMessageFor(model => model.Selected_Area, "", new { @class = "text-danger" })
+           
+        </div>
+
+        <div class="form-group">
+            <input type="hidden" name="Address" value="@Model.Address" /> 
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+         
+        </div>
+
+        <div class="form-group">
+            <input type="hidden" name="Muslim" value="@Model.Muslim" /> 
+                @Html.ValidationMessageFor(model => model.Muslim, "", new { @class = "text-danger" })
+         
+        </div>
+
+        <div class="form-group">
+            <input type="hidden" name="Category" value="@Model.Category" /> 
+                @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+            </div>
+
+
+            <div class="form-group">
+                <label>User Status</label>
+                <div class="col-xs-12">
+                    <select name="userStatus" class="selectpicker" data-style="btn-white" data-size="3">
+                        <option>True</option>
+                        <option>False</option>
+                    </select>
+                    @Html.ValidationMessageFor(model => model.userStatus, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+        <div class="form-group">
+            <input type="hidden" name="Email" value="@Model.Email" /> 
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+
+
+        <div class="form-group">
+            <input type="hidden" name="Email" value="@Model.Email" /> 
+                    @Html.ValidationMessageFor(model => model.EmailConfirmed, "", new { @class = "text-danger" })
+                </div>
+           
+      
+
+        <div class="form-group">
+            <input type="hidden" name="PasswordHash" value="@Model.PasswordHash" /> 
+                @Html.ValidationMessageFor(model => model.PasswordHash, "", new { @class = "text-danger" })
+           
+        </div>
+
+        <div class="form-group">
+            <input type="hidden" name="SecurityStamp" value="@Model.SecurityStamp" /> 
+                @Html.ValidationMessageFor(model => model.SecurityStamp, "", new { @class = "text-danger" })
+            </div>
+       
+
+        <div class="form-group">
+            <input type="hidden" name="PhoneNumber" value="@Model.PhoneNumber" /> 
+                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+            </div>
+       
+
+        <div class="form-group">
+          
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.PhoneNumberConfirmed)
+                    @Html.ValidationMessageFor(model => model.PhoneNumberConfirmed, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+          
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.TwoFactorEnabled)
+                    @Html.ValidationMessageFor(model => model.TwoFactorEnabled, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="hidden" name="LockoutEndDateUtc" value="@Model.LockoutEndDateUtc" /> 
+                @Html.ValidationMessageFor(model => model.LockoutEndDateUtc, "", new { @class = "text-danger" })
+            </div>
+     
+
+        <div class="form-group">
+          
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.LockoutEnabled)
+                    @Html.ValidationMessageFor(model => model.LockoutEnabled, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="hidden" name="AccessFailedCount" value="@Model.AccessFailedCount" />
+                @Html.ValidationMessageFor(model => model.AccessFailedCount, "", new { @class = "text-danger" })
+           
+        </div>
+
+        <div class="form-group">
+            <input type="hidden" name="UserName" value="@Model.UserName" />
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+            </div>
+
+       
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

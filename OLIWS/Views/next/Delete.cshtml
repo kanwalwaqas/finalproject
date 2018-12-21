@@ -1,0 +1,73 @@
+﻿@model OLIWS.Models.Account
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Account</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.admin.FirsName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.admin.FirsName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.client.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.client.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.donor.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.donor.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fund.Fund_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fund.Fund_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.loan.Loan_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.loan.Loan_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.register.RegisterID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.register.RegisterID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

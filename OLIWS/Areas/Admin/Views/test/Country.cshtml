@@ -1,0 +1,60 @@
+﻿@model IEnumerable<OLIWS.Models.Country>
+
+@{
+    ViewBag.Title = "Country";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Country</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<h2>country</h2>
+
+
+<div class="container" style="font-family:Arial">
+    <form method="post">
+        <h3>Countries </h3>
+        @Html.AntiForgeryToken()
+        <input type="text" name="country_name" class="form-control" id="fname" maxlength="25" onkeyup="validatename('fname','coerror',1,'C','Enter Alphabet only')" style="height:30px;width:200px">
+        <span id="coerror"></span>
+        <div class="col-md-offset-2 col-md-10" style="margin-top:-30px;margin-right:40px">
+            <input type="submit" value="Add" class="btn btn-info btn-fill btn-wd" />
+        </div>
+        @if (ViewBag.CountryError != "")
+        {
+            <span>@ViewBag.CountryError</span>
+        }
+    </form>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.country_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.country_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.status)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CountryID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CountryID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CountryID })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

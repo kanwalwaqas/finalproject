@@ -1,0 +1,60 @@
+﻿@model IEnumerable<OLIWS.Models.State>
+@using OLIWS.Models;
+@{
+    ViewBag.Title = "State";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+<h2>state</h2>
+
+
+<div class="container" style="font-family:Arial">
+    <form method="post">
+        <h3>State</h3>
+        @Html.AntiForgeryToken()
+        <input type="text" name="state_name" class="form-control" id="fname" maxlength="25" onkeyup="validatename('fname','coerror',1,'C','Enter Alphabet only')" style="height:30px;width:200px">
+        <span id="coerror"></span>
+        <div class="col-md-offset-2 col-md-10" style="margin-top:-30px;margin-right:40px">
+            <input type="submit" value="Add" class="btn btn-info btn-fill btn-wd" />
+            @if (ViewBag.CountryExistencesError != "")
+            {
+                <span>@ViewBag.CountryExistencesError</span>
+            }
+        </div>
+
+    </form>
+    <table class="table">
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.state_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (State st in Model)
+        {
+            <tr>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => st.state_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => st.status)
+                </td>
+                <td>
+                    @Html.ActionLink(st.state_name, "city", new { CID = st.state_name }) |
+                    @Html.ActionLink("Details", "Details", new { id = st.state_name }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = st.state_name })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>
+
+}

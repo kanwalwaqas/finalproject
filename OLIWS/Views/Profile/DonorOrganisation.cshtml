@@ -1,0 +1,346 @@
+﻿@model OLIWS.Models.ProfileViewModel
+@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "DonorOrganisation";
+    Layout = "~/Views/Shared/profile_Layout.cshtml";
+} 
+    
+
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card card-user">
+                    <div class="image">
+                        <img src="assets/img/background.jpg" alt="..." />
+                    </div>
+                    <div class="content">
+                        <div class="author">
+                            @foreach (var i in Model.P_Profile)
+                            {
+                                <img class="avatar border-white" src="@Url.Content(i.picture)" alt="..." />
+                            }
+                            @using (Html.BeginForm("profile_picture", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                foreach (var item in Model.P_User)
+                                {
+                                    <h4 class="title">
+                                        @item.FirstName<br />
+                                        <a href="#"><small>@item.FirstName</small></a>
+                                    </h4>
+                                }
+                                <div class="row">
+                                    <div class="col-md-3" style="margin-left:350px">
+                                        <input type="file" name="file" id="file" />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="submit" value="Submit" style="margin-right:200px;height:22px;width:70px" />
+                                    </div>
+                                    <input type="hidden" name="Id" value="@User.Identity.GetUserId()" />
+                                </div>
+                            }
+
+
+                        </div>
+
+                    </div>
+                    <hr>
+
+                </div>
+            </div>
+
+          @using (Html.BeginForm("DonorOrganisation", "Profile", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+          {
+            @Html.AntiForgeryToken()
+                <div class="col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h4 class="title">Donor Organisation</h4>
+                        </div>
+                        @foreach (var item in Model.P_Profile)
+                        {
+                            <input type="hidden" name="Profile_biuldingID" value="@item.Profile_biuldingID" />
+                        }
+                        @foreach (var item in Model.P_User)
+                        {
+                            <input type="hidden" name="Id" value="@item.Id" />
+                        <div class="content">
+                            <form>
+
+                                <div class="row">
+                                    <div class="col-md-6" style="margin-bottom:5px">
+                                        <div class="form-group">
+                                            <label>OrganizationName</label>
+                                            <input type="text"  style="color:black" disabled class="form-control border-input" name="FirstName" placeholder="Organization Name" value="@item.FirstName">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" >
+                                        <div class="form-group">
+                                            <label  for="exampleInputEmail1">email</label>
+                                            <input type="email"  style="color:black" disabled class="form-control border-input" name="myemail" placeholder="Enter Email" value="@item.Email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12"style="margin-bottom:5px">
+                                        <div class="form-group">
+                                            <label>Address</label>
+                                            <input type="text"  style="color:black" name="Address" class="form-control border-input" placeholder="Address" value="@item.Address">
+                                        </div>
+                                 </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6" style="margin-bottom:5px">
+                                            <div class="form-group">
+                                                <label>Phone</label>
+                                                <input type="text"  style="color:black" name="Phone" class="form-control border-input" placeholder="Contact Number" value="@item.Phone">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>category</label>
+                                                <input type="text" style="color:black" disabled name="category" class="form-control border-input" placeholder="category" value="@item.Category">
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Selected city</label>
+                                                    <input disabled  style="color:black" type="text" name="Selected_city" class="form-control border-input" placeholder="Selected_city" value="@item.Selected_city">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Selected Area</label>
+                                                    <input type="text"  style="color:black" disabled name="Selected_Area" class="form-control border-input" placeholder="Selected_Area" value="@item.Selected_Area">
+                                                </div>
+                                            </div>
+                                        </div>
+@foreach (var io in Model.P_organization)
+{
+                                    <div class="header">
+                                        <h3 class="title"> Organization owner info</h3>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>owner Name</label>
+                                    <input type="text"  style="color:black" name="owner_Name" class="form-control border-input" placeholder="First Name" value="@io.owner_Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>owner LastName</label>
+                                    <input type="text"  style="color:black" name="owner_LastName" class="form-control border-input" placeholder="Last Name" value="@io.owner_LastName">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>owner Email</label>
+                                    <input type="email"  style="color:black" name="owner_Email" class="form-control border-input" placeholder="Enter Email" value="@io.owner_Email">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>owner CNIC</label>
+                                    <input type="text"  style="color:black" name="owner_CNIC" class="form-control border-input" placeholder="CNIC" value="@io.owner_CNIC">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>owner Address</label>
+                                    <input type="text"  style="color:black" name="owner_Address" class="form-control border-input" placeholder="Address" value="@io.owner_Address">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>owner PhoneNum</label>
+                                    <input type="text"  style="color:black" name="owner_PhoneNum" class="form-control border-input" placeholder="Address" value="@io.owner_PhoneNum">
+                                </div>
+                            </div>
+
+@foreach (var i in Model.P_User)
+{
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Gender</label>
+                                    <input type="text"  style="color:black" name="owner_PhoneNum" class="form-control border-input" placeholder="Address" value="@i.Gender">
+                                </div>
+                            </div>
+
+}
+                    </div>
+
+}
+        <div class="header">
+            <h3 class="title"> Donation information</h3>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        @foreach (var ite in Model.P_fund_Type)
+        {
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Zakat</label>
+                        <input type="text"  style="color:black" disabled class="form-control border-input" placeholder="Zakat" value="@ite.Zakat">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Sadaqah</label>
+                        <input type="text"  style="color:black" disabled class="form-control border-input" placeholder="Sadaqah" value="@ite.Sadaqah">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Usher</label>
+                        <input type="text"  style="color:black" disabled class="form-control border-input" placeholder="Usher" value="@ite.Usher">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Zakat-ul-Fitr</label>
+                        <input type="text"  style="color:black" disabled class="form-control border-input" placeholder="Zakat-ul-Fitr" value="@ite.zakat_ul_fitr">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Atia-o-khairat</label>
+                        <input type="text"  style="color:black" disabled class="form-control border-input" placeholder="Atia-o-khairat" value="@ite.Atia_o_Khairat">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Khums</label>
+                        <input type="text"  style="color:black" disabled class="form-control border-input" placeholder="Khums" value="@ite.khums">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Other</label>
+                        <input type="text"  style="color:black" disabled class="form-control border-input" placeholder="Other" value="">
+                    </div>
+                </div>
+            </div>
+        }
+
+            @foreach (var it in Model.P_fund_Categories)
+            {
+
+        <div class="header">
+            <h3 class="title"> Donation Category </h3>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Once/Monthly</label>
+                        <input type="text" class="form-control border-input"  style="color:black" disabled placeholder="Once/Monthly" value="@it.frequency">
+                    </div>
+                </div>
+            </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Education</label>
+                                            <input type="text" disabled  style="color:black" class="form-control border-input" placeholder="Education" value="@it.Education">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Health</label>
+                                            <input type="text"  style="color:black" disabled class="form-control border-input" placeholder="Health" value="@it.Health">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>other</label>
+                                            <input type="text" disabled  style="color:black" class="form-control border-input" placeholder="other" value="@it.Loan">
+                                        </div>
+                                    </div>
+                                </div>
+            }
+        <div class="header">
+            <h3 class="title">Donation</h3>
+        </div>
+        <br>
+        <br>
+        <br>
+        @foreach (var itt in Model.P_donor)
+        {
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="text" disabled  style="color:black" name="Amount" class="form-control border-input" placeholder="Amount" value="@itt.Amount">
+                    </div>
+                </div> 
+            </div>
+        }
+        @*<div class="header">
+            <h3 class="title"> Account Information</h3>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>AccountHolderName</label>
+                    <input type="text" name="AccountName" class="form-control border-input" placeholder="AccountName">
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Account Number</label>
+                    <input type="text" name="AccountNumber" class="form-control border-input" placeholder="AccountNumber">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Expiry Date</label>
+                    <input type="number" name="duration" class="form-control border-input" placeholder="ExpiryDate">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Sort Code</label>
+                    <input type="text" name="SortCode" class="form-control border-input" placeholder="SortCode">
+                </div>
+            </div>
+        </div>*@
+        <div class="text-center">
+            <button type="submit" class="btn btn-info btn-fill btn-wd">Update Profile</button>
+        </div>
+        <div class="clearfix"></div>
+</form>
+                        </div>
+
+
+                        }
+
+                        </div>
+                    </div>}
+               </div>
+            </div>
+
+        </div>
+ 

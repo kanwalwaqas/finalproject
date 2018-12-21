@@ -1,0 +1,206 @@
+﻿@model IEnumerable<OLIWS.Models.DonorViewModel>
+@{
+    ViewBag.Title = "AddDonations";
+    Layout = "~/Views/Shared/profile_Layout.cshtml";
+}
+<style>
+
+
+</style>
+
+<script>
+  
+    function input_show() {
+        var checkBox = document.getElementById("other");
+        var text = document.getElementById("input_amount");
+        var checkBox1 = document.getElementById("radio1");
+        var checkBox2 = document.getElementById("radio2");
+        var checkBox3 = document.getElementById("radio3");
+        var checkBox4 = document.getElementById("radio4");
+
+        if (checkBox.checked== true) {
+            text.style.display = "block";
+        } else if ( checkBox1.checked == true) {
+            text.style.display = "none";
+        } else if (checkBox2.checked== true) {
+            text.style.display = "none";
+        } else if (checkBox3.checked== true) {
+            text.style.display = "none";
+        } else if (checkBox4.checked == true) {
+            text.style.display = "none";
+        }
+        else {
+            text.style.display = "none";
+        }
+
+    }
+
+    function postData() {
+
+        var obj = {};
+        obj.Zakat = $('input[name="Zakat"]')[0].checked ?  $('input[name="Zakat"]')[0].name       :  "";
+        obj.Sadaqah = $('input[name="Sadaqah"]')[0].checked ?  $('input[name="Sadaqah"]')[0].name      :  "";
+        obj.Usher = $('input[name="Usher"]')[0].checked ? $('input[name="Usher"]')[0].name : "";
+        obj.zakat_ul_fitr = $('input[name="zakat_ul_fitr"]')[0].checked ? $('input[name="zakat_ul_fitr"]')[0].name : "";
+        obj.khums = $('input[name="khums"]')[0].checked ?    $('input[name="khums"]')[0].name:  "";
+        obj.Atia_o_Khairat = $('input[name="Atia_o_Khairat"]')[0].checked ?   $('input[name="Atia_o_Khairat"]')[0].name     :  "";
+        obj.Education = $('input[name="Education"]')[0].checked ?  $('input[name="Education"]')[0].name      :  "";
+        obj.Health = $('input[name="Health"]')[0].checked ?      $('input[name="Health"]')[0].name   :  "";
+        obj.Other = $('input[name="Other"]')[0].checked ? $('input[name="Other"]')[0].name : "";
+        //obj.Amount = $('input[name="Amount"]')[0].checked;
+        var amounts = $('input[name="Amount"]');
+        for (var i = 0; i < amounts.length ; i++) {
+            if (amounts[i].checked) {
+                if (amounts[i].id=="Other") {
+                    obj.Amount = $('#input_amount').val();
+                }
+                else {
+                    obj.Amount = amounts[i].value;
+                }
+            }
+        }
+
+
+        $.ajax({
+            type: "POST",
+            url: "AddDonations",
+            data: obj,
+            success:function( data ) {
+                alert( "Data Loaded: " + data );
+            },
+        });
+
+
+    }
+    
+        $(".second-icon").hide();
+        $(".first-icon").hide();
+   
+</script>
+<h2>AddDonations</h2>
+<div class="container">
+    <div class="row">
+        <div name="reg-form" class="form-horizontal" method="post" id="Slct3">
+            <div class="icon-box mb-0 p-0 col-lg-offset-3">
+                <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                    <i class="pe-7s-users"></i>
+                </a>
+                <h1 class="text-gray pt-10 mt-0 mb-30">Donation Information</h1>
+            </div>
+            <hr>
+            <div action="submission.html" method="get">
+                <div class="row">
+                    <div class="form-group col-md-6 col-lg-push-3">
+                        <div class="form-group" style="margin-right:20px">
+                            <div>
+                                <input type="checkbox" name="Zakat" value="Zakat" id="zakat1" ><p><b>Zakat</b></p> <br>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <div class="form-group" style="margin-bottom:20px">
+                            <div>
+                                <input type="checkbox" name="Sadaqah" value="Sadaqah" id="sadqah" ><p><b>Sadaqah</b></p> <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-lg-push-3">
+                        <div class="form-group" style="margin-right:20px">
+                            <div>
+                                <input type="checkbox" name="Usher" value="Usher" id="usher" ><p><b>Usher</b></p> <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <div class="form-group" style="margin-bottom:20px">
+                            <div>
+                                <input type="checkbox" name="zakat_ul_fitr" value="zakat_ul_fitr" id="zakat_ul_fitr" ><p><b>Zakat-ul-Fitr</b></p> <br>
+                            </div>
+
+                        </div>
+                    </div>
+                    <span id="checkboxerrors"></span>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-lg-push-3">
+                        <div>
+
+                            <label class="checkbox-inline" style="margin-right:35px;margin-left:10px">
+                                <input type="checkbox" name="Atia_o_Khairat" value="Atia_o_Khairat" ><p>Atia-o-khairat</p> <br>
+                            </label>
+                            <label class="checkbox-inline" style="margin-bottom:10px">
+                                <input type="checkbox" name="khums" value="khums" style="zoom:1.5;margin-right:100px"><p>Khums</p> <br>
+                            </label>
+                            <label class="checkbox-inline" style="margin-left:45px;margin-bottom:20px">
+                                <input type="checkbox" name="Other" value="Other" style="zoom:1.5;margin-right:80px"><p>Other</p> <br>
+                            </label>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    
+            <div style="">
+                <div class="icon-box mb-0 p-0 col-lg-offset-3">
+                    <h3>Donation Category</h3>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-6 col-lg-push-3">
+
+                        <label class="checkbox-inline" style="margin-right:30px;margin-left:15px">
+                            <input type="checkbox" name="Education" value="Education" ><p>Education</p> <br>
+                        </label>
+                        <label class="checkbox-inline" style="margin-bottom:5px">
+                            <input type="checkbox" name="Health" value="Health" style="zoom:1.5;margin-right:100px"><p>Health</p> <br>
+                        </label>
+                        <label class="checkbox-inline" style="margin-left:35px;margin-bottom:10px">
+                            <input type="checkbox" name="Other" value="Other" style="zoom:1.5;margin-right:80px"><p>Other</p> <br>
+                        </label>
+
+                    </div>
+                </div>
+                <hr>
+                <div class="icon-box mb-0 p-0 col-lg-offset-3">
+                    <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                        <i class="pe-7s-users"></i>
+                    </a>
+                    <h3 class="text-gray pt-10 mt-0 mb-30">How much you want to donate</h3>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-lg-push-3">
+                        <ul class="chicklet-list clearfix">
+                            <label class="container">
+                                Two
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+
+                            <li><input class="form-control" name="Amount" value="500" id="radio1" onchange="input_show()" type="radio"> <label>500</label></li>
+                            <li><input class="form-control" name="Amount" value="1000" id="radio2" onchange="input_show()" type="radio"> <label>1000</label></li>
+
+                            <li><input class="form-control" name="Amount" value="2000" id="radio3" onchange="input_show()" type="radio"> <label>2000</label></li>
+
+                            <li><input class="form-control" name="Amount" value="3000" id="radio4" onchange="input_show()" type="radio"> <label>3000</label></li>
+
+
+                            <li><input class="form-control" name="Amount" value="5000" id="radio4" onchange="input_show()" type="radio"> <label>5000</label></li>
+                            <li><input class="form-control" name="Amount" id="other" onchange="input_show()" type="radio"> <label>Other</label></li>
+                            <li>
+                                <input name="Amount" class="form-control" id="input_amount" placeholder="Other Amount" type="text" style="height:45px;width:260px;display:none">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button class="thm-btn thm-tran-bg" type="submit" onclick="postData()"> Register now</button>
+        </div>
+
+
+
+    </div>
+</div>

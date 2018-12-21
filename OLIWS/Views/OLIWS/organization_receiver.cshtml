@@ -1,0 +1,273 @@
+﻿@model OLIWS.Models.OrgViewModel
+@{
+    ViewBag.Title = "organization_receiver";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("organization_receiver", "OLIWS", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+  
+<link href="~/Designing/OLIWSHOME/multi/css/app/app.css" rel="stylesheet">
+<link href="~/Designing/OLIWSHOME/multi/css/vendor/all.css" rel="stylesheet">
+<script src="~/Designing/OLIWSHOME/multi/js/vendor/all.js"></script>
+<script src="~/Designing/OLIWSHOME/multi/js/app/app.js"></script>
+
+<section class="register-section sec-padd-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-push-3">
+                <form name="reg-form" class="register-form" method="post">
+                    <div class="icon-box mb-0 p-0">
+                        <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                            <i class="pe-7s-users"></i>
+                        </a>
+                        <h1 class="text-gray pt-10 mt-0 mb-30">Organization Registration</h1>
+                    </div>
+                    <hr>
+                    <div class="form-group ">
+                        <div class="row">
+                            <div class="icon-box mb-0 p-0">
+                                <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                                    <i class="pe-7s-users"></i>
+                                </a>
+                                <h3 class="text-gray pt-10 mt-0 mb-30">Donation Type</h3>
+                            </div>
+                            <br>
+
+                            <ul class="chicklet-list clearfix">
+                                <li><input  id="donate-amount-1" class="form-control" name="frequency" type="radio"> <label>Once</label>
+
+                                <li><input id="donate-amount-1" class="form-control" name="frequency" type="radio"> <label>Monthly</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <div class="row">
+                            <div class="icon-box mb-0 p-0">
+                                <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                                    <i class="pe-7s-users"></i>
+                                </a>
+                                <h3 class="text-gray pt-10 mt-0 mb-30">Receiver Type</h3>
+                            </div>
+                            <br>
+
+                            <div class="row">
+                                <div class="form-group ">
+
+                                    <label class="checkbox-inline" style="margin-right:30px;margin-left:15px">
+                                        <input type="checkbox" name="Education" value="Education" style="zoom:1.5"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Education</p> <br>
+                                    </label>
+                                    <label class="checkbox-inline" style="margin-bottom:5px">
+                                        <input type="checkbox" name="Health" value="Health" style="zoom:1.5;margin-right:100px"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Health</p> <br>
+                                    </label>
+                                    <label class="checkbox-inline" style="margin-left:35px;margin-bottom:10px">
+                                        <input type="checkbox" name="Loan" value="Other" style="zoom:1.5;margin-right:80px"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Loan</p> <br>
+                                    </label>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group " id="in_form" @*style="display:none"*@>
+                            <div class="icon-box mb-0 p-0">
+                                <h3>Receive Category</h3>
+                            </div>
+                            <label class="checkbox-inline" style="margin-right:30px;margin-left:15px">
+                                <input type="checkbox" id="admi" name="AdmissionFee" value="Atia-o-khairat" onchange="MyFunc()" style="zoom:1.5"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">AdmissionFee/fee</p> <br>
+                            </label>
+                            <label class="checkbox-inline" style="margin-bottom:5px">
+                                <input type="checkbox" id="accessories" name="Accessories" value="Accessories" onchange="MyFunct()" style="zoom:1.5;margin-right:100px"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Accessories</p> <br>
+                            </label>
+                            <label class="checkbox-inline" style="margin-left:35px;margin-bottom:10px">
+                                <input type="checkbox" id="uni" name="Uniform" value="Uniform" onchange="MyFuncUni()" style="zoom:1.5;margin-right:80px"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Uniform</p> <br>
+                            </label>
+
+
+                        </div>
+
+                        <div class="panel panel-default" @*style="display:none"*@ id="fee" >
+                            <div class="panel-body">
+                                <div class="form-group margin-none">
+                                    <label class="col-sm-3 control-label"></label>
+                                    <div class="col-sm-9">
+                                        <select class="selectpicker" name="fee_cat" multiple data-style="btn-white" title='Choose one of the following...'>
+                                            <option value="semesterFee">School fee</option>
+                                            <option value="Annual">Annual</option>
+                                            <option value="">semester</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default" @*style="display:none"*@ id="access">
+                        <div class="panel-body">
+                            <div class="form-group margin-none">
+                                <label class="col-sm-3 control-label"></label>
+                                <div class="col-sm-9">
+                                    <select class="selectpicker" name="stationary_cat" multiple data-style="btn-white" title='Choose one of the following...'>
+                                        <option value="books_notes">stationary_cat</option>
+                                        <option value="bags">Bags</option>
+                                        <option value="">books and notes</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default" @*style="display:none"*@ id="uniform">
+                        <div class="panel-body">
+                            <div class="form-group margin-none">
+                                <label class="col-sm-3 control-label"></label>
+                                <div class="col-sm-9">
+                                    <select class="selectpicker" multiple data-style="btn-white" title='Choose one of the following...'>
+                                        <option value="Dress">Dress</option>
+                                        <option value="shoes">Shoes</option>
+                                        <option value="uniform_cat">Shirt</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="form-group " id="org_form" @*style="display:none"*@>
+                            <div class="icon-box mb-0 p-0">
+                                <h3>Donation Category</h3>
+                            </div>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="Medicine" value="Medicine" style="zoom:1.5"><p style="font-size:20px;font-weight:bolder">Medicine</p> <br>
+                            </label>
+                            <label class="checkbox-inline" style="margin-left:50px">
+                                <input type="checkbox" name="Minor_Surgury" value="MinorSurgury" style="zoom:1.5"><p style="font-size:20px;font-weight:bolder">Minor Surgury</p> <br>
+                            </label>
+                            <label class="checkbox-inline" style="margin-left:360px;top:-57px">
+                                <input type="checkbox" name="Test_Reports" value="TestReports" style="zoom:1.5"><p style="font-size:20px;font-weight:bolder">Test/Reports</p> <br>
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="icon-box mb-0 p-0">
+                        <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                            <i class="pe-7s-users"></i>
+                        </a>
+                        <h3 class="text-gray pt-10 mt-0 mb-30">Loan Category</h3>
+                    </div>
+                    <br>
+
+                    <ul class="chicklet-list clearfix">
+                        <li><input id="donate-amount-1" class="form-control" name="Loan_Type" type="radio"> <label>Education</label>
+
+                        <li><input id="donate-amount-1" class="form-control" name="Loan_Type" type="radio"> <label>Health</label></li>
+                        <li>
+
+
+
+                            <input id="other-amount" placeholder="Amount need" name="loan_amount" type="text">
+
+                        </li>
+                    </ul>
+                    <div class="icon-box mb-0 p-0">
+                        <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                            <i class="pe-7s-users"></i>
+                        </a>
+                        <h3 class="text-gray pt-10 mt-0 mb-30">Current source of financing</h3>
+                    </div>
+                    <br>
+                    <ul class="chicklet-list clearfix">
+                        <li><input  id="donate-amount-1" class="form-control" name="source_finance" type="radio"> <label>Government</label>
+                        <li><input id="donate-amount-1" class="form-control" name="source_finance" type="radio"> <label>Fedral</label></li>
+                        <li><input id="donate-amount-1" class="form-control" name="source_finance" type="radio"> <label>Semi Govr</label></li>
+                     </ul> 
+                    <div>
+                        <br /><div>
+                            <button class="thm-btn thm-tran-bg">Register now</button>
+                        </div>
+                    </div>
+                    <br />                 
+            </form>
+
+
+
+        </div>
+        </div>
+    
+
+</section>
+<script>
+    function In_Show() {
+        var info = document.getElementById("in_form");
+        var org = document.getElementById("org_form");
+        if (org.style.display == "block") {
+            org.style.display = "none"
+        }
+        if (info.style.display == "none") {
+            info.style.display = "block";
+        } else {
+            info.style.display = "none";
+        }
+    }
+    function org_Show() {
+        var org = document.getElementById("org_form");
+        var info = document.getElementById("in_form");
+        if (info.style.display == "block") {
+            info.style.display = "none"
+        }
+        if (org.style.display == "none") {
+            org.style.display = "block";
+        } else {
+            org.style.display = "none";
+        }
+    }
+
+
+</script>
+<script>
+    function MyFunc() {
+        var checkBox = document.getElementById("admi");
+        var text = document.getElementById("fee");
+        if (checkBox.checked == true) {
+            text.style.display = "block";
+        }
+        else {
+            text.style.display = "none";
+        }
+
+    }
+</script>
+<script>
+    function MyFuncUni() {
+        var checkBox = document.getElementById("uni");
+        var text = document.getElementById("uniform");
+        if (checkBox.checked == true) {
+            text.style.display = "block";
+        }
+        else {
+            text.style.display = "none";
+        }
+
+    }
+</script>
+<script>
+    function MyFunct() {
+        var checkBox = document.getElementById("accessories");
+        var text = document.getElementById("access");
+        if (checkBox.checked == true) {
+            text.style.display = "block";
+        }
+        else {
+            text.style.display = "none";
+        }
+
+    }
+</script>
+
+}
+

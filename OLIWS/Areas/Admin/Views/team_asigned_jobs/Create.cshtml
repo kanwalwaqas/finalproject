@@ -1,0 +1,65 @@
+﻿@model OLIWS.Models.team_asigned_jobs
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    OLIWS.Models.ApplicationDbContext db = new OLIWS.Models.ApplicationDbContext();
+    var u_id = db.Roles.Where(a => a.Name == "Receiver").Select(s => s.Users.Select(l => l.UserId)).SingleOrDefault(); ;
+
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>team_asigned_jobs</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TeamID, "Team Members", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.DropDownList("TeamID", null, htmlAttributes: new { @class = "form-control" })*@
+                <select class="form-control" name="TeamID">
+                    @foreach (var item in db.team.ToList())
+                    {
+                    <option value="@item.TeamID">@item.team_title</option>
+                    }
+                </select>
+                @Html.ValidationMessageFor(model => model.TeamID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Id, "Receiver To Verify", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.DropDownList("TeamID", null, htmlAttributes: new { @class = "form-control" })*@
+                <select class="form-control" name="Id">
+                    @foreach (var ss in u_id)
+                    {
+                    foreach (var i in db.Users.Where(d => d.Id==ss))
+                    {
+                        <option value="@i.Id">@i.FirstName @i.LastName</option>
+                    }
+                    }
+                </select>
+                @Html.ValidationMessageFor(model => model.Id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="hidden" value="1" name="Job_status"/>
+         </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

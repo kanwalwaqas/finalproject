@@ -1,0 +1,19 @@
+@media screen and (max-width: 380px){
+	/* General */
+
+		/* Header */
+
+			div#logo img {
+				max-width: 195px;
+			}
+
+			section#header_bottom .menu_icon {
+				padding-bottom: 30px;
+			}
+
+	/* Events */
+
+			html .tribe-events-calendar thead th {
+				padding: 7px 0;
+			}
+}

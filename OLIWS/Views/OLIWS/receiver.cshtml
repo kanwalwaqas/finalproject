@@ -1,0 +1,405 @@
+﻿@model OLIWS.Models.Receiver
+@{
+    ViewBag.Title = "receiver";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Designing/OLIWSHOME/multi/css/app/app.css" rel="stylesheet">
+<link href="~/Designing/OLIWSHOME/multi/css/vendor/all.css" rel="stylesheet">
+<script src="~/Designing/OLIWSHOME/multi/js/vendor/all.js"></script>
+<script src="~/Designing/OLIWSHOME/multi/js/app/app.js"></script>
+
+<section class="register-section sec-padd-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-push-3">
+                <form name="reg-form" class="register-form" method="post">
+                    <div class="icon-box mb-0 p-0">
+                        <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                            <i class="pe-7s-users"></i>
+                        </a>
+                        <h1 class="text-gray pt-10 mt-0 mb-30" style="color:black">Receiver Information</h1>
+                    </div>
+                    <hr>
+
+                    <div class="form-group ">
+                        <div class="row">
+                            <div class="icon-box mb-0 p-0">
+                                <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                                    <i class="pe-7s-users"></i>
+                                </a>
+                                <h3 class="text-gray pt-10 mt-0 mb-30">Receive Category</h3>
+                            </div>
+                            <br>
+
+                            <ul class="chicklet-list clearfix">
+                                <li><input id="" class="form-control" name="fund_cat" type="radio" onchange="In_Show()"> <label>Education</label></li>
+
+                                <li><input id="donate-amount-1" class="form-control" name="fund_cat" type="radio" onchange="org_Show()"> <label>Health</label></li>
+
+                                <li><input class="form-control" id="donate-amount-2" name="fund_cat" type="radio" onchange="o_Show()"> <label>Loan</label></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <hr>
+                    <div id="in_form" style="display:none">
+                        <div class="form-group ">
+                            <div class="row">
+                                <div class="icon-box mb-0 p-0">
+                                    <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                                        <i class="pe-7s-users"></i>
+                                    </a>
+                                    <h3 class="text-gray pt-10 mt-0 mb-30">Receive Type</h3>
+                                </div>
+                                <br>
+
+                                <ul class="chicklet-list clearfix">
+                                    <li><input  id="donate-amount-1" class="form-control" name="frequency" type="radio"> <label>Once</label>
+
+                                    <li><input id="donate-amount-1" class="form-control" name="frequency" type="radio"> <label>Monthly</label></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group " id="">
+                                <div class="icon-box mb-0 p-0">
+                                    <h3>Education Category</h3>
+                                </div>
+                                <label class="checkbox-inline" style="margin-right:30px;margin-left:15px">
+                                    <input type="checkbox" id="admi" name="AdmissionFee" value="Atia-o-khairat" onchange="MyFunc()" style="zoom:1.5"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">AdmissionFee/fee</p> <br>
+                                </label>
+                                <label class="checkbox-inline" style="margin-bottom:5px">
+                                    <input type="checkbox" id="accessories" name="Accessories" value="Accessories" onchange="MyFunct()" style="zoom:1.5;margin-right:100px"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Accessories</p> <br>
+                                </label>
+                                <label class="checkbox-inline" style="margin-left:35px;margin-bottom:10px">
+                                    <input type="checkbox" id="uni" name="Uniform" value="Uniform" onchange="MyFuncUni()" style="zoom:1.5;margin-right:80px"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Uniform</p> <br>
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default" style="display:none" id="fee">
+                            <div class="panel-body">
+                                <div class="form-group margin-none">
+                                    <label class="col-sm-4 control-label"></label>
+                                    <div class="col-sm-11">
+                                        <select class="selectpicker" name="stationary_cat" multiple data-style="btn-white" title='Choose one of the following..'>
+                                            <option value="fee">fee</option>
+                                            <option value="admi_fee">admission fee</option>
+                                            <option value="s_fee">Semester fee</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default" style="display:none" id="access">
+                            <div class="panel-body">
+                                <div class="form-group margin-none">
+                                    <label class="col-sm-4 control-label"></label>
+                                    <div class="col-sm-11">
+                                        <select class="selectpicker"  name="stationary_cat" multiple data-style="btn-white" title='Choose one of the following...'>
+                                            <option>stationary</option>
+                                            <option>Bags</option>
+                                            <option>books and notes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default" style="display:none" id="uniform">
+                            <div class="panel-body">
+                                <div class="form-group margin-none">
+                                    <label class="col-sm-4 control-label"></label>
+                                    <div class="col-sm-11">
+                                        <select class="selectpicker" name="uniform_cat" multiple data-style="btn-white" title='Choose one of the following...'>
+                                            <option>Dress</option>
+                                            <option>Shoes</option>
+                                            <option>Shirt</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label>Amount You Want To Receive</label>
+                            </div>
+                            <div class="form-group col-md-4 " style="margin-bottom:5px">
+                                <input name="AccountName" class="form-control" value="" type="text" style="height:45px;width:260px">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="org_form" style="display:none">
+                        <div class="form-group ">
+                            <div class="row">
+                                <div class="icon-box mb-0 p-0">
+                                    <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                                        <i class="pe-7s-users"></i>
+                                    </a>
+                                    <h3 class="text-gray pt-10 mt-0 mb-30">Receive Type</h3>
+                                </div>
+                                <br>
+
+                                <ul class="chicklet-list clearfix">
+                                    <li><input checked="checked" id="donate-amount-1" class="form-control" name="donate-amount" type="radio"> <label>Once</label>
+
+                                    <li><input id="donate-amount-1" class="form-control" name="donate-amount" type="radio"> <label>Monthly</label></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group " id="">
+                                <div class="icon-box mb-0 p-0">
+                                    <h3>Health Category</h3>
+                                </div>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="Medicine" value="Medicine" style="zoom:1.5"><p style="font-size:20px;font-weight:bolder">Medicine</p> <br>
+                                </label>
+                                <label class="checkbox-inline" style="margin-left:50px">
+                                    <input type="checkbox" name="Minor Surgury" value="Minor Surgury" style="zoom:1.5"><p style="font-size:20px;font-weight:bolder">Minor Surgury</p> <br>
+                                </label>
+                                <label class="checkbox-inline" style="margin-left:360px;top:-57px">
+                                    <input type="checkbox" name="Test/Reports " value="Test/Reports" style="zoom:1.5"><p style="font-size:20px;font-weight:bolder">Test/Reports</p> <br>
+                                </label>
+
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label>Amount You Want To Receive</label>
+                            </div>
+                            <div class="form-group col-md-4 " style="margin-bottom:5px">
+                                <input name="AccountName" class="form-control" value="" type="text" style="height:45px;width:260px">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="div3" style="display:none">
+                        <div class="icon-box mb-0 p-0">
+                            <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                                <i class="pe-7s-users"></i>
+                            </a>
+                            <h2 class="text-gray pt-10 mt-0 mb-30" style="color:black">Our Loan Category</h2>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="form-group col-md-7 col-md-push-1">
+                                <div class="form-group" style="margin-right:20px;color:black">
+                                    <div>
+                                        <input type="checkbox" name="Zakat" value="Zakat" style="zoom:1.5"><p style="margin-top:-23px;margin-left:40px;font-size:22px;color:black"><b>Loan Taken For Education</b></p> <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-7 col-md-push-1">
+                                <div class="form-group" style="margin-right:20px;color:black">
+                                    <div>
+                                        <input type="checkbox" name="Zakat" value="Zakat" style="zoom:1.5"><p style="margin-top:-23px;margin-left:40px;font-size:22px;color:black"><b>Loan Taken For Health</b></p> <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label>Father/Gardian Full Name</label>
+                            </div>
+                            <div class="form-group col-md-4 " style="margin-bottom:5px">
+                                <input name="AccountName" class="form-control" value="" type="text" style="height:45px;width:260px">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label>Total Family Member</label>
+                            </div>
+                            <div class="form-group col-md-4 " style="margin-bottom:5px">
+                                <input name="AccountName" class="form-control" value="" type="text" style="height:45px;width:260px">
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="form-group ">
+                            <div class="row">
+                                <div class="icon-box mb-0 p-0">
+                                    <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                                        <i class="pe-7s-users"></i>
+                                    </a>
+                                    <h2 class="text-gray pt-10 mt-0 mb-30" style="color:black">Source of Income</h2>
+                                </div>
+                                <br>
+                                @*<div class="row">
+                                        <div class="form-group col-md-6">
+                                            <div class="form-group" style="margin-right:20px">
+                                                <div>
+                                                    <input type="checkbox" name="Zakat" value="Zakat" style="zoom:1.5"><p style="margin-top:-23px;margin-left:30px;font-size:22px"><b>Zakat</b></p> <br>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            <div class="form-group" style="margin-bottom:20px">
+                                                <div>
+                                                    <input type="checkbox" name="Sadaqah" value="Sadaqah" style="zoom:1.5"><p style="margin-top:-23px;margin-left:30px;font-size:22px"><b>Sadaqah</b></p> <br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>*@
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label>Monthly Income</label>
+                            </div>
+                            <div class="form-group col-md-4 " style="margin-bottom:5px">
+                                <input name="AccountName" class="form-control" value="" type="text" style="height:45px;width:260px">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label>Occupation</label>
+                            </div>
+                            <div class="form-group col-md-4 " style="margin-bottom:5px">
+                                <input name="AccountName" class="form-control" value="" type="text" style="height:45px;width:260px">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label>Organization Name where work</label>
+                            </div>
+                            <div class="form-group col-md-4 " style="margin-bottom:5px">
+                                <input name="AccountName" class="form-control" value="" type="text" style="height:45px;width:260px">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label>Loan Amount</label>
+                            </div>
+                            <div class="form-group col-md-4 " style="margin-bottom:5px">
+                                <input name="AccountName" class="form-control" value="" type="text" style="height:45px;width:260px">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="clearfix col-lg-offset-3">
+                        <br /><div>
+                            <button class="thm-btn thm-tran-bg">Register now</button>
+                        </div>
+                    </div>
+
+                </form>
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+
+</section>
+<script>
+    function In_Show() {
+        var info = document.getElementById("in_form");
+        var org = document.getElementById("org_form");
+        var div = document.getElementById("div3");
+        if (org.style.display == "block") {
+            org.style.display = "none"
+        }
+        if (div.style.display == "block") {
+            div.style.display = "none";
+        }
+        if (info.style.display == "none") {
+            info.style.display = "block";
+        }
+        else {
+            info.style.display = "none";
+        }
+    }
+    function org_Show() {
+        var org = document.getElementById("org_form");
+        var info = document.getElementById("in_form");
+        var div = document.getElementById("div3");
+        if (info.style.display == "block") {
+            info.style.display = "none"
+        }
+        if (div.style.display == "block") {
+            div.style.display = "none";
+        }
+        if (org.style.display == "none") {
+            org.style.display = "block";
+        }
+        else {
+            org.style.display = "none";
+        }
+    }
+    function o_Show() {
+        var div = document.getElementById("div3");
+        var info = document.getElementById("in_form");
+        var org = document.getElementById("org_form");
+        if (org.style.display == "block") {
+            org.style.display = "none";
+        }
+        if (info.style.display == "block") {
+            info.style.display = "none";
+        }
+        if (div.style.display == "none") {
+            div.style.display = "block"
+        }
+         else {
+            div.style.display = "none";
+        }
+    }
+
+
+</script>
+<script>
+    function MyFunc() {
+        var checkBox = document.getElementById("admi");
+        var text = document.getElementById("fee");
+        if (checkBox.checked == true) {
+            text.style.display = "block";
+        }
+        else {
+            text.style.display = "none";
+        }
+
+    }
+</script>
+<script>
+    function MyFuncUni() {
+        var checkBox = document.getElementById("uni");
+        var text = document.getElementById("uniform");
+        if (checkBox.checked == true) {
+            text.style.display = "block";
+        }
+        else {
+            text.style.display = "none";
+        }
+
+    }
+</script>
+<script>
+    function MyFunct() {
+        var checkBox = document.getElementById("accessories");
+        var text = document.getElementById("access");
+        if (checkBox.checked == true) {
+            text.style.display = "block";
+        }
+        else {
+            text.style.display = "none";
+        }
+
+    }
+</script>

@@ -1,0 +1,203 @@
+﻿@model OLIWS.Models.RegViewModel
+@{
+    ViewBag.Title = "Volunter";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    OLIWS.Models.ApplicationDbContext db = new OLIWS.Models.ApplicationDbContext();
+}
+<script src="~/Scripts/VolunterValidation.js"></script>
+
+@using (Html.BeginForm("Volunter", "OLIWS", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+
+    <section class="volunteer sec-padd">
+        <div class="container">
+            <div class="feature-style-one">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="img-box">
+                            <img src="~/Designing/OLIWSHOME/images/cause/19.jpg" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                        <div class="section-title2">
+                            <h3>Ways to volunteer</h3>
+                        </div>
+                        <div class="text">
+                            <p>OLIWS has designed several volunteering models to enable individuals get involved in  community despite their time constraints. Volunteering is made easy as it caters to the individual’s interests and convenienc, time availability and location.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="section-title center">
+                <h2>Become a  <span class="thm-color">Volunteer</span></h2>
+            </div>
+
+            <div class="default-form-area">
+                <form id="contact-form" name="contact_form" class="default-form" method="post">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+
+                            <div class="default-form-bg">
+                                <div class="row clearfix">
+                                    <div>
+                                        <input type="hidden" name="userStatus" value="True">
+                                        @Html.ValidationMessageFor(n => n.userStatus, null, new { @class = "text-danger" })
+                                    </div>
+                                    <input type="hidden" name="in_org" value="Volunteer">
+                                    <div class="col-md-3 col-sm-6 col-xs-6 col-sm-offset-3">
+
+                                        <div class="form-group">
+                                            <label>First Name</label>
+                                            <input type="text" name="FirstName" class="form-control" placeholder="" title="First Name" id="vfname" maxlength="15" onkeyup="validate_name('vfname', 'verror', 2, 'N', 'For valid name enter elphabet only')" style="height:45px; width:260px">
+                                            <span id="verror"></span>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 col-sm-offset-3">
+                                        <div class="form-group">
+                                            <label>Last Name</label>
+                                            <input type="text" name="LastName" class="form-control" placeholder="" title="Last Name" id="vlname" maxlength="15" required onkeyup="validate_name('vlname', 'vLerror', 2, 'N', 'For valid name enter elphabet only')" style="height:45px; width:260px">
+                                            <span id="vLerror"></span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-3 col-sm-6 col-xs-6 col-sm-offset-3">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input type="email" name="Email" class="form-control " value="" placeholder="" title="Email" id="vemail" onkeyup="validate_name('vemail','vEerror','', 'E', 'Email formate should be abc@xyz.com ')" style="height:45px; width:260px">
+                                            <span id="vEerror"></span>
+                                        </div>
+                                        <span id="val" style="display:none">1</span>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 col-sm-offset-3">
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input type="password" name="password" class="form-control " value="" placeholder="" title="Password" id="vpass" onkeyup="validate_name('vpass', 'vPerror', 6, 'P', 'please enter atleast 1 capital letter & contain these(#$%^&)')" style="height:45px; width:260px">
+                                            <span id="vPerror"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 col-sm-offset-3">
+                                        <div class="form-group">
+                                            <label>Confirm Password</label>
+                                            <input type="password" name="Confirmpassword" class="form-control" value="" placeholder="" title="Confirm Password" id="vCpass" onkeyup="pass_match('vCpass', 'vpass', 'vCPerror')" style="height:45px; width:260px">
+                                            <span id="vCPerror"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 col-sm-offset-3">
+                                        <div class="form-group">
+                                            <label>Phone Nmuber</label>
+                                            <input type="text" name="Phone" class="form-control" value="" placeholder="" title="Phone Number" id="vphn" maxlength="13" required onkeyup="validate_name('vphn', 'vPherror', 10, 'Ph', 'Should be only numeric value')" style="height:45px; width:260px">
+                                            <span id="vPherror"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 col-sm-offset-3">
+                                        <div class="form-group">
+                                            <label>CNIC</label>
+                                            <input name="CNIC" placeholder="" title="CNIC" class="form-control" type="text" value="" id="cnic" onkeyup="validate_name('cnic', 'CNPerror', 14, 'C', 'Type CNIC with dashes')" style="height:45px;width:260px">
+                                            <span id="CNPerror"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 col-sm-offset-3">
+                                        <div class="form-group">
+                                            <label>Address</label>
+                                            <input type="text" name="Address" class="form-control" value="" placeholder="" title="Address" maxlength="50" id="vAdr" onkeyup="validate_name('vAdr', 'vadrerror', 7, 'AD', 'addres is not valid')" style="height:45px; width:260px">
+                                            <span id="vadrerror"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 col-sm-offset-3">
+                                        <div class="form-group">
+                                            <div>
+                                                <label>Gender</label>
+                                                <select name="Gender" class="form-control" style="height:45px;width:260px">
+                                                    <option value="Gender" disabled selected>
+                                                        Gender
+                                                    </option>
+                                                    <option value="Male">
+                                                        Male
+                                                    </option>
+                                                    <option value="Female">
+                                                        Female
+                                                    </option>
+                                                    <option value="Other">
+                                                        Other
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        @if (User.IsInRole("Admin"))
+                                        {
+
+                                            <div class="col-md-3 col-sm-6 col-xs-6 col-sm-offset-3">
+                                                <div class="form-group">
+                                                    <select class="form-control" name="Id">
+                                                        @foreach (var z in db.Roles.ToList())
+                                                        {
+                                                            <option value="@z.Id">@z.Name</option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="col-md-3 col-sm-6 col-xs-6 col-sm-offset-3">
+                                                <div class="form-group">
+                                                    <label>Category</label>
+                                                    <select class="form-control" id="Catagory_Name" name="Id" onchange="category()" style="height:45px;width:260px">
+                                                        @*<option value="Category" disabled selected>Select Category...</option>*@
+                                                        @foreach (var z in db.Roles.Where(s => s.Name == "Volunteer"))
+                                                        {
+
+                                                            <option value="@z.Id">@z.Name</option>
+                                                        }
+                                                    </select>
+
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 col-sm-offset-3">
+                                        <div class="form-group" style="margin-right:20px">
+                                            <label>Dtae Of Birth</label>
+                                            <input name="Date_of_birth" placeholder="" title="Date of Birth" type="date" id="vdateid" onchange="Validate_Date('vdateid', 'vDerror')" value="" style="height:45px; width:260px">
+                                            @*@Html.ValidationMessageFor(n => n.Date_of_birth, null, new { @class = "text-danger" })*@
+                                            <span id="vDerror"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-6 col-sm-offset-3">
+                                        <div class="form-group">
+                                            <label>Experience</label>
+                                            <textarea name="Qualification" class="form-control textarea required" required rows="5" maxlength="150" placeholder="" title="Experience, Learing and Skills... "></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 col-sm-offset-3">
+                                        <label class="form-group" style="margin-right:450px;margin-top:10px">
+                                            <input type="checkbox" name="Muslim" value="Muslim" style="zoom:1.5"><p style="font-size:18px;font-weight:bolder;margin-top:-1px;margin-left:20px;margin-right:500px">Muslim</p> <br>
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group center">
+                                <div class="clearfix">
+                                    <br /><div>
+                                        <button class="thm-btn thm-tran-bg" onclick="return Check_All()">Register now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+}

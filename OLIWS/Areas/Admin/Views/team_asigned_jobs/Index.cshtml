@@ -1,0 +1,65 @@
+﻿@model IEnumerable<OLIWS.Models.team_asigned_jobs>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    OLIWS.Models.ApplicationDbContext db = new OLIWS.Models.ApplicationDbContext();
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Receiver
+        </th>
+        <th>
+            Team Member
+        </th>
+        <th>
+            Status
+        </th>
+        <th>
+             Assigned Date
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @db.Users.FirstOrDefault(l=>l.Id==item.Id).UserName
+        </td>
+        <td>
+            @db.team.FirstOrDefault(l => l.TeamID == item.TeamID).team_title
+        </td>
+        <td>
+            @if (item.Job_status == 1)
+            {
+               <label style="color:green">Active</label>
+            }
+            else if (item.Job_status == 0)
+            {
+                <label>In-Active</label>
+            }
+            else
+            {
+                <label>Not Varified</label>
+            }
+
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.currentdate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

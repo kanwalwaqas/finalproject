@@ -1,0 +1,67 @@
+﻿@model OLIWS.Models.Account
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Account</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.admin.FirsName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.admin.FirsName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.client.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.client.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.donor.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.donor.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fund.Fund_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fund.Fund_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.loan.Loan_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.loan.Loan_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.register.RegisterID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.register.RegisterID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AccountID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

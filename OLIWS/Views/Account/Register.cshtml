@@ -1,0 +1,842 @@
+﻿@model OLIWS.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+@*<script src="~/Scripts/validation.js"></script>*@
+<script src="~/Scripts/validation.js"></script>
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+
+    <section class="volunteer sec-padd">
+        <div class="container">
+
+            <form name="reg-form" class="register-form" method="post">
+                <div class="icon-box mb-0 p-0 col-lg-offset-3">
+                    <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                        <i class="pe-7s-users"></i>
+                    </a>
+                    <h1 class="text-gray pt-10 mt-0 mb-30">Registration</h1>
+                </div>
+                <hr>
+                <p class="text-gray"></p>
+                <div>
+                    <input type="hidden" name="userStatus" value="True">
+                    @Html.ValidationMessageFor(n => n.userStatus, null, new { @class = "text-danger" })
+                </div>
+                <div>
+                    <input type="hidden" name="in_org" value="Individual">
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-lg-push-2" style="margin-right:20px">
+                        <label>First Name</label>
+                        <input name="FirstName" value="" placeholder="" class="form-control" type="text" id="fname" maxlength="15" title="first name" onkeyup="validate_name('fname', 'error', 2, 'N', 'For valid name enter elphabet only')" style="height:45px;width:260px">
+                        @Html.ValidationMessageFor(n => n.FirstName, null, new { @class = "text-danger" })
+                        <span id="error"></span>
+                    </div>
+
+                    <div class="form-group col-md-6" style="margin-bottom:20px">
+                        <label>Last Name</label>
+                        <input name="LastName" value="" placeholder="" class="form-control" type="text" id="lname" maxlength="15" onkeyup="validate_name('lname', 'Lerror', 2, 'N', 'For valid name enter elphabet only')" style="height:45px;width:260px">
+                        @Html.ValidationMessageFor(n => n.LastName, null, new { @class = "text-danger" })
+                        <span id="Lerror"></span>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-lg-push-2" style="margin-right:20px">
+                        <div>
+                            <label>Email</label>
+                            <input name="Email" class="form-control" placeholder="" type="email" id="email" title="Email" onkeyup="validate_name('email','Eerror','', 'E', 'Email formate should be abc@xyz.com ')" @*onblur="return CheckAvailability()"*@ style="height:45px;width:260px">
+                            @Html.ValidationMessageFor(n => n.Email, null, new { @class = "text-danger" })
+                            <span id="Eerror"></span>
+                        </div>
+                        <span id="val" style="display:none">1</span>
+                    </div><label>Password</label>
+                    <div class="form-group col-md-6" style="margin-bottom:20px">
+                        <input name="Password" class="form-control" placeholder="" title="Password" type="password" value="" id="pass" onkeyup="validate_name('pass', 'Perror', 6, 'P', 'please enter atleast 1 capital letter & contain these(#$%^&)')" style="height:45px;width:260px">
+                        @Html.ValidationMessageFor(n => n.Password, null, new { @class = "text-danger" })
+                        <span id="Perror"></span>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="form-group col-md-6 col-lg-push-2" style="margin-right:20px">
+                        <label>Confirm Pasword</label>
+                        <input name="ConfirmPassword" placeholder="" title="Confirm Password" class="form-control" type="password" value="" id="Cpass" onkeyup="pass_match('pass', 'Cpass', 'CPerror')" style="height:45px;width:260px">
+
+                        <span id="CPerror"></span>
+                    </div>
+                    <div class="form-group col-md-6" style="margin-bottom:20px">
+                        <label>CNIC</label>
+                        <input name="CNIC" placeholder="" title="CNIC" class="form-control" type="text" value="" id="cnic" onkeyup="validate_name('cnic', 'CNPerror', 14, 'C', 'Type CNIC with dashes')" style="height:45px;width:260px">
+                        @Html.ValidationMessageFor(n => n.CNIC, null, new { @class = "text-danger" })
+                        <span id="CNPerror"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-lg-push-2" style="margin-right:20px">
+                        <label>Address</label>
+                        <input name="Address" placeholder="" title="Address" class="form-control" type="text" value="" maxlength="50" id="Adr" onkeyup="validate_name('Adr', 'adrerror', 7, 'AD', 'addres is not valid')" style="height:45px;width:260px" @*pattern="[a-zA-Z0-9 #]{3-40}"*@>
+                        @Html.ValidationMessageFor(n => n.Address, null, new { @class = "text-danger" })
+                        <span id="adrerror"></span>
+
+                    </div>
+                    <div class="form-group col-md-6" style="margin-bottom:20px">
+                        <label>Contact Number</label>
+                        <input name="Phone" placeholder="" title="Contact Number" class="form-control" type="text" value="" id="phn" maxlength="13" onkeyup="validate_name('phn', 'Pherror', 10, 'Ph', 'Should be only numeric value')" style="height:45px;width:260px">
+                        @Html.ValidationMessageFor(n => n.Phone, null, new { @class = "text-danger" })
+                        <span id="Pherror"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-lg-push-2" style="margin-right:20px ">
+                        <label>Date of Birth</label>
+                        <input name="Date_of_birth" placeholder="" title="Date Of Birth" class="form-control" type="date" value="" id="dateid" onchange="Validate_Date('dateid','Derror')" style="height:45px;width:260px">
+                        @Html.ValidationMessageFor(n => n.Date_of_birth, null, new { @class = "text-danger" })
+                        <span id="Derror"></span>
+                    </div>
+                    <div class="form-group col-md-6" style="margin-bottom:20px">
+                        <div>
+                            <label>Gender</label>
+                            <select name="Gender" class="form-control" style="height:45px;width:260px">
+                                <option value="Gender" disabled selected>
+                                    Gender
+                                </option>
+                                <option value="Male">
+                                    Male
+                                </option>
+                                <option value="Female">
+                                    Female
+                                </option>
+                                <option value="Other">
+                                    Other
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <select class="form-control" name="Id">
+                                    @foreach (var z in ViewBag.All_Roles)
+                                    {
+                                        <option value="@z.Id">@z.Name</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="form-group col-md-6 col-lg-push-2">
+                            <div style="margin-bottom:20px">
+                                <label>Category</label>
+                                <select class="form-control" id="Catagory_Name" name="Id" onchange="category()" style="height:45px;width:260px">
+                                    <option value="category" disabled selected>Select Category...</option>
+                                    @foreach (var z in ViewBag.category)
+                                    {
+                                        <option value="@z.Id">@z.Name</option>
+                                    }
+                                </select>
+
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-lg-push-2" id="Slct1" style="display:none;margin-right:20px">
+                        <div>
+                            <label>Select city</label>
+                            <select name="Selected_city" class="form-control" id="ff" style="height:45px;width:260px;margin-right:20px" onchange="return populate(this.id, 'gg');">
+
+                                <option value="" disabled selected>
+                                    Selected cites
+                                </option>
+                                <option value="Lahore">
+                                    Lahore
+                                </option>
+                                <option value="kasur">
+                                    kasur
+                                </option>
+                                <option value="Faisalabad">
+                                    Faisalabad
+                                </option>
+                            </select>
+
+                        </div>
+                    </div>
+
+
+                    <div class="form-group col-md-6" id="slct2" style="margin-bottom:20px;display:none">
+                        <div>
+                            <label>Select Area</label>
+                            <select name="Selected_Area" class="form-control" id="gg" style="height:45px;width:260px">
+                                <option value="">
+                                    Select area
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-lg-offset-3" style="margin-bottom:20px">
+                        <label class="form-group center" style="margin-right:450px;margin-top:10px">
+                            <input type="checkbox" name="Muslim" value="Muslim" checked style="zoom:1.5"><p style="font-size:18px;font-weight:bolder;margin-top:-1px;margin-left:20px;margin-right:500px" id="mus" onclick="if(!this.form.checkbox.checked){alert('You must agree to the terms first.');return false}">Muslim</p> <br>
+                            @Html.ValidationMessageFor(n => n.Muslim, null, new { @class = "text-danger" })
+                        </label>
+                    </div>
+                </div>
+                <br>
+                <div name="reg-form" class="register-form " method="post" id="Slct3" style="display:none">
+                    <div class="icon-box mb-0 p-0 col-lg-offset-3">
+                        <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                            <i class="pe-7s-users"></i>
+                        </a>
+                        <h1 class="text-gray pt-10 mt-0 mb-30">Donor Information</h1>
+                    </div>
+                    <hr>
+                    <div action="submission.html" method="get">
+                        <div class="row">
+                            <div class="form-group col-md-6 col-lg-push-3">
+                                <div class="form-group" style="margin-right:20px">
+                                    <div>
+                                        <input type="checkbox" name="Zakat" onchange="Error_show()" value="Zakat" id="zakat1" @*onsubmit="    return is_checked('zakat', 'sadqah', 'usher', 'zakat_ul_fitr', 'checkboxerrors');"*@ style="zoom:1.5"><p style="margin-top:-23px;margin-left:30px;font-size:22px"><b>Zakat</b></p> <br>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <div class="form-group" style="margin-bottom:20px">
+                                    <div>
+                                        <input type="checkbox" name="Sadaqah" value="Sadaqah" id="sadqah" style="zoom:1.5"><p style="margin-top:-23px;margin-left:30px;font-size:22px"><b>Sadaqah</b></p> <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6 col-lg-push-3">
+                                <div class="form-group" style="margin-right:20px">
+                                    <div>
+                                        <input type="checkbox" name="Usher" value="Usher" id="usher" style="zoom:1.5"><p style="margin-top:-23px;margin-left:30px;font-size:22px"><b>Usher</b></p> <br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class="form-group" style="margin-bottom:20px">
+                                    <div>
+                                        <input type="checkbox" name="zakat_ul_fitr" value="zakat_ul_fitr" id="zakat_ul_fitr" style="zoom:1.5"><p style="margin-top:-23px;margin-left:30px;font-size:22px"><b>Zakat-ul-Fitr</b></p> <br>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <span id="checkboxerrors"></span>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6 col-lg-push-3">
+                                <div>
+
+                                    <label class="checkbox-inline" style="margin-right:35px;margin-left:10px">
+                                        <input type="checkbox" name="Atia_o_Khairat" value="Atia_o_Khairat" style="zoom:1.5"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Atia-o-khairat</p> <br>
+                                    </label>
+                                    <label class="checkbox-inline" style="margin-bottom:10px">
+                                        <input type="checkbox" name="khums" value="khums" style="zoom:1.5;margin-right:100px"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Khums</p> <br>
+                                    </label>
+                                    <label class="checkbox-inline" style="margin-left:45px;margin-bottom:20px">
+                                        <input type="checkbox" name="Other" value="Other" style="zoom:1.5;margin-right:80px"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Other</p> <br>
+                                    </label>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <br />
+                    <div class="form-group ">
+                        <div class="row">
+                            <div class="icon-box mb-0 p-0">
+                                <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                                    <i class="pe-7s-users"></i>
+                                </a>
+                                <h3 class="text-gray pt-10 mt-0 mb-30 col-lg-offset-3">Donation Type</h3>
+                            </div>
+                            <br>
+
+                            <ul class="chicklet-list clearfix col-lg-offset-3">
+                                <li><input id="donate-amount-1" class="form-control" name="frequency" value="once" type="radio"> <label data-amount="1000" for="donate-amount-1">Once</label></li>
+
+
+                                <li><input class="form-control" id="donate-amount-2" name="frequency" value="monthly" type="radio"> <label data-amount="2000" for="donate-amount-2">Monthly</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div style="">
+                        <div class="icon-box mb-0 p-0 col-lg-offset-3">
+                            <h3>Donation Category</h3>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6 col-lg-push-3">
+
+                                <label class="checkbox-inline" style="margin-right:30px;margin-left:15px">
+                                    <input type="checkbox" name="Education" value="Education" style="zoom:1.5"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Education</p> <br>
+                                </label>
+                                <label class="checkbox-inline" style="margin-bottom:5px">
+                                    <input type="checkbox" name="Health" value="Health" style="zoom:1.5;margin-right:100px"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Health</p> <br>
+                                </label>
+                                <label class="checkbox-inline" style="margin-left:35px;margin-bottom:10px">
+                                    <input type="checkbox" name="Other" value="Other" style="zoom:1.5;margin-right:80px"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Other</p> <br>
+                                </label>
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="icon-box mb-0 p-0 col-lg-offset-3">
+                            <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                                <i class="pe-7s-users"></i>
+                            </a>
+                            <h3 class="text-gray pt-10 mt-0 mb-30">How much you want to donate</h3>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6 col-lg-push-3">
+                                <ul class="chicklet-list clearfix">
+
+
+                                    <li><input class="form-control" name="Amount" value="500" id="radio1" onchange="input_show()" type="radio"> <label>500</label></li>
+                                    <li><input class="form-control" name="Amount" value="1000" id="radio2" onchange="input_show()" type="radio"> <label>1000</label></li>
+
+                                    <li><input class="form-control" name="Amount" value="2000" id="radio3" onchange="input_show()" type="radio"> <label>2000</label></li>
+
+                                    <li><input class="form-control" name="Amount" value="3000" id="radio4" onchange="input_show()" type="radio"> <label>3000</label></li>
+
+
+                                    <li><input class="form-control" name="Amount" value="5000" id="radio4" onchange="input_show()" type="radio"> <label>5000</label></li>
+                                    <li><input class="form-control" name="Amount" id="other" onchange="input_show()" type="radio"> <label>Other</label></li>
+                                    <li>
+                                        <input name="Amount" class="form-control" id="input_amount" placeholder="Other Amount" type="text" style="height:45px;width:260px;display:none">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div name="reg-form" class="register-form  col-lg-offset-3" method="post" id="Slct4" style="display:none">
+                    <div class="icon-box mb-0 p-0">
+                        <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                            <i class="pe-7s-users"></i>
+                        </a>
+                        <h1 class="text-gray pt-10 mt-0 mb-30" style="color:black">Receiver Information</h1>
+                    </div>
+                    <hr>
+                    <div class="form-group  col-lg-push-2 ">
+                        <div class="row">
+                            <div class="icon-box mb-0 p-0 ">
+                                <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                                    <i class="pe-7s-users"></i>
+                                </a>
+                                <h3 class="text-gray pt-10 mt-0 mb-30">Receiver Type</h3>
+                            </div>
+                            <br>
+
+                            <ul class="chicklet-list clearfix">
+                                <li><input id="donate-amount-1" class="form-control" name="reciever_fund_type" value="Fund" type="radio" onchange="In_Show()"> <label>fund</label>
+
+                                <li><input id="donate-amount-1" class="form-control" name="reciever_fund_type" value="Loan" type="radio" onchange="org_Show()"> <label>Loan</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="fundid" style="display:none" class="form-group col-lg-push-2">
+                        <div class="form-group ">
+                            <div class="row">
+                                <div class="icon-box mb-0 p-0 col-lg-push-2">
+                                    <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                                        <i class="pe-7s-users"></i>
+                                    </a>
+                                    <h3 class="text-gray pt-10 mt-0 mb-30">Receiver Type</h3>
+                                </div>
+                                <br>
+
+                                <ul class="chicklet-list clearfix">
+                                    <li><input id="donate-amount-1" class="form-control" name="frequency_educ" value="Once" type="radio"> <label>Once</label>
+
+                                    <li><input id="donate-amount-1" class="form-control" name="frequency_educ" value="monthly" type="radio"> <label>Monthly</label></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-push-4">
+                            <div class="row">
+                                <div class="icon-box mb-0 p-0 ">
+                                    <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                                        <i class="pe-7s-users"></i>
+                                    </a>
+                                    <h3 class="text-gray pt-10 mt-0 mb-30">Receive Category</h3>
+                                </div>
+                                <br>
+
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label class="checkbox-inline" style="margin-right:30px;margin-left:15px">
+                                            <input type="checkbox" name="Education" value="Education" id="eee" onchange="Myedu()" style="zoom:1.5"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Education</p> <br>
+                                        </label>
+                                        <label class="checkbox-inline " style="margin-bottom:5px">
+                                            <input type="checkbox" name="Health" value="Health" id="hhh" onchange="Myhea()" style="zoom:1.5;margin-right:100px"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Health</p> <br>
+                                        </label>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="row" id="educt" style="display:none">
+                            <div class="form-group col-md-12">
+                                <div class="icon-box mb-0 p-0">
+                                    <h3>Education Category</h3>
+                                </div>
+                                <label class="checkbox-inline" style="margin-right:30px;margin-left:15px">
+                                    <input type="checkbox" id="admi" name="AdmissionFee" value="AdmissionFee" onchange="MyFunc()" style="zoom:1.5"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">AdmissionFee/fee</p> <br>
+                                </label>
+                                <label class="checkbox-inline" style="margin-bottom:5px">
+                                    <input type="checkbox" id="accessories" name="Accessories" value="Accessories" onchange="MyFunct()" style="zoom:1.5;margin-right:100px"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Accessories</p> <br>
+                                </label>
+                                <label class="checkbox-inline" style="margin-left:35px;margin-bottom:10px">
+                                    <input type="checkbox" id="uni" name="Uniform" value="Uniform" onchange="MyFuncUni()" style="zoom:1.5;margin-right:80px"><p style="font-size:20px;font-weight:bolder;margin-bottom:80px">Uniform</p> <br>
+                                </label>
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div>
+                                    <label>Education Image</label>
+                                    <input type="file" name="file" id="file" />
+                                    @ViewBag.Message
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="org_form">
+
+                            <div class="row" id="ggg" style="display:none">
+                                <div class="form-group col-md-12">
+                                    <div class="icon-box mb-0 p-0">
+                                        <h3>Health Category</h3>
+                                    </div>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="Medicine" value="Medicine" style="zoom:1.5"><p style="font-size:20px;font-weight:bolder">Medicine</p> <br>
+                                    </label>
+                                    <label class="checkbox-inline" style="margin-left:50px">
+                                        <input type="checkbox" name="Minor_Surgury" value="Minor Surgury" style="zoom:1.5"><p style="font-size:20px;font-weight:bolder">Minor Surgury</p> <br>
+                                    </label>
+                                    <label class="checkbox-inline" style="margin-left:25px">
+                                        <input type="checkbox" name="Test_Reports" value="Test/Reports" style="zoom:1.5"><p style="font-size:20px;font-weight:bolder">Test/Reports</p> <br>
+                                    </label>
+                                </div>
+
+                                <div class="form-group col-md-6 ">
+                                    <div>
+                                        <label>Health Image</label>
+                                        <input type="file" name="file" id="file" />
+                                        @ViewBag.Message
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="form-group col-md-7">
+                                <label>Amount You Want To Receive</label>
+                            </div>
+                            <div class="form-group col-md-7">
+                                <input name="HealthAmount" class="form-control" value="" type="text" style="height:45px;width:360px">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="loanid" style="display:none">
+                        <div class="icon-box mb-0 p-0 col-lg-offset-1">
+                            <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                                <i class="pe-7s-users"></i>
+                            </a>
+                            <h2 class="text-gray pt-10 mt-0 mb-30" style="color:black">Our Loan Category</h2>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="form-group col-md-6 col-md-push-1">
+                                <div class="form-group" style="margin-right:20px;color:black">
+                                    <div>
+                                        <input type="radio" name="laon_cat" value="laon_edu" style="zoom:1.5"><p style="margin-top:-23px;margin-left:40px;font-size:22px;color:black"><b>Loan Taken For Education</b></p> <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6 col-md-push-1">
+                                <div class="form-group" style="margin-right:20px;color:black">
+                                    <div>
+                                        <input type="radio" name="laon_cat" value="laon_hea" style="zoom:1.5"><p style="margin-top:-23px;margin-left:40px;font-size:22px;color:black"><b>Loan Taken For Health</b></p> <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="form-group col-md-6 col-lg-push-1">
+                                <label>Father/Gardian Full Name</label>
+                            </div>
+                            <div class="form-group col-md-6" style="margin-bottom:5px">
+                                <input name="Gardian_Name" class="form-control" value="" type="text" style="height:45px;width:260px">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6 col-lg-push-1">
+                                <label>Total Family Member</label>
+                            </div>
+                            <div class="form-group col-md-6 " style="margin-bottom:5px">
+                                <input name="Gardian_Members" class="form-control" value="" type="text" style="height:45px;width:260px">
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="form-group ">
+                            <div class="row">
+                                <div class="icon-box mb-0 p-0 col-lg-offset-1">
+                                    <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">
+                                        <i class="pe-7s-users"></i>
+                                    </a>
+                                    <h2 class="text-gray pt-10 mt-0 mb-30" style="color:black">Source of Income</h2>
+                                </div>
+                                <br>
+
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6 col-lg-push-1">
+                                <label>Monthly Income</label>
+                            </div>
+                            <div class="form-group col-md-6" style="margin-bottom:5px">
+                                <input name="Gardian_Income" class="form-control" value="" type="text" style="height:45px;width:260px">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6 col-lg-push-1">
+                                <label>Occupation</label>
+                            </div>
+                            <div class="form-group col-md-6" style="margin-bottom:5px">
+                                <input name="Gardian_Occupation" class="form-control" value="" type="text" style="height:45px;width:260px">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6 col-lg-push-1">
+                                <label>Organization Name where work</label>
+                            </div>
+                            <div class="form-group col-md-6" style="margin-bottom:5px">
+                                <input name="Gardian_Oranization" class="form-control" value="" type="text" style="height:45px;width:260px">
+                            </div>
+                        </div>
+                        <br /><br /><br />
+                        <div class="row">
+                            <div class="form-group col-md-6 col-lg-push-1">
+                                <label>Loan Amount</label>
+                            </div>
+                            <div class="form-group col-md-6 " style="margin-bottom:5px">
+                                <input name="Loan_Amount" class="form-control" value="" type="text" style="height:45px;width:260px">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="clearfix">
+                    <br /><div class="form-group col-md-6 col-lg-push-3">
+                        <button class="thm-btn thm-tran-bg" type="submit" onclick="return Check_AllFields()"> Register now</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+
+
+    </section>
+
+    <script>
+function populate(s1,s2){
+		var s1 = document.getElementById(s1);
+		var s2 = document.getElementById(s2);
+		s2.innerHTML="";
+
+		if(s1.value == "Lahore"){
+		var optionArray=["|","ghari_shahu|GhariShahu","shahdara|Shahdara","mughalpura|Mughalpura"]
+		}
+		else if(s1.value == "kasur"){
+		var optionArray=["|","chunian|Chunian","Pattoki|Pattoki","kot_Radha_Kishan|Kot Radha Kishan"]
+		}else if(s1.value == "Faisalabad"){
+		var optionArray=["|","lyallpurTown|Lyallpur Town","madinaTown|Madina Town","jinnahTown|Jinnah Town","iqbaltown|Iqbal town","jaranwalaTown|Jaranwala Town"]
+		}
+		for(var option in optionArray){
+		var pair= optionArray[option].split("|");
+		var newOption= document.createElement("option");
+		newOption.value =pair[0];
+		newOption.innerHTML= pair[1];
+		s2.options.add(newOption);
+
+		}
+
+}
+
+function category() {
+    var sel = document.getElementById('Catagory_Name');
+    var i = sel.selectedIndex;
+    var selected_text = sel.options[i].text;
+    if (selected_text == 'Donor') {
+        document.getElementById('Slct3').style.display = "block";
+        document.getElementById('Slct4').style.display = "none";
+        document.getElementById('Slct1').style.display = "none";
+        document.getElementById('slct2').style.display = "none";
+    }
+    else if (selected_text == 'Receiver') {
+        document.getElementById('Slct1').style.display = "block";
+        document.getElementById('slct2').style.display = "block";
+        document.getElementById('Slct4').style.display = "block";
+        document.getElementById('Slct3').style.display = "none";
+    }
+    else {
+        document.getElementById('Slct1').style.display = "none";
+        document.getElementById('Slct3').style.display = "none";
+        document.getElementById('Slct4').style.display = "none";
+
+    }
+}
+function Error_show() {
+    var checkBox = document.getElementById("zakat1");
+    //var text = document.getElementById("input_amount");
+    //var checkBox1 = document.getElementById("radio1");
+    //var checkBox2 = document.getElementById("radio2");
+    //var checkBox3 = document.getElementById("radio3");
+    //var checkBox4 = document.getElementById("radio4");
+
+    if (checkBox.checked == true) {
+        alert('please select one')
+    }
+        //else if ( checkBox1.checked == true) {
+        //    text.style.display = "none";
+        //} else if (checkBox2.checked == true) {
+        //    text.style.display = "none";
+        //} else if (checkBox3.checked == true) {
+        //    text.style.display = "none";
+        //} else if (checkBox4.checked == true) {
+        //    text.style.display = "none";
+        //}
+    else {
+        text.style.display = "none";
+    }
+
+}
+
+
+    </script>
+    <script>
+function In_Show() {
+    var info = document.getElementById("fundid");
+    var org = document.getElementById("loanid");
+	if(org.style.display=="block"){
+	org.style.display="none"
+	}
+	if(info.style.display == "none"){
+	  info.style.display="block";
+	}else {
+	 info.style.display="none";
+	}
+}
+function org_Show() {
+    var org = document.getElementById("loanid");
+    var info = document.getElementById("fundid");
+	if(info.style.display=="block"){
+	info.style.display="none"
+	}
+	if(org.style.display == "none"){
+	  org.style.display="block";
+	}else{
+	  org.style.display="none";
+	}
+}
+    </script>
+
+    <script>
+        function Myedu() {
+            var checkBox = document.getElementById("eee");
+            var text = document.getElementById("educt");
+
+            var checkBoxHealth = document.getElementById("hhh");
+            var textHealthBlock = document.getElementById("ggg");
+
+            if (checkBox.checked ==true ) {
+                text.style.display = "block";
+                checkBoxHealth.checked = false;
+                textHealthBlock.style.display = "none";
+        }
+        else {
+            text.style.display = "none";
+        }
+
+        }
+
+        function Myhea() {
+            var checkBox = document.getElementById("hhh");
+            var text = document.getElementById("ggg");
+
+            var checkBoxEducation = document.getElementById("eee");
+            var textEducationBlock = document.getElementById("educt");
+
+            if (checkBox.checked == true) {
+                text.style.display = "block";
+                checkBoxEducation.checked = false;
+                textEducationBlock.style.display = "none";
+        }
+        else {
+            text.style.display = "none";
+        }
+
+        }
+    </script>
+    <script>
+    function MyFunc() {
+        var checkBox = document.getElementById("admi");
+        var text = document.getElementById("fee");
+        if (checkBox.checked == true) {
+            text.style.display = "block";
+        }
+        else {
+            text.style.display = "none";
+        }
+
+    }
+    </script>
+    <script>
+    function MyFuncUni() {
+        var checkBox = document.getElementById("uni");
+        var text = document.getElementById("uniform");
+        if (checkBox.checked == true) {
+            text.style.display = "block";
+        }
+        else {
+            text.style.display = "none";
+        }
+
+    }
+    </script>
+
+    <script>
+    function MyFunct() {
+        var checkBox = document.getElementById("accessories");
+        var text = document.getElementById("access");
+        if (checkBox.checked == true) {
+            text.style.display = "block";
+        }
+        else {
+            text.style.display = "none";
+        }
+
+    }
+    </script>
+    <script>
+    function input_show() {
+        var checkBox = document.getElementById("other");
+        var text = document.getElementById("input_amount");
+        var checkBox1 = document.getElementById("radio1");
+        var checkBox2 = document.getElementById("radio2");
+        var checkBox3 = document.getElementById("radio3");
+        var checkBox4 = document.getElementById("radio4");
+
+        if (checkBox.checked == true) {
+            text.style.display = "block";
+        } else if ( checkBox1.checked == true) {
+            text.style.display = "none";
+        } else if (checkBox2.checked == true) {
+            text.style.display = "none";
+        } else if (checkBox3.checked == true) {
+            text.style.display = "none";
+        } else if (checkBox4.checked == true) {
+            text.style.display = "none";
+        }
+        else {
+            text.style.display = "none";
+        }
+
+    }
+    </script>
+    @*<script>
+        function Error_show() {
+            var checkBox = document.getElementById("zakat1");
+            //var text = document.getElementById("input_amount");
+            //var checkBox1 = document.getElementById("radio1");
+            //var checkBox2 = document.getElementById("radio2");
+            //var checkBox3 = document.getElementById("radio3");
+            //var checkBox4 = document.getElementById("radio4");
+
+            if (checkBox.checked == true) {
+                alert('please select one')
+            }
+            //else if ( checkBox1.checked == true) {
+            //    text.style.display = "none";
+            //} else if (checkBox2.checked == true) {
+            //    text.style.display = "none";
+            //} else if (checkBox3.checked == true) {
+            //    text.style.display = "none";
+            //} else if (checkBox4.checked == true) {
+            //    text.style.display = "none";
+            //}
+            else {
+                text.style.display = "none";
+            }
+
+        }
+        </script>*@
+    @*<script>
+            function is_checked()
+            {
+                var zakat = document.getElementById('zakat').checked;
+                var sadqah = document.getElementById('sadqah').checked;
+                var zakat_ul_fitr = document.getElementById('zakat_ul_fitr').checked;
+                var usher = document.getElementById('usher').checked;
+                if (zakat == false && sadqah == false && zakat_ul_fitr == false && usher==false)
+                {
+                    alert('please select one');
+                    return false;
+                }
+                else {
+                    return true;
+                }
+
+            }
+
+        </script>*@
+
+
+
+
+
+
+
+
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+
+    }
+}

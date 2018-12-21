@@ -1,0 +1,91 @@
+﻿@model IEnumerable<OLIWS.Models.BalanceDetails>
+
+@{
+    ViewBag.Title = "ViewDonations";
+    Layout = "~/Views/Shared/profile_Layout.cshtml";
+}
+
+
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<div class="container">
+    <div class="row">
+        <h2>All Donations</h2>
+        @*<div class="col-lg-2"></div>*@
+        <div class="col-lg-12">
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TotalAmount)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Education)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Health)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Others)
+                    </th>
+                    @*<th>
+                        @Html.DisplayNameFor(model => model.Team)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Admin)
+                    </th>*@
+                    @*<th>
+                    @Html.DisplayNameFor(model => model.UserID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DonorID)
+                </th>*@
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TotalAmount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Education)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Health)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Others)
+                        </td>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.Team)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Admin)
+                        </td>*@
+                        @*<td>
+                        @Html.DisplayFor(modelItem => item.UserID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DonorID)
+                    </td>*@
+                        @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { id=item.BalanceID }) |
+                        @Html.ActionLink("Details", "Details", new { id=item.BalanceID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id=item.BalanceID })
+                    </td>*@
+                    </tr>
+                }
+
+            </table>
+
+
+
+        </div>
+        @*<div class="col-lg-2"></div>*@
+    </div>
+
+</div>
+

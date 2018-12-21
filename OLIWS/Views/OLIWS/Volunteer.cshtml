@@ -1,0 +1,122 @@
+﻿@model OLIWS.Models.Volunteer
+@{
+    ViewBag.Title = "Volunteer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Volunteer", "OLIWS", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{ @Html.AntiForgeryToken()
+
+    
+
+
+<section class="register-section sec-padd-top">
+    <div class="container">
+        <div class="row">
+             <div class="form-column column col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="section-title2">
+                    <h4>Become a Volunteer:</h4>
+
+
+                    <form action="#" class="donate-form default-form">
+                      
+                        <h3>Register Now</h3>
+                </div>
+                <!--Login Form-->
+
+
+                <div class="styled-form register-form">
+                    
+                    <form action="#" method="post">
+                    
+
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group" style="margin-right:20px">
+                                <span class="adon-icon"><span class="fa fa-user"></span></span> <input name="FirstName" placeholder="Your Name " type="text" value="">
+                               @Html.ValidationMessageFor(s => s.FirstName, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group" style="margin-right:20px">
+                                <span class="adon-icon"><span class="fa fa-envelope-o"></span></span> <input name="LastName" placeholder="LastName " type="text" value="">
+                                @Html.ValidationMessageFor(s => s.LastName, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group" style="margin-right:20px">
+                                <span class="adon-icon"><span class="fa fa-user"></span></span> <input name="Email" placeholder="Email" type="text" value="">
+                                @Html.ValidationMessageFor(s => s.Email, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group" style="margin-right:20px">
+                                <span class="adon-icon"><span class="fa fa-user"></span></span> <input name="Password" placeholder="Password" type="password" value="">
+                                @Html.ValidationMessageFor(s => s.Password, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group" style="margin-right:20px">
+                                <span class="adon-icon"><span class="fa fa-user"></span></span> <input name="ConfirmPassword" placeholder="Confirm Password" type="password" value="">
+                                @Html.ValidationMessageFor(s => s.ConfirmPassword, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group" style="margin-right:20px">
+                                <span class="adon-icon"><span class="fa fa-unlock-alt"></span></span> <input name="Gender" placeholder="Gender" type="text" value="">
+                                @Html.ValidationMessageFor(s => s.Gender, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group" style="margin-right:20px">
+                                <span class="adon-icon"><span class="fa fa-unlock-alt"></span></span> <input name="PhoneNum" placeholder="Phone" type="text" value="">
+                                @Html.ValidationMessageFor(s => s.PhoneNum, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group" style="margin-right:20px">
+                                <span class="adon-icon"><span class="fa fa-unlock-alt"></span></span> <input name="CNIC" placeholder="CNIC" type="text" value="">
+                                @Html.ValidationMessageFor(s => s.CNIC, null, new { @class = "text-danger" })
+                            </div>
+                            </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group" style="margin-right:20px">
+                                <span class="adon-icon"><span class="fa fa-unlock-alt"></span></span> <input name="Qualification" placeholder="Qualification" type="text" value="">
+                                @Html.ValidationMessageFor(s => s.Qualification, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                       
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group" style="margin-right:20px">
+                                <span class="adon-icon"><span class="fa fa-unlock-alt"></span></span> <input name="Address" placeholder="Address" type="text" value="">
+                                @Html.ValidationMessageFor(s=> s.Address, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group" style="margin-right:20px">
+                                <span class="adon-icon"><span class="fa fa-unlock-alt"></span></span> <input name="Date_of_Birth"  type="date" value="">
+                                @Html.ValidationMessageFor(s=> s.Date_of_Birth, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <div class="form-group pull-left">
+                                <button class="thm-btn thm-tran-bg">Register here</button>
+                            </div>
+
+
+                            <div class="form-group padd-top-15 pull-right">
+                                * Free registered user to submit content.
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+
+}

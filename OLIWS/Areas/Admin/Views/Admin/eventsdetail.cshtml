@@ -1,0 +1,54 @@
+﻿@model OLIWS.Models.ProfileViewModel
+@{
+    ViewBag.Title = "eventsdetail";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table" style="margin-top:400px">
+    <tr>
+
+
+
+        <th>
+            <label>Events/Campaign</label>
+
+        </th>  
+    </tr>
+   
+      
+            @foreach (var item in Model.work_event)
+
+            {
+                
+
+<tr>
+          
+
+            <td>
+                @Html.DisplayFor(modelItem => item.events)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.campigns)
+            </td>
+   
+  
+    
+
+
+            <td class="text-right">
+                <a href="~/Admin/Admin/eventstatus/@item.work_eventsID" class="btn btn-success btn-xs" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil"></i></a>
+
+            </td>
+        </tr>
+                    }
+                
+@*@foreach (var it in Model.work_sub)
+{
+    <td>
+
+        @Html.DisplayFor(modelItem => it.Name)
+    </td>}*@
+</table>
+
+
